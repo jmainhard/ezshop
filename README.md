@@ -1,10 +1,10 @@
-# Proyecto Boletas aplicación POO		marzo 2021  
+# Proyecto aplicación POO marzo 2021  
 
-##### Boletero de ferretería con salida por consola (Java)  
+Boletero de ferretería con salida por consola (Java)  
 
 ---
 
-**TODO: Aprender Json**
+**TODO: Aprender Json**  
 **Próximo Lunes (8-febrero) reunión, Hora: Por ver, apróx 17**
 
 - Planificación general Proyecto ✅
