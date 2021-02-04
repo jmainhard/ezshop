@@ -25,7 +25,7 @@ Ideas: Clases
         - compra -> baja inventario, genera comprobante (imprime), limpia canasta
         - addProducto/delProducto
         - updateIngresos
-    - Contabilidad 
-        - // Reporta -> Ingresos (Json archivo)
+    - Contabilidad // ControladorIngresos
+        - // Reporta -> Ingresos (Json archivo) x mes
 
 // Ideas: funcionalidades
