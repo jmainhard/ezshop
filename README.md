@@ -9,11 +9,12 @@ Boletero de ferretería con salida por consola (Java)
 - Código
 - Diagrama UML en VPP
 
-Ideas: Programa
+Ideas: Clases
 - Clases candidatas
     - Cliente (Lado Vendedor)
     - Producto
-    - Inventario (Json)
+    - ControlInventario 
+        - Inventario (Json)
     - Imprimible (Interfaz) (pensar aplicación pa otras clases)
     - Comprobante extends Imprimible (abstracta) (repensar nombre)
         - Boleta extends
@@ -24,7 +25,6 @@ Ideas: Programa
         - addProducto/delProducto
         - updateIngresos
     - Contabilidad 
-        - //Reporta -> Ingresos (Json archivo)
+        - // Reporta -> Ingresos (Json archivo)
 
-
-Ideas: funcionalidades
+// Ideas: funcionalidades
