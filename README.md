@@ -12,6 +12,7 @@ Boletero de ferretería con salida por consola (Java)
 Ideas: Clases
 - Clases candidatas
     - Cliente (Lado Vendedor)
+     // TODO verificador de ruts
     - Producto
     - ControlInventario 
         - Inventario (Json)
@@ -19,7 +20,7 @@ Ideas: Clases
     - Comprobante extends Imprimible (abstracta) (repensar nombre)
         - Boleta extends
         - Factura extends
-    - HistorialClientes (Json)
+    - HistorialClientes (Json) attributes: nombre, rut, comprobantesAsociados
     - Canasta (candidato a funcionalidad compra)
         - compra -> baja inventario, genera comprobante (imprime), limpia canasta
         - addProducto/delProducto
