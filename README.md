@@ -5,7 +5,7 @@ Boletero de ferretería con salida por consola (Java)
 ---
 
 **TODO: Aprender Json**  
-**Próximo Lunes (8-febrero) reunión, Hora: Por ver, apróx 17**
+**Lunes (8-febrero) reunión, Reparto de funcionalidades, dependencias entorno de trabajo**
 
 - Planificación general Proyecto ✅
 - Diagrama UML VPP ✅ (Base lista, abierto a cambios)
