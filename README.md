@@ -10,7 +10,8 @@ Boletero de ferretería con salida por consola (Java)
 - Planificación general Proyecto ✅
 - Diagrama UML VPP ✅ (Base lista, abierto a cambios)
 - TODO Reparto de funcionalidades ✅
-- Código
+- Código (Escribir testeos si surgen)
+- Tests
 - Revisión
 - Presentación
 
