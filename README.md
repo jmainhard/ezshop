@@ -29,7 +29,7 @@ Ideas: Clases
     - HistorialClientes (Json) attributes: nombre, rut, comprobantesAsociados
     - Canasta (candidato a funcionalidad compra)
         - compra -> baja inventario, genera comprobante (imprime), limpia canasta
-        - addProducto/delProducto
+        - addProducto/removeProducto
         - updateIngresos
     - Contabilidad // ControladorIngresos
         - // Reporta -> Ingresos (Json archivo) x mes
