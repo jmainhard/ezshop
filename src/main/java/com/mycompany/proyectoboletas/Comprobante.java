@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.proyectoboletas;
 
 import java.util.Date;
 
 /**
- *
  * @author Esteban
  */
 public class Comprobante {
     private int numComprobante;
     private Date fecha;
     private double total;
+    private Cliente cliente;
 
     public Comprobante(int numComprobante, Date fecha, double total) {
         this.numComprobante = numComprobante;
@@ -23,7 +18,8 @@ public class Comprobante {
     }
 
     public Comprobante(Cliente cliente) {
-        
+        this.cliente = cliente; // necesitaba este constructor y agregué esta linea, me disculpo -Jorge
+        // TODO
     }
     
     public void imprimir(){

@@ -21,13 +21,12 @@ public class Canasta {
     }
 
     // TODO
-    // Disminuye el stock de (uno o más) productos vendidos
-    // ? Genera comprobante -> ? entrega detalle (String) de los productos en canasta
-    // X Limpia esta canasta para una nueva venta -> no hace falta limpiar -
-    // la canasta debido a que cada cliente tiene una canasta con referencia unica en tiempo de ejecución
-    public void compra() {
-        throw new UnsupportedOperationException("Compra no soportada");
-    }
+    // Cambiaré el método compra a cliente para que allí se haga limpieza del cliente para una nueva compra
+    // debido a que canasta no tiene a cliente entre sus atributos y-
+    // es allá donde se crea una nueva canasta por cada cliente
+//    public void compra() {
+//        throw new UnsupportedOperationException("Compra no soportada");
+//    }
     
     public boolean addProducto(Producto p) {
         try {
@@ -37,9 +36,7 @@ public class Canasta {
                 throw new IllegalArgumentException();
             }
             if (!p.equals(null)) {
-                if (productos.add(p)) {
-                    return true;
-                }
+                return productos.add(p);
             } else {
                 throw new NullPointerException();
             }
@@ -54,7 +51,7 @@ public class Canasta {
         return false;
     }
     
-    // TODO
+    // TODO añadir exceptions
     public boolean removeProducto(Producto p) {
         productos.remove(p);
         return false;
