@@ -6,11 +6,11 @@ package com.mycompany.proyectoboletas;
  */
 
 public class Cliente {
-    String nombre;
-    String rut;
-    Canasta canasta;
+    private String nombre;
+    private String rut;
+    private Canasta canasta;
     
-    public void Cliente(String nombre, String rut) {
+    public Cliente(String nombre, String rut) {
         this.nombre = nombre;
         this.rut = rut;
         this.canasta = new Canasta();
