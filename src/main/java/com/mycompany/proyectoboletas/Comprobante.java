@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author Esteban
  */
-public abstract class Comprobante {
+public abstract class Comprobante implements Imprimible {
     private int numComprobante;
     private Date fecha;
     private double total;
@@ -18,12 +18,13 @@ public abstract class Comprobante {
     }
 
     public Comprobante(Cliente cliente) {
-        this.cliente = cliente; // necesitaba este constructor y agregué esta linea, me disculpo -Jorge
+        this.cliente = cliente;
         // TODO
     }
     
+    @Override
     public void imprimir(){
-    
+        
     }
     
     public double calcTotal(){

@@ -1,5 +1,6 @@
 package com.mycompany.proyectoboletas;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,12 +22,12 @@ public class Cliente {
     // Disminuye el stock de (uno o más) productos vendidos
     // Genera comprobante 
     
-    // X Limpia este cliente con una nueva instancia de canasta y -
-    // distintos atributos para una nueva compra -> no es necesario limpieza, se maneja desde Main
+    // no es necesario limpieza, se maneja desde Main
     public void comprar() {
         Comprobante comprobante;
         
         // confirmar que desea comprar y explicar las consecuencias de la compra
+        // Desea comprar? esto modificará el stock de los productos en canasta y finalizará la sesión de venta
         
         switch (tipoComprobante()) {
             case 1:
@@ -38,7 +39,7 @@ public class Cliente {
             default:
                 throw new AssertionError();
         }
-
+        
 //        ? comprobante.mostrarDetalle();
 //        comprobante.imprimir();
     }
@@ -50,17 +51,21 @@ public class Cliente {
         while (numTipo < 1 || numTipo > 2) {
             numTipo = -1;
             
-            System.out.println("Seleccione tipo de Comprobante");
+            System.out.println("\nSeleccione tipo de Comprobante");
+            System.out.println("1 - Boleta");
+            System.out.println("2 - Factura");
             try {
-                System.out.println("1 - Boleta");
-                System.out.println("2 - Factura");
                 numTipo = teclado.nextInt();
+            } catch (InputMismatchException e) {
+                System.err.println("Error: Ingrese un número "+ e);
+                teclado.next();
             } catch (Exception e) {
-                System.out.println("Error: Ingrese número válido "+ e);
+                System.err.println("Error: "+ e);
                 teclado.next();
             }
         }
-        System.out.println("Tipo comprobante: "+ numTipo);
+        String tipo = numTipo == 1 ? " (Boleta)" : " (Factura)";
+        System.out.println("\nSeleccionado: "+ numTipo+ tipo);
         
         return numTipo;
     }
@@ -92,7 +97,13 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "nombre=" + nombre + ", rut=" + rut + ", canasta=" + canasta + '}';
+        String strBuilder;
+        
+        strBuilder = "========== Datos Cliente ==========\n";
+        strBuilder += "Nombre: "+ nombre+ "\n";
+        strBuilder += "Rut: "+ rut+ "\n";
+        
+        return strBuilder;
     }
     
     

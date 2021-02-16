@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author Esteban
  */
-public class Boleta extends Comprobante{
+public class Boleta extends Comprobante {
 
     public Boleta(int numComprobante, Date fecha, double total) {
         super(numComprobante, fecha, total);
