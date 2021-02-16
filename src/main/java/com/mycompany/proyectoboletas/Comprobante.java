@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author Esteban
  */
-public class Comprobante {
+public abstract class Comprobante {
     private int numComprobante;
     private Date fecha;
     private double total;
