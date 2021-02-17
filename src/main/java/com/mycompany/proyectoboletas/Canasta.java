@@ -2,39 +2,29 @@ package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
- * @author Jorge M.
- *         Maximiliano C.
- *         Esteban E.
+ * @author Jorge M., Maximiliano C., Esteban E.
  */
 
 public class Canasta {
     //Nombres Serializados para dar limpieza al JSON
     @SerializedName("Productos")
     private ArrayList<Producto> productos;
+    private double total; // Importante: se actualiza al invocar getTotal()
     
     public Canasta() {
         this.productos = new ArrayList<>();
     }
     
     public Canasta(ArrayList<Producto> productos) {
-        this.productos = new ArrayList<>(productos);
+        this.productos = productos;
+        this.total = calcTotal();
     }
-
-    // TODO
-    // Cambiaré el método compra a cliente para que allí se haga limpieza del cliente para una nueva compra
-    // debido a que canasta no tiene a cliente entre sus atributos y-
-    // es allá donde se crea una nueva canasta por cada cliente
-//    public void compra() {
-//        throw new UnsupportedOperationException("Compra no soportada");
-//    }
     
     public boolean addProducto(Producto p) {
         try {
-            // este if: en caso de que se utilizara polimorfismo,
-            // de otra forma sería error de compilación (en lugar de IllegalArgument)
+            // En caso de polimorfismo a futuro
             if (p.getClass() != Producto.class) {
                 throw new IllegalArgumentException();
             }
@@ -54,15 +44,24 @@ public class Canasta {
         return false;
     }
     
-    // TODO añadir exceptions
     public boolean removeProducto(Producto p) {
-        productos.remove(p);
+        try {
+            return productos.remove(p);
+        } catch (NullPointerException e) {
+            System.err.println(e + ": Producto nulo o no inicializado");
+        } catch (Exception e) {
+            System.err.println(e + ": Error al intentar eliminar producto");
+        }
+        
         return false;
     }
     
-    // TODO
-    public void updateIngresos() {
-        throw new UnsupportedOperationException("updateIngresos no opera aún");
+    // Actualiza total
+    public double calcTotal() {
+        double total = this.productos.stream()
+                .mapToDouble(x -> x.getPrecio())
+                .sum();
+        return total;
     }
     
     // getters y setters
@@ -73,7 +72,15 @@ public class Canasta {
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
     }
+    
+    public double getTotal() {
+        total = calcTotal();
+        return total;
+    }
 
+    public void setTotal(double total) {
+        this.total = total;
+    }
     
     
 }

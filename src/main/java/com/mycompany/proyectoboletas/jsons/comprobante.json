@@ -1,6 +1,6 @@
 {
   "Numero Comprobante": 0,
-  "Fecha": "Feb 17, 2021, 12:15:09 AM",
+  "Fecha": "Feb 17, 2021, 2:27:26 AM",
   "Total Compra": 11500.0,
   "Cliente": {
     "Nombre Cliente": "Esteban Esparza",
@@ -25,7 +25,8 @@
           "Stock": 10,
           "Precio": 2500.0
         }
-      ]
+      ],
+      "total": 11500.0
     }
   }
 }

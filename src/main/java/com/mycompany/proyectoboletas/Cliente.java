@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 /**
  * @author Jorge M., Esteban E., Maximiliano C.
+ * 
+ *  Cliente corresponde a una clase que maneja las ventas (de una ferreteria),
+ * no es un cliente comprando sino que es quién utiliza el sistema y 
+ * realiza las ventas.
+ * 
  */
 
 public class Cliente {
@@ -28,6 +33,7 @@ public class Cliente {
     // Genera comprobante 
     
     // no es necesario limpieza, se maneja desde Main
+    // ? TODO - refactorizar nombre del método a vender, discutir
     public void comprar() {
         Comprobante comprobante;
         
@@ -73,6 +79,11 @@ public class Cliente {
         System.out.println("\nSeleccionado: "+ numTipo+ tipo);
         
         return numTipo;
+    }
+    
+    // TODO - implementar updateIngresos
+    public boolean updateIngresos() {
+        throw new UnsupportedOperationException();
     }
     
     // getters y setters
