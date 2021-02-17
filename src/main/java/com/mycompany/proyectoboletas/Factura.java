@@ -14,7 +14,10 @@ public class Factura extends Comprobante {
     public Factura(Cliente cliente) {
         super(cliente);
     }
-
+    @Override
+    public void imprimir(){
+        System.out.println("Hola");
+    }
     @Override
     public String toString() {
         return "Factura{" + '}';

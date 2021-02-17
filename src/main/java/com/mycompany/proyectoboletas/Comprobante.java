@@ -1,14 +1,22 @@
 package com.mycompany.proyectoboletas;
 
+import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
 import java.util.Date;
+
 
 /**
  * @author Esteban
  */
-public abstract class Comprobante implements Imprimible {
+public class Comprobante implements Imprimible {
+    //Nombres Serializados para dar limpieza al JSON
+    @SerializedName("Numero Comprobante")
     private int numComprobante;
+    @SerializedName("Fecha")
     private Date fecha;
+    @SerializedName("Total Compra")
     private double total;
+    @SerializedName("Cliente")
     private Cliente cliente;
 
     public Comprobante(int numComprobante, Date fecha, double total) {
@@ -19,17 +27,24 @@ public abstract class Comprobante implements Imprimible {
 
     public Comprobante(Cliente cliente) {
         this.cliente = cliente;
+        this.fecha = new Date();
         // TODO
     }
     
     @Override
     public void imprimir(){
-        
+        System.out.println("Hola");
     }
     
-    public double calcTotal(){
-        
-        return 0;
+    
+    //Actualiza TOTAL
+    public void calcTotal(){
+        ArrayList<Producto> productos = new ArrayList<Producto>();
+        productos = this.cliente.getCanasta().getProductos();
+        for (Producto p: productos) {
+            this.total+=p.getPrecio();
+        }
+        System.out.println("Total calculado");
     }
     
     public int getNumComprobante() {

@@ -1,5 +1,6 @@
 package com.mycompany.proyectoboletas;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,9 @@ import java.util.List;
  */
 
 public class Canasta {
-    private List<Producto> productos;
+    //Nombres Serializados para dar limpieza al JSON
+    @SerializedName("Productos")
+    private ArrayList<Producto> productos;
     
     public Canasta() {
         this.productos = new ArrayList<>();
@@ -63,7 +66,7 @@ public class Canasta {
     }
     
     // getters y setters
-    public List<Producto> getProductos() {
+    public ArrayList<Producto> getProductos() {
         return productos;
     }
 

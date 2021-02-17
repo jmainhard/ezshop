@@ -1,10 +1,16 @@
 package com.mycompany.proyectoboletas;
 
+import com.google.gson.annotations.SerializedName;
+
 
 public class Producto {
+    @SerializedName("ID Producto")
     private int id;
+    @SerializedName("Nombre Producto")
     private String nombre;
+    @SerializedName("Stock")
     private int stock;
+    @SerializedName("Precio")
     private double precio;
 
     public Producto() {

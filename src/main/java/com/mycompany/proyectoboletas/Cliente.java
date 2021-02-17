@@ -1,5 +1,6 @@
 package com.mycompany.proyectoboletas;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,8 +9,12 @@ import java.util.Scanner;
  */
 
 public class Cliente {
+    //Nombres Serializados para dar limpieza al JSON
+    @SerializedName("Nombre Cliente")
     private String nombre;
+    @SerializedName("Rut")
     private String rut;
+    @SerializedName("Canasta")
     private Canasta canasta;
     
     public Cliente(String nombre, String rut) {

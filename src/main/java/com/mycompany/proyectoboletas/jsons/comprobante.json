@@ -1,0 +1,31 @@
+{
+  "Numero Comprobante": 0,
+  "Fecha": "Feb 17, 2021, 12:15:09 AM",
+  "Total Compra": 11500.0,
+  "Cliente": {
+    "Nombre Cliente": "Esteban Esparza",
+    "Rut": "20953304-9",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Martillo",
+          "Stock": 10,
+          "Precio": 5000.0
+        },
+        {
+          "ID Producto": 2,
+          "Nombre Producto": "Sierra",
+          "Stock": 10,
+          "Precio": 4000.0
+        },
+        {
+          "ID Producto": 3,
+          "Nombre Producto": "Alicate",
+          "Stock": 10,
+          "Precio": 2500.0
+        }
+      ]
+    }
+  }
+}
