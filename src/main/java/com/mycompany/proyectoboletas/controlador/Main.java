@@ -1,5 +1,6 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.controlador;
 
+import com.mycompany.proyectoboletas.*;
 import java.util.Scanner;
 
 /**
@@ -30,7 +31,7 @@ public class Main {
 //        System.out.println("Datos de "+ cliente.getNombre()+ "(Después de compra)");
 //        System.out.println(cliente);
 //        System.out.println(cliente.getCanasta());
-
+//
 //        Producto producto1 = new Producto(2, "Taladro", 13, 19990);
 //        Producto producto2 = new Producto(3, "Paquete de Clavos 3mm", 45, 19990);
 //        Producto producto3 = new Producto(4, "Pintura", 32, 12000);
@@ -41,9 +42,12 @@ public class Main {
 //        canasta.addProducto(producto2);
 //        canasta.addProducto(producto3);
 //        
-//        // comprobando que ambas canastas (cliente y mainCanasta) tienen misma referencia
+//        // comprobando que ambas canastas (cliente y mainCanasta) tienen misma referencia a Productos
 //        System.out.println(cliente.getCanasta().getProductos());
 //        System.out.println(canasta.getProductos());
+//        
+//        System.out.println(cliente.getCanasta());
+//        System.out.println(canasta);
         
         
     }

@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.controlador;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.mycompany.proyectoboletas.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,7 +36,7 @@ public class MainPrueba {
     public static void generarComprobanteJson(Comprobante comprobante){
         FileWriter writer;
         try {
-            writer = new FileWriter("src/main/java/com/mycompany/proyectoboletas/jsons/comprobante.json");
+            writer = new FileWriter("jsons/comprobante.json");
             //PrettyPrint para dar format al JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String jsonString = gson.toJson(comprobante);

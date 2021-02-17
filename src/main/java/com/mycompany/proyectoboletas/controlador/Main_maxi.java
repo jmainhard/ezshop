@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.controlador;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
+import com.mycompany.proyectoboletas.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,7 +40,7 @@ public class Main_maxi {
         JsonParser jsonParser = new JsonParser();
         try {
 
-            BufferedReader br = new BufferedReader(new FileReader("src/main/java/com/mycompany/proyectoboletas/jsons/inventario.json"));
+            BufferedReader br = new BufferedReader(new FileReader("jsons/inventario.json"));
             JsonElement jsonElement = jsonParser.parse(br);
             ArrayList<Producto> objs = new Gson().fromJson(jsonElement, new TypeToken<List<Producto>>() {
             }.getType());

@@ -28,10 +28,10 @@ public class Canasta {
             if (p.getClass() != Producto.class) {
                 throw new IllegalArgumentException();
             }
-            if (!p.equals(null)) {
-                return productos.add(p);
-            } else {
+            if (p == null) {
                 throw new NullPointerException();
+            } else {
+                return productos.add(p);
             }
         } catch (NullPointerException e) {
             System.err.println(e + ": Producto nulo o no inicializado");

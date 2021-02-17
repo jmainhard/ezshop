@@ -36,6 +36,7 @@ public class Cliente {
     // ? TODO - refactorizar nombre del método a vender, discutir
     public void comprar() {
         Comprobante comprobante;
+//        InventarioController inventController;
         
         // confirmar que desea comprar y explicar las consecuencias de la compra
         // Desea comprar? esto modificará el stock de los productos en canasta y finalizará la sesión de venta

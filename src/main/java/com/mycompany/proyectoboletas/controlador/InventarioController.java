@@ -1,16 +1,22 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.controlador;
+
+import com.mycompany.proyectoboletas.Imprimible;
+import com.mycompany.proyectoboletas.Producto;
 
 /**
  * @author Maximiliano C., Esteban E., Jorge M.
  */
-public class Inventario implements Imprimible {
+// métodos cargarStock
+//         actualizarStock
+//         Validador de inventario
+public class InventarioController implements Imprimible {
 
     @Override
     public void imprimir() {
         System.out.println("helo");
     }
 
-    public Inventario() {
+    public InventarioController() {
     }
 
     // TODO
@@ -22,6 +28,8 @@ public class Inventario implements Imprimible {
         // TODO
         return p;
     }
+    
+    
 
     public void mostrarInventario() {
     }

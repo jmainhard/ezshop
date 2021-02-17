@@ -2,7 +2,8 @@ package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.SerializedName;
 
-
+// Separar atributo stock en una clase aparte
+// Stock: pdcto: Producto, cantidad: int
 public class Producto {
     @SerializedName("ID Producto")
     private int id;
