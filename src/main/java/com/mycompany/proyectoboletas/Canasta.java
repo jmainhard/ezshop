@@ -11,15 +11,13 @@ public class Canasta {
     //Nombres Serializados para dar limpieza al JSON
     @SerializedName("Productos")
     private ArrayList<Producto> productos;
-    private double total; // Importante: se actualiza al invocar getTotal()
-    
+        
     public Canasta() {
         this.productos = new ArrayList<>();
     }
     
     public Canasta(ArrayList<Producto> productos) {
-        this.productos = productos;
-        this.total = calcTotal();
+        this.productos = productos;    
     }
     
     public boolean addProducto(Producto p) {
@@ -71,15 +69,6 @@ public class Canasta {
 
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
-    }
-    
-    public double getTotal() {
-        total = calcTotal();
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
     }
     
     

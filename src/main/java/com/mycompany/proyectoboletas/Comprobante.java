@@ -8,22 +8,17 @@ import java.util.Date;
 /**
  * @author Esteban
  */
-public class Comprobante implements Imprimible {
+public abstract class Comprobante implements Imprimible {
     //Nombres Serializados para dar limpieza al JSON
     @SerializedName("Numero Comprobante")
     private int numComprobante;
     @SerializedName("Fecha")
     private Date fecha;
-    @SerializedName("Total Compra")
-    private double total;
     @SerializedName("Cliente")
     private Cliente cliente;
+    @SerializedName("Total Compra")
+    private double total;
 
-    public Comprobante(int numComprobante, Date fecha, double total) {
-        this.numComprobante = numComprobante;
-        this.fecha = fecha;
-        this.total = total;
-    }
 
     public Comprobante(Cliente cliente) {
         this.cliente = cliente;
@@ -36,6 +31,7 @@ public class Comprobante implements Imprimible {
         System.out.println("Hola");
     }
     
+    public abstract void mostrar();
     
     //Actualiza TOTAL
     public void calcTotal(){

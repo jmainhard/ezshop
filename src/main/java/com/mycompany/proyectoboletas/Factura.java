@@ -7,13 +7,15 @@ import java.util.Date;
  */
 public class Factura extends Comprobante {
 
-    public Factura(int numComprobante, Date fecha, double total) {
-        super(numComprobante, fecha, total);
-    }
-
     public Factura(Cliente cliente) {
         super(cliente);
     }
+
+    @Override
+    public void mostrar() {
+        
+    }
+    
     @Override
     public void imprimir(){
         System.out.println("Hola");

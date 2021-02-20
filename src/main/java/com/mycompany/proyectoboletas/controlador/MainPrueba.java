@@ -11,7 +11,8 @@ import java.util.ArrayList;
  */
 public class MainPrueba {
     public static void main(String[] args) {
-        
+        NumComprobanteController numCont = new NumComprobanteController();
+        numCont.setComprobantes();
         Producto p1 = new Producto(1,"Martillo",10,5000);
         Producto p2 = new Producto(2,"Sierra",10,4000);
         Producto p3 = new Producto(3,"Alicate",10,2500);
@@ -26,17 +27,23 @@ public class MainPrueba {
         Cliente cliente = new Cliente("Esteban Esparza", "20953304-9");
         cliente.setCanasta(canasta);
         
-        Comprobante comprobante = new Comprobante(cliente);
+        Boleta comprobante = new Boleta(cliente);
         comprobante.calcTotal();
+        numCont.generarNumComprobante(comprobante);
+        
         generarComprobanteJson(comprobante);
+        
+        
         
         
     }
     //Crear archivo JSON 
     public static void generarComprobanteJson(Comprobante comprobante){
+        String path = "jsons/comprobante-"+comprobante.getNumComprobante()+".json";
+        
         FileWriter writer;
         try {
-            writer = new FileWriter("jsons/comprobante.json");
+            writer = new FileWriter(path);
             //PrettyPrint para dar format al JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String jsonString = gson.toJson(comprobante);
@@ -47,6 +54,8 @@ public class MainPrueba {
         }
 
     }
+    
+    
     
     
 }
