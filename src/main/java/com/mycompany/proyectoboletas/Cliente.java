@@ -1,6 +1,11 @@
 package com.mycompany.proyectoboletas;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.*;
+import com.google.gson.reflect.TypeToken;
+import com.mycompany.proyectoboletas.controlador.ClientesController;
+import com.mycompany.proyectoboletas.controlador.ListController;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -21,11 +26,16 @@ public class Cliente {
     private String rut;
     @SerializedName("Canasta")
     private Canasta canasta;
+    @Expose
+    private HistorialCliente historial;
+    
     
     public Cliente(String nombre, String rut) {
         this.nombre = nombre;
         this.rut = rut;
         this.canasta = new Canasta();
+        
+        
     }
     
     // TODO
@@ -36,10 +46,10 @@ public class Cliente {
     // ? TODO - refactorizar nombre del método a vender, discutir
     public void comprar() {
         Comprobante comprobante;
-//        InventarioController inventController;
+        ClientesController clientesHandler = new ClientesController();
         
         // confirmar que desea comprar y explicar las consecuencias de la compra
-        // Desea comprar? esto modificará el stock de los productos en canasta y finalizará la sesión de venta
+        // Desea comprar? esto modificará el stock de los productos en canasta y finalizará la sesión de compra
         
         switch (tipoComprobante()) {
             case 1:
@@ -51,6 +61,27 @@ public class Cliente {
             default:
                 throw new AssertionError();
         }
+        
+        
+        try {
+        // Registrar cliente comprando si no existe en la lista
+            if (!clientesHandler.existeCliente(this)) {
+                if (clientesHandler.addCliente(this)) {
+                    System.out.println("\n-- Nuevo Cliente registrado --");
+                    System.out.println("Rut: "+ this.getRut()+ "\n");
+                }
+            }
+            historial = clientesHandler.getHistorialClienteComprando(this);
+            historial.addComprobante(comprobante.getNumComprobante());
+            clientesHandler.guardar();
+        } catch (NullPointerException e) {
+            System.err.println("Error: cliente nulo o no inicializado "+ e);
+        } catch (Exception e) {
+            System.err.println("Error al manejar cliente "+ e);
+        }
+        
+        
+
         
 //        ? comprobante.mostrarDetalle();
 //        comprobante.imprimir();

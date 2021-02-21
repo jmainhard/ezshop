@@ -71,5 +71,14 @@ public class Canasta {
         this.productos = productos;
     }
     
+    @Override
+    public String toString() {
+        String strBuilder = "========== Productos en Canasta ==========\n";
+        strBuilder = productos.stream().
+                map(p -> p.toString() + "\n").
+                reduce(strBuilder, String::concat);
+        
+        return strBuilder;
+    }
     
 }

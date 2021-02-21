@@ -41,8 +41,6 @@ public abstract class Comprobante implements Imprimible {
             this.total+=p.getPrecio();
         }
         System.out.println("Total calculado");
-        // total en canasta
-//        this.total = cliente.getCanasta().getTotal();
     }
     
     public int getNumComprobante() {
