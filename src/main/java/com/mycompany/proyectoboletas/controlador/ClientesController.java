@@ -74,4 +74,25 @@ public class ClientesController {
     public ArrayList<HistorialCliente> cargar() {
         return clientesHandler.cargarObjetos();
     }
+
+    public ArrayList<HistorialCliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ArrayList<HistorialCliente> clientes) {
+        this.clientes = clientes;
+    }
+    
+    public String toString() {
+        clientes = clientesHandler.cargarObjetos();
+        String strBuilder;
+        
+        strBuilder = "========== Clientes registrados ==========\n";
+        strBuilder = clientes.stream().
+                map(c -> c.toString()+ "\n").
+                reduce(strBuilder, String::concat);
+        
+        return strBuilder;
+    }
+    
 }

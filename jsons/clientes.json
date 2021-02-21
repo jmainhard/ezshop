@@ -13,5 +13,47 @@
       0,
       0
     ]
+  },
+  {
+    "Rut": "1234567-8",
+    "Nombre": "Juan Perez",
+    "Fecha de registro": "Feb 21, 2021, 12:21:50 PM",
+    "ID Comprobantes asociados": [
+      0,
+      0
+    ]
+  },
+  {
+    "Rut": "4564353-2",
+    "Nombre": "John Perez",
+    "Fecha de registro": "Feb 21, 2021, 12:39:21 PM",
+    "ID Comprobantes asociados": [
+      0,
+      0
+    ]
+  },
+  {
+    "Rut": "null",
+    "Nombre": "null",
+    "Fecha de registro": "Feb 21, 2021, 3:23:57 PM",
+    "ID Comprobantes asociados": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "Rut": "UNDEFINED",
+    "Nombre": "UNDEFINED",
+    "Fecha de registro": "Feb 21, 2021, 3:32:57 PM",
+    "ID Comprobantes asociados": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   }
 ]

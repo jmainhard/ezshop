@@ -28,14 +28,15 @@ public class Cliente {
     private Canasta canasta;
     @Expose
     private HistorialCliente historial;
-    
+
+    public Cliente() {
+        this.canasta = new Canasta();
+    }
     
     public Cliente(String nombre, String rut) {
         this.nombre = nombre;
         this.rut = rut;
         this.canasta = new Canasta();
-        
-        
     }
     
     // TODO
@@ -44,12 +45,11 @@ public class Cliente {
     
     // no es necesario limpieza, se maneja desde Main
     // ? TODO - refactorizar nombre del método a vender, discutir
-    public void comprar() {
+    public void hacerVenta() {
         Comprobante comprobante;
-        ClientesController clientesHandler = new ClientesController();
         
-        // confirmar que desea comprar y explicar las consecuencias de la compra
-        // Desea comprar? esto modificará el stock de los productos en canasta y finalizará la sesión de compra
+        // confirmar que desea hacerVenta y explicar las consecuencias de la compra
+        // Desea hacerVenta? esto modificará el stock de los productos en canasta y finalizará la sesión de compra
         
         switch (tipoComprobante()) {
             case 1:
@@ -62,25 +62,8 @@ public class Cliente {
                 throw new AssertionError();
         }
         
-        
-        try {
-        // Registrar cliente comprando si no existe en la lista
-            if (!clientesHandler.existeCliente(this)) {
-                if (clientesHandler.addCliente(this)) {
-                    System.out.println("\n-- Nuevo Cliente registrado --");
-                    System.out.println("Rut: "+ this.getRut()+ "\n");
-                }
-            }
-            historial = clientesHandler.getHistorialClienteComprando(this);
-            historial.addComprobante(comprobante.getNumComprobante());
-            clientesHandler.guardar();
-        } catch (NullPointerException e) {
-            System.err.println("Error: cliente nulo o no inicializado "+ e);
-        } catch (Exception e) {
-            System.err.println("Error al manejar cliente "+ e);
-        }
-        
-        
+        // Asocia el historial de este cliente a un comprobante
+        updateClientes(comprobante);
 
         
 //        ? comprobante.mostrarDetalle();
@@ -116,6 +99,33 @@ public class Cliente {
     // TODO - implementar updateIngresos
     public boolean updateIngresos() {
         throw new UnsupportedOperationException();
+    }
+    
+    /**
+     * Asocia un comprobante al historial de este cliente, si no existe lo crea
+     * @param comprobante comprobante a ser asociado a este cliente
+     */
+    private void updateClientes(Comprobante comprobante) {
+        ClientesController clientesHandler = new ClientesController();
+
+        try {
+            if (!clientesHandler.existeCliente(this)) {
+                if (clientesHandler.addCliente(this)) {
+                    System.out.println("\n-- Nuevo Cliente registrado --");
+                    System.out.println("Rut: "+ this.getRut()+ "\n");
+                }
+            }
+            // consigue el historial creado ahora o el que ya existia sin diferenciar
+            historial = clientesHandler.getHistorialClienteComprando(this);
+            
+            // añade comprobante y guarda archivo de clientes
+            historial.addComprobante(comprobante.getNumComprobante());
+            clientesHandler.guardar();
+        } catch (NullPointerException e) {
+            System.err.println("Error: cliente nulo o no inicializado "+ e);
+        } catch (Exception e) {
+            System.err.println("Error al manejar cliente "+ e);
+        }
     }
     
     // getters y setters

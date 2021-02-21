@@ -3,6 +3,7 @@ package com.mycompany.proyectoboletas;
 import com.google.gson.annotations.SerializedName;
 import com.mycompany.proyectoboletas.controlador.FileController;
 import com.mycompany.proyectoboletas.controlador.ListController;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -65,7 +66,19 @@ public class HistorialCliente {
 
     @Override
     public String toString() {
-        return "HistorialCliente{" + "rut=" + rut + ", nombre=" + nombre + ", fechaRegistro=" + fechaRegistro + ", comprobantesAsociadosPorId=" + comprobantesAsociadosPorId + '}';
+        String strBuilder;
+        
+        String strFecha = DateFormat.
+                getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM).
+                format(fechaRegistro);
+        
+        strBuilder = "Rut: "+ rut+ "\n";
+        strBuilder += "Nombre: "+ nombre+ "\n";
+        strBuilder += "Fecha de registro: "+  strFecha+ "\n";
+        strBuilder += "Comprobantes asociados: "+
+                comprobantesAsociadosPorId.toString()+ "\n";
+        
+        return strBuilder;
     }
     
     
