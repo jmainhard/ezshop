@@ -35,17 +35,19 @@ public class ListController<E> {
      * @param listaObjetos lista que se desea guardar al archivo json
      *  {@code archivoJson} de este ListController
      */
-    public void guardarObjetos(ArrayList<E> listaObjetos) {
+    public boolean guardarObjetos(ArrayList<E> listaObjetos) {
         FileController<E> jsonHandler = new FileController<>(collectionType);
          try {
             if ( jsonHandler.saveToJson(listaObjetos, RUTA+archivoJson) ) {
-                System.out.println("\nLista guardada exitosamente\n");
+//                System.out.println("\nLista guardada exitosamente\n");
+                return true;
             }
         } catch (NullPointerException ex) {
             System.err.println("Error al guardar: "+ ex);
         } catch (Exception ex) {
             System.err.println("Error al intentar guardar esta lista "+ ex);
         }
+        return false;
     }
     
     /**

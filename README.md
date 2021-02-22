@@ -4,7 +4,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---
 
-**Lunes (8-febrero) reunión, Reparto de funcionalidades, dependencias entorno de trabajo**
+**Lunes (8-febrero) reunión, Reparto de funcionalidades, dependencias entorno de trabajo**  
 **Miércoles (17-febrero) reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo**
 
 - Planificación general Proyecto ✅
@@ -12,7 +12,7 @@ Boletero de ferretería con salida por consola (Java)
 - Reparto de funcionalidades ✅
 - Código (Escribir testeos si surgen)
 - 2 Excepciones personalizadas (Idea para una: StockInsuficienteException)
-- Tests
+- Tests (1 / 2 mínimo)
 - Revisión
 - Presentación
 

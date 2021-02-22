@@ -14,9 +14,9 @@ public class Main {
     
     public static void main(String[] args) {
 //        menuDePruebas();
-        Producto p = new Producto(1, "Martillo", 3, 22222);
-        Producto p1 = new Producto(2, "Sierra", 7, 19990);
-        Producto p2 = new Producto(3, "Sierra Eléctrica", 8, 45990);
+        Producto p = new Producto(1, "Martillo", 22222);
+        Producto p1 = new Producto(2, "Sierra", 19990);
+        Producto p2 = new Producto(3, "Sierra Eléctrica", 45990);
         Stock s = new Stock(p, 6);
         Stock s1 = new Stock(p1, 14);
         Stock s2 = new Stock(p2, 13);

@@ -9,18 +9,18 @@ public class Producto {
     private int id;
     @SerializedName("Nombre Producto")
     private String nombre;
-    @SerializedName("Stock")
-    private int stock;
+//    @SerializedName("Stock")
+//    private int stock;
     @SerializedName("Precio")
     private double precio;
 
     public Producto() {
     }
 
-    public Producto(int id, String nombre, int stock, double precio) {
+    public Producto(int id, String nombre, double precio) {
         this.id = id;
         this.nombre = nombre;
-        this.stock = stock;
+//        this.stock = stock;
         this.precio = precio;
     }
 
@@ -40,13 +40,13 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
+//    public int getStock() {
+//        return stock;
+//    }
+//
+//    public void setStock(int stock) {
+//        this.stock = stock;
+//    }
 
     public double getPrecio() {
         return precio;
@@ -58,7 +58,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", stock=" + stock + ", precio=" + precio + '}';
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
     
     

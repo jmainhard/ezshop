@@ -1,0 +1,71 @@
+[
+  {
+    "Nombre Cliente": "Cliente Default 1",
+    "Rut": "111111-1",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 1",
+          "Precio": 19990.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 2",
+          "Precio": 37000.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 3",
+          "Precio": 450000.0
+        }
+      ]
+    }
+  },
+  {
+    "Nombre Cliente": "Cliente Default 2",
+    "Rut": "222222-2",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 1",
+          "Precio": 19990.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 2",
+          "Precio": 37000.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 3",
+          "Precio": 450000.0
+        }
+      ]
+    }
+  },
+  {
+    "Nombre Cliente": "Cliente Default 2",
+    "Rut": "222222-2",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 1",
+          "Precio": 19990.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 2",
+          "Precio": 37000.0
+        },
+        {
+          "ID Producto": 1,
+          "Nombre Producto": "Producto Default 3",
+          "Precio": 450000.0
+        }
+      ]
+    }
+  }
+]

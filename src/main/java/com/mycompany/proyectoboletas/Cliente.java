@@ -1,11 +1,7 @@
 package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.*;
-import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.controlador.ClientesController;
-import com.mycompany.proyectoboletas.controlador.ListController;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -63,7 +59,7 @@ public class Cliente {
         }
         
         // Asocia el historial de este cliente a un comprobante
-        updateClientes(comprobante);
+        updateCliente(comprobante);
 
         
 //        ? comprobante.mostrarDetalle();
@@ -105,7 +101,7 @@ public class Cliente {
      * Asocia un comprobante al historial de este cliente, si no existe lo crea
      * @param comprobante comprobante a ser asociado a este cliente
      */
-    private void updateClientes(Comprobante comprobante) {
+    private void updateCliente(Comprobante comprobante) {
         ClientesController clientesHandler = new ClientesController();
 
         try {

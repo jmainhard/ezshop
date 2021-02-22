@@ -13,9 +13,9 @@ public class MainPrueba {
     public static void main(String[] args) {
         NumComprobanteController numCont = new NumComprobanteController();
         numCont.setComprobantes();
-        Producto p1 = new Producto(1,"Martillo",10,5000);
-        Producto p2 = new Producto(2,"Sierra",10,4000);
-        Producto p3 = new Producto(3,"Alicate",10,2500);
+        Producto p1 = new Producto(1,"Martillo",5000);
+        Producto p2 = new Producto(2,"Sierra",4000);
+        Producto p3 = new Producto(3,"Alicate",2500);
         
         ArrayList<Producto> productos = new ArrayList<Producto>();
         productos.add(p1);
