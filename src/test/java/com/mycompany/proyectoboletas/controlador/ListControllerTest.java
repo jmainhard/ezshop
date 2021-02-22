@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Jorge M.
  */
 public class ListControllerTest {
-    ListController listHandler = new ListController("clientesTest.json", new TypeToken<Collection<Cliente>>(){});
+    ListController<Cliente> listHandler = new ListController("clientesTest.json", new TypeToken<Collection<Cliente>>(){});
     ArrayList<Cliente> objetosCliente = new ArrayList<>();
     String jsonText;
     
