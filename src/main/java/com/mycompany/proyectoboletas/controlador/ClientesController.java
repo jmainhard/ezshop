@@ -27,7 +27,7 @@ public class ClientesController {
                         (clienteComprando.getRut().equals(clienteRegistrado.getRut()))
                 );
         } catch (NullPointerException e) {
-            System.err.println(e.getStackTrace());
+            System.err.println("Error: referencia nula o no inicilizada"+ e);
         }
         return false;
     }

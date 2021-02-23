@@ -43,9 +43,13 @@ public class Cliente {
     // Disminuye el stock de los productos vendidos
     // Genera comprobante
     // Actualiza historial
-    public boolean hacerVenta() {
+    public boolean hacerVenta() throws CanastaVaciaException {
         ClientesController clientesHandler = new ClientesController();
         Comprobante comprobante;
+        
+        if (canasta.getProductos().isEmpty()) {
+//            throw new CanastaVaciaException("Canasta sin productos");
+        }
         
         if (!confirmarVenta()) {
             return false;
