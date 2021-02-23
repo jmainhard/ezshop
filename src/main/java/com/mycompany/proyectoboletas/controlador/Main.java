@@ -99,15 +99,16 @@ public class Main {
     
     public static void menuDePruebas() {
         ClientesController clientesHandler = new ClientesController();
-        boolean repetir = true;
-        boolean salir = false;
-        int opcion = -1;
-        String respuestaRepetir = "";
+        boolean repetir;
+        boolean salir;
+        int opcion;
         Scanner teclado = new Scanner(System.in);
+        
         do {
             repetir = true;
             do {
                 salir = false;
+                opcion = -1;
                 System.out.println("\nMenu de Ferretería v. Alpha");
                 System.out.println("------------< >------------");
                 System.out.println("1 - Hacer Venta");
@@ -118,6 +119,7 @@ public class Main {
                     opcion = teclado.nextInt();
                 } catch (InputMismatchException e) {
                     System.err.println("\nError al ingresar opción "+ e);
+                    teclado.next();
                 }
                 
                 switch (opcion) {
@@ -142,23 +144,30 @@ public class Main {
                     default:
                         salir = false;
                 }
-
             } while (!salir);
-
-            if (repetir) {
-                System.out.println("\nDesea salir?");
-                System.out.print("\n[y - Si] ");
-                System.out.println(" [n - No]");
-                respuestaRepetir = teclado.next();
-                if (respuestaRepetir.toLowerCase().charAt(0) == 'y') {
-                    repetir = false;
-                } else {
-                    repetir = true;
-                }
-            }
             
-        } while (repetir);
+            repetir = confirmarSalida();
+            
+        } while (repetir); // fin while menu principal
+
+    } 
+    
+    public static boolean confirmarSalida() {
+        Scanner teclado = new Scanner(System.in);
+        boolean confirmar;
+        String respuesta = "";
         
+        System.out.println("\nDesea salir?");
+        System.out.print("\n[y - Si] ");
+        System.out.println(" [n - No]");
+
+        try {
+            respuesta = teclado.next();
+        } catch (Exception e) { System.err.println("Error "+ e); }
+        
+        confirmar = respuesta.toLowerCase().charAt(0) == 'y';
+
+        return !confirmar;
     }
     
     // FIXME añadir control de excepciones
