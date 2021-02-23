@@ -1,41 +1,8 @@
 [
   {
-    "Rut": "8765432-1",
-    "Nombre": "Douglas Adams",
-    "Fecha de registro": "Feb 21, 2021, 1:22:02 AM",
-    "ID Comprobantes asociados": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  {
     "Rut": "1234567-8",
-    "Nombre": "Juan Perez",
-    "Fecha de registro": "Feb 21, 2021, 12:21:50 PM",
-    "ID Comprobantes asociados": [
-      0,
-      0
-    ]
-  },
-  {
-    "Rut": "4564353-2",
-    "Nombre": "John Perez",
-    "Fecha de registro": "Feb 21, 2021, 12:39:21 PM",
-    "ID Comprobantes asociados": [
-      0,
-      0
-    ]
-  },
-  {
-    "Rut": "null",
-    "Nombre": "null",
-    "Fecha de registro": "Feb 21, 2021, 3:23:57 PM",
+    "Nombre": "Douglas Adams",
+    "Fecha de registro": "Feb 22, 2021, 10:39:47 PM",
     "ID Comprobantes asociados": [
       0,
       0,
@@ -44,14 +11,27 @@
     ]
   },
   {
-    "Rut": "UNDEFINED",
-    "Nombre": "UNDEFINED",
-    "Fecha de registro": "Feb 21, 2021, 3:32:57 PM",
+    "Rut": "1234123-2",
+    "Nombre": "asdasd",
+    "Fecha de registro": "Feb 22, 2021, 10:52:57 PM",
     "ID Comprobantes asociados": [
       0,
-      0,
-      0,
-      0,
+      0
+    ]
+  },
+  {
+    "Rut": "23423",
+    "Nombre": "asdasd",
+    "Fecha de registro": "Feb 22, 2021, 10:59:36 PM",
+    "ID Comprobantes asociados": [
+      0
+    ]
+  },
+  {
+    "Rut": "2342",
+    "Nombre": "asd",
+    "Fecha de registro": "Feb 22, 2021, 11:01:27 PM",
+    "ID Comprobantes asociados": [
       0,
       0
     ]

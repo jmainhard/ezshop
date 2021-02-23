@@ -13,21 +13,22 @@ public class Main {
     private static final Cliente cliente = new Cliente();
     
     public static void main(String[] args) {
-//        menuDePruebas();
-        Producto p = new Producto(1, "Martillo", 22222);
-        Producto p1 = new Producto(2, "Sierra", 19990);
-        Producto p2 = new Producto(3, "Sierra Eléctrica", 45990);
-        Stock s = new Stock(p, 6);
-        Stock s1 = new Stock(p1, 14);
-        Stock s2 = new Stock(p2, 13);
-        
-        ArrayList<Stock> inventario = new ArrayList<>();
-        inventario.add(s);
-        inventario.add(s1);
-        inventario.add(s2);
-        
-        inventario.forEach(System.out::println);
-        
+        menuDePruebas();        
+
+//        Producto p = new Producto(1, "Martillo", 22222);
+//        Producto p1 = new Producto(2, "Sierra", 19990);
+//        Producto p2 = new Producto(3, "Sierra Eléctrica", 45990);
+//        Stock s = new Stock(p, 6);
+//        Stock s1 = new Stock(p1, 14);
+//        Stock s2 = new Stock(p2, 13);
+//        
+//        ArrayList<Stock> inventario = new ArrayList<>();
+//        inventario.add(s);
+//        inventario.add(s1);
+//        inventario.add(s2);
+//        
+//        inventario.forEach(System.out::println);
+//        
         // pruebas 20-02 Jorge
 //        Cliente cliente = new Cliente("Juan Perez", "1234567-8");
         
@@ -108,7 +109,7 @@ public class Main {
             do {
                 salir = false;
                 System.out.println("\nMenu de Ferretería v. Alpha");
-                System.out.println("----------< >----------");
+                System.out.println("------------< >------------");
                 System.out.println("1 - Hacer Venta");
                 System.out.println("2 - Ver Clientes");
                 System.out.println("3 - Salir");
@@ -121,12 +122,17 @@ public class Main {
                 
                 switch (opcion) {
                     case 1:
-                        cliente.setNombre("UNDEFINED");
-                        cliente.setRut("UNDEFINED");
+                        // Aquí irian submenus como menuVentas(); este tendría p. ej. -> 
+                        // 1 - añadir productos a canasta 
+                        // 2 - quitar productos
+                        // 3 - hacer venta
+                        // 4 - Salir
+                        // por ahora lo estoy utilizando para probar funcionalidades aisladas
                         cliente.hacerVenta();
                         salir = false;
                         break;
                     case 2:
+                        // menuClientes(); (sub menu)
                         System.out.println(clientesHandler.toString());
                         salir = false;
                         break;
@@ -140,9 +146,9 @@ public class Main {
             } while (!salir);
 
             if (repetir) {
-                System.out.println("Desea salir?");
-                System.out.print("[y - Si] ");
-                System.out.println(" [n - No]\n");
+                System.out.println("\nDesea salir?");
+                System.out.print("\n[y - Si] ");
+                System.out.println(" [n - No]");
                 respuestaRepetir = teclado.next();
                 if (respuestaRepetir.toLowerCase().charAt(0) == 'y') {
                     repetir = false;
@@ -153,6 +159,20 @@ public class Main {
             
         } while (repetir);
         
+    }
+    
+    // FIXME añadir control de excepciones
+    public static String askNombre() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("\n< Ingrese Nombre Cliente >");
+        return teclado.nextLine();
+    }
+    
+    // FIXME añadir control de excepciones
+    public static String askRut() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("\n< Ingrese Rut Cliente >");
+        return teclado.next();
     }
     
 }

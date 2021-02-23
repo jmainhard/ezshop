@@ -8,18 +8,18 @@ Boletero de ferretería con salida por consola (Java)
 **Miércoles (17-febrero) reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo**
 
 - Planificación general Proyecto ✅
-- Diagrama UML VPP ✅ (Base lista, abierto a cambios)
+- Diagrama UML VPP ✅ (Constante modificación)
 - Reparto de funcionalidades ✅
 - Código (Escribir testeos si surgen)
-- 2 Excepciones personalizadas (Idea para una: StockInsuficienteException)
-- Tests (1 / 2 mínimo)
+- 2 Excepciones personalizadas (Idea para una: StockInsuficienteException) (1 / 2 mínimo pauta)
+- Tests (1 / 2 mínimo pauta)
 - Revisión
 - Presentación
 
 - Clases Modelo
     - Cliente (Lado Vendedor) Funcionalidad venta  
         - // POSIBLE verificador de ruts  
-        - al vender -> Baja Stock -> (InventarioController), genera comprobante, ? -> imprime y guarda  
+        - updateInventario() -> al vender -> Baja Stock -> (InventarioController), genera comprobante, ? -> imprime y guarda  
         - updateIngresos -> (ContabilidadController)  
         - updateClientes -> (ClientesController)
     - Producto  
@@ -41,12 +41,11 @@ Boletero de ferretería con salida por consola (Java)
         - Idea: podría ser una lista de objetos de una Clase nombrada  Mes/Contabilidad, de atributos añoMes : String e ingresos : double  
 
     - ClientesController  
-        - clientes.json (Json) attributes: nombre, rut, Fecha de registro, Lista comprobantesAsociados (por id)
-        - Idea json: Una lista de objetos de tipo HistorialCliente, de atributos nombre, rut, fecha registro y Lista comprobantesAsociados (para separar de canasta)  
+        - clientes.json (Json), almacena objetos de tipo HistorialCliente
 
     - Main (POR PLANIFICAR)  
         (algunas ideas preliminares -Jorge, abierto a colaboración)  
         - (Menús) vista de inventario, vista de boletas y vista de clientes, Nueva Venta, Salir
-        - Nueva compra -> datos cliente, adición de productos a canasta (muestra inv, pregunta id), eliminación si desea (muestra canasta, pregunta id), generación de comprobante, imprimie comprobante (consola) guarda comprobante (json) ->  pregunta si desea comprar nuevamente, reinicia el ciclo
+        - Nueva venta -> datos cliente, adición de productos a canasta (muestra inv, pregunta id), eliminación si desea (muestra canasta, pregunta id), generación de comprobante, imprimie comprobante (consola) guarda comprobante (json) ->  pregunta si desea comprar nuevamente, reinicia el ciclo
 
 

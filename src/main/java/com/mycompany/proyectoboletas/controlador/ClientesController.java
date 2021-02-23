@@ -87,7 +87,7 @@ public class ClientesController {
         clientes = clientesHandler.cargarObjetos();
         String strBuilder;
         
-        strBuilder = "========== Clientes registrados ==========\n";
+        strBuilder = "\n========== Clientes registrados ==========\n";
         strBuilder = clientes.stream().
                 map(c -> c.toString()+ "\n").
                 reduce(strBuilder, String::concat);

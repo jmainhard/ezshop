@@ -54,14 +54,18 @@ public class Canasta {
         return false;
     }
     
-    // Actualiza total
+    /**
+     * Total forma parte de comprobante, se calcula en {@code class} Comprobante
+     * @see Comprobante
+     */
+    @Deprecated
     public double calcTotal() {
         double total = this.productos.stream()
                 .mapToDouble(x -> x.getPrecio())
                 .sum();
         return total;
     }
-    
+
     // getters y setters
     public ArrayList<Producto> getProductos() {
         return productos;

@@ -2,6 +2,8 @@ package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.*;
 import com.mycompany.proyectoboletas.controlador.ClientesController;
+import static com.mycompany.proyectoboletas.controlador.Main.askNombre;
+import static com.mycompany.proyectoboletas.controlador.Main.askRut;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ import java.util.Scanner;
  * 
  *  Cliente corresponde a una clase que maneja las ventas (de una ferreteria),
  * no es un cliente comprando sino que es quién utiliza el sistema y 
- * realiza las ventas.
+ * realiza las ventas, por cada venta existe un cliente.
  * 
  */
 
@@ -26,6 +28,8 @@ public class Cliente {
     private HistorialCliente historial;
 
     public Cliente() {
+        this.nombre = "Nombre Indefinido";
+        this.rut = "Rut Indefinido";
         this.canasta = new Canasta();
     }
     
@@ -36,34 +40,31 @@ public class Cliente {
     }
     
     // TODO
-    // Disminuye el stock de (uno o más) productos vendidos
-    // Genera comprobante 
-    
-    // no es necesario limpieza, se maneja desde Main
-    // ? TODO - refactorizar nombre del método a vender, discutir
-    public void hacerVenta() {
+    // Disminuye el stock de los productos vendidos
+    // Genera comprobante
+    // Actualiza historial
+    public boolean hacerVenta() {
+        ClientesController clientesHandler = new ClientesController();
         Comprobante comprobante;
         
-        // confirmar que desea hacerVenta y explicar las consecuencias de la compra
-        // Desea hacerVenta? esto modificará el stock de los productos en canasta y finalizará la sesión de compra
-        
-        switch (tipoComprobante()) {
-            case 1:
-                comprobante = new Boleta(this);
-                break;
-            case 2:
-                comprobante = new Factura(this);
-                break;
-            default:
-                throw new AssertionError();
+        if (!confirmarVenta()) {
+            return false;
         }
         
-        // Asocia el historial de este cliente a un comprobante
+        this.setRut(askRut());
+        if (!clientesHandler.existeCliente(this)) {
+            this.setNombre(askNombre());
+        }
+        
+        comprobante = selectComprobante();
+        
+        // Asocia el historial de este cliente al comprobante seleccionado
         updateCliente(comprobante);
 
         
 //        ? comprobante.mostrarDetalle();
 //        comprobante.imprimir();
+        return true;
     }
     
     public int tipoComprobante() {
@@ -90,6 +91,43 @@ public class Cliente {
         System.out.println("\nSeleccionado: "+ numTipo+ tipo);
         
         return numTipo;
+    }
+    
+    public Comprobante selectComprobante() {
+        Comprobante comprobante;
+        switch (tipoComprobante()) {
+            case 1:
+                return new Boleta(this);
+            case 2:
+                return new Factura(this);
+            default:
+                throw new AssertionError();
+        }
+    }
+    
+    public boolean confirmarVenta() {
+        Scanner teclado = new Scanner(System.in);
+        boolean confirmo = false; // CONFIRMO xd
+        String respuesta = "";
+        
+        System.out.println("\n¿Desea finalizar esta venta?\n"
+                + "esto modificará el stock\n"
+                + "de los productos vendidos\n"
+                + "y finalizará la sesión de venta.\n");
+
+        System.out.print("[y - Si] ");
+        System.out.println(" [n - No]");
+        try {
+            respuesta = teclado.next();
+        } catch (Exception e) { System.err.println("Error "+ e); }
+            
+        if (respuesta.toLowerCase().charAt(0) == 'y') {
+            confirmo = true;
+        } else if (respuesta.toLowerCase().charAt(0) == 'n') {
+            confirmo = false;
+        }
+        
+        return confirmo;
     }
     
     // TODO - implementar updateIngresos
