@@ -27,13 +27,13 @@ public class MainPrueba {
         Cliente cliente = new Cliente("Esteban Esparza", "20953304-9");
         cliente.setCanasta(canasta);
         
-        Boleta comprobante = new Boleta(cliente);
+        Factura comprobante = new Factura(cliente);
         comprobante.calcTotal();
         numCont.generarNumComprobante(comprobante);
         
         generarComprobanteJson(comprobante);
-        
-        
+        comprobante.imprimir();
+
         
         
     }

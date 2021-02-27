@@ -25,13 +25,11 @@ public abstract class Comprobante implements Imprimible {
         this.fecha = new Date();
         // TODO
     }
-    
+
     @Override
-    public void imprimir(){
-        System.out.println("Hola");
+    public void imprimir() {
+
     }
-    
-    public abstract void mostrar();
     
     //Actualiza TOTAL
     public void calcTotal(){
@@ -40,7 +38,7 @@ public abstract class Comprobante implements Imprimible {
         for (Producto p: productos) {
             this.total+=p.getPrecio();
         }
-        System.out.println("Total calculado");
+        //System.out.println("Total calculado");
     }
     
     public int getNumComprobante() {
@@ -50,7 +48,10 @@ public abstract class Comprobante implements Imprimible {
     public Date getFecha() {
         return fecha;
     }
-
+    
+    public Cliente getCliente(){
+        return cliente;
+    }
     public double getTotal() {
         return total;
     }

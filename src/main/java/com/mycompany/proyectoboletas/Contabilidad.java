@@ -14,7 +14,7 @@ public class Contabilidad {
     public Contabilidad() {
     }
     
-    public void reporteMensula(){
+    public void reporteMensual(){
         
     }
     
