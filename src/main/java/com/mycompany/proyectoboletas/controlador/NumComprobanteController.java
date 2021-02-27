@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.controlador;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.mycompany.proyectoboletas.Comprobante;
+
+import java.io.*;
 
 /**
- *
  * @author Esteban
  */
 public class NumComprobanteController {
@@ -23,8 +15,8 @@ public class NumComprobanteController {
     private int comprobantes;
 
     public NumComprobanteController() {
-        
-        
+
+
     }
 
     public void setComprobantes() {
@@ -34,18 +26,17 @@ public class NumComprobanteController {
             br = new BufferedReader(new FileReader("jsons/numComprobantes.json"));
         } catch (FileNotFoundException e) {
         }
-        
-        NumComprobanteController num = gson.fromJson(br,NumComprobanteController.class);
+
+        NumComprobanteController num = gson.fromJson(br, NumComprobanteController.class);
         this.comprobantes = num.getComprobantes();
     }
-    
-    
 
-    public void generarNumComprobante(Comprobante comprobante){
+
+    public void generarNumComprobante(Comprobante comprobante) {
         comprobantes++;
         comprobante.setNumComprobante(comprobantes);
         generarJson();
-        
+
     }
 
     public int getComprobantes() {
@@ -55,8 +46,8 @@ public class NumComprobanteController {
     public void setComprobantes(int comprobantes) {
         this.comprobantes = comprobantes;
     }
-    
-    public void generarJson(){
+
+    public void generarJson() {
         NumComprobanteController num = new NumComprobanteController();
         num.setComprobantes(comprobantes);
         FileWriter writer;
