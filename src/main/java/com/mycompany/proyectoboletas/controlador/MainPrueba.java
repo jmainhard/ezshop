@@ -11,6 +11,8 @@ import java.util.ArrayList;
  */
 public class MainPrueba {
     public static void main(String[] args) {
+        Contabilidad contabilidad = new Contabilidad();
+        contabilidad.setComprobantesTotales();
         NumComprobanteController numCont = new NumComprobanteController();
         numCont.setComprobantes();
         Producto p1 = new Producto(1,"Martillo",5000);
@@ -27,11 +29,14 @@ public class MainPrueba {
         Cliente cliente = new Cliente("Esteban Esparza", "20953304-9");
         cliente.setCanasta(canasta);
         
-        Factura comprobante = new Factura(cliente);
+        Comprobante comprobante = new Factura(cliente);
         comprobante.calcTotal();
         numCont.generarNumComprobante(comprobante);
         
         generarComprobanteJson(comprobante);
+
+        contabilidad.addComprobante(comprobante);
+        addToHistory(contabilidad);
         comprobante.imprimir();
 
         
@@ -49,6 +54,27 @@ public class MainPrueba {
             String jsonString = gson.toJson(comprobante);
             writer.write(jsonString);
             writer.close();
+
+
+        } catch (IOException ex) {
+            System.out.println("Error al crear el archivo");
+        }
+
+    }
+
+    public static void addToHistory(Contabilidad contabilidad){
+        String path = "jsons/historialComprobantes.json";
+
+        FileWriter writer;
+        try {
+            writer = new FileWriter(path);
+            //PrettyPrint para dar format al JSON
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String jsonString = gson.toJson(contabilidad);
+            writer.write(jsonString);
+            writer.close();
+
+
         } catch (IOException ex) {
             System.out.println("Error al crear el archivo");
         }
