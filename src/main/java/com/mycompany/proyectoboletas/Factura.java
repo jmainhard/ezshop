@@ -14,6 +14,9 @@ public class Factura extends Comprobante {
 
     @Override
     public void imprimir() {
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+        System.out.println("Tipo: FACTURA");
         System.out.println("Num Comprobante: "+this.getNumComprobante());
         System.out.println("Fecha: "+this.getFecha());
         System.out.println("Nombre Cliente: "+this.getCliente().getNombre());
@@ -28,6 +31,9 @@ public class Factura extends Comprobante {
         System.out.println("Total Neto: $"+ (this.getTotal()-iva));
         System.out.println("IVA (19%): $"+iva);
         System.out.println("Total compra: $"+this.getTotal()+" IVA inc.");
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+
     }
 
     @Override
