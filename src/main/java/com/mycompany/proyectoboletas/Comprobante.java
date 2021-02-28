@@ -19,6 +19,9 @@ public abstract class Comprobante implements Imprimible {
     @SerializedName("Total Compra")
     private double total;
 
+    public Comprobante(){
+
+    }
 
     public Comprobante(Cliente cliente) {
         this.cliente = cliente;
@@ -28,7 +31,7 @@ public abstract class Comprobante implements Imprimible {
 
     @Override
     public void imprimir() {
-
+        System.out.println("");
     }
     
     //Actualiza TOTAL

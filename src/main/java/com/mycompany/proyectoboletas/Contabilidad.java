@@ -18,12 +18,16 @@ import java.util.ArrayList;
  * @author Esteban
  */
 public class Contabilidad {
+    @SerializedName("Historial Facturas")
+    private ArrayList<Factura> facturasTotales = new ArrayList<>();
     @SerializedName("Historial Boletas")
-    private ArrayList<Comprobante> comprobantesTotales = new ArrayList<>();
+    private ArrayList<Boleta> boletasTotales = new ArrayList<>();
 
     public Contabilidad() {
     }
 
+    // Se debe llamar cada vez que se instancia al objeto, almenos una vez en la ejecución
+    // Lee el json y restablece los datos de los Comprobantes
     public void setComprobantesTotales(){
         Gson gson = new Gson();
         BufferedReader br = null;
@@ -33,20 +37,42 @@ public class Contabilidad {
         }
 
         Contabilidad num = gson.fromJson(br,Contabilidad.class);
-        this.comprobantesTotales = num.getComprobantesTotales();
+        this.facturasTotales = num.getFacturasTotales();
+        this.boletasTotales = num.getBoletasTotales();
     }
 
 
-    public ArrayList<Comprobante> getComprobantesTotales() {
-        return comprobantesTotales;
+    public ArrayList<Factura> getFacturasTotales() {
+        return facturasTotales;
     }
 
+    public ArrayList<Boleta> getBoletasTotales() {
+        return boletasTotales;
+    }
+    //Añade un comprobante al historial, separa por tipo (FACTURA O BOLETA)
     public void addComprobante(Comprobante comprobante){
-        comprobantesTotales.add(comprobante);
+        if (comprobante.getClass() == Factura.class){
+            facturasTotales.add((Factura) comprobante);
+        }
+        if(comprobante.getClass() == Boleta.class){
+            boletasTotales.add((Boleta) comprobante);
+        }
     }
 
     public void reporteMensual(){
-        
+        double ingresos = 0;
+        int cont = 0;
+        for(Factura f : facturasTotales){
+            ingresos+= f.getTotal();
+            cont++;
+        }
+
+        for(Boleta b : boletasTotales){
+            ingresos+= b.getTotal();
+            cont++;
+        }
+        System.out.println("Cantidad de ventas realizada: "+cont);
+        System.out.println("Los ingresos historicos son: $"+ingresos);
     }
 
 

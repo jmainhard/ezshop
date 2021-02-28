@@ -38,6 +38,7 @@ public class MainPrueba {
         contabilidad.addComprobante(comprobante);
         addToHistory(contabilidad);
         comprobante.imprimir();
+        contabilidad.reporteMensual();
 
         
         
