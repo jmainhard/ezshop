@@ -55,6 +55,7 @@ public class ClientesController {
     }
     
     public boolean removeCliente(Cliente cliente) {
+        clientes = clientesHandler.cargarObjetos();
         
         if (!existeCliente(cliente)) {
             return false;
