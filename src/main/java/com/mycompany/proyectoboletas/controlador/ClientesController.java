@@ -21,6 +21,7 @@ public class ClientesController {
     }
     
     public boolean existeCliente(Cliente clienteComprando) throws NullPointerException {
+            clientes = clientesHandler.cargarObjetos(); // actualiza
         try {
             return clientes.stream().
                 anyMatch(clienteRegistrado -> 
