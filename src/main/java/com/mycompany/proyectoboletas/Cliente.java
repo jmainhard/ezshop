@@ -65,9 +65,11 @@ public class Cliente {
         // Asocia el historial de este cliente al comprobante seleccionado
         updateCliente(comprobante);
 
-        
-//        ? comprobante.mostrarDetalle();
-//        comprobante.imprimir();
+        comprobante.calcTotal();
+        // TODO generar números de comprobante reales y posible guardado a JSON,
+        // aunque el guardado  JSON talvez sea mas fácil en lógica implementarlo
+        // en Main.java, revisar
+        comprobante.imprimir();
         return true;
     }
     

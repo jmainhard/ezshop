@@ -215,7 +215,7 @@ public class Main {
         int opcion;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
-        Producto pdtoPrueba = new Producto(-1, "PROD UNDEFINED", 9999999);
+        Producto pdtoPrueba = new Producto(-1, "PROD UNDEFINED", 9999);
         
             do {
                 salir = false;
@@ -268,11 +268,12 @@ public class Main {
                              } else if (clienteComprando.getCanasta().removeProducto(pdtoPrueba)) {
                                  System.out.println("\n-- Producto Removido --");
                              }
-                        } catch (Exception e) {
+                        } catch (CanastaVaciaException e) {
                             System.err.println(e);
-                        }
+                        } catch (Exception e) { System.err.println("Error"+ e);}
                         salir = false;
                         break;
+
                     case 3: // Ver canasta
                         try {
                             if (clienteComprando.getCanasta().getProductos().isEmpty()) {
