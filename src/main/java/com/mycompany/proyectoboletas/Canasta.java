@@ -42,9 +42,14 @@ public class Canasta {
         return false;
     }
     
-    public boolean removeProducto(Producto p) {
+    public boolean removeProducto(int id) {
         try {
-            return productos.remove(p);
+            for (Producto producto : productos) {
+                // existeProducto
+                if (producto.getId() == id) {
+                    return productos.remove(producto);
+                }
+            }
         } catch (NullPointerException e) {
             System.err.println(e + ": Producto nulo o no inicializado");
         } catch (Exception e) {

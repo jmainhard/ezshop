@@ -138,7 +138,7 @@ public class Main {
         int opcion;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
-        Producto pdtoPrueba = new Producto(-1, "PROD UNDEFINED", 9999);
+        Producto pdtoPrueba = new Producto(1, "PROD UNDEFINED", 9999);
         
             do {
                 salir = false;
@@ -188,12 +188,20 @@ public class Main {
                          try {
                              if (clienteComprando.getCanasta().getProductos().isEmpty()) {
                                  throw new CanastaVaciaException("No hay productos para eliminar");
-                             } else if (clienteComprando.getCanasta().removeProducto(pdtoPrueba)) {
-                                 System.out.println("\n-- Producto Removido --");
+                             } else {
+                                 System.out.println(clienteComprando.getCanasta());
+                                 if (clienteComprando.getCanasta().removeProducto(askIdProducto())) {
+                                     System.out.println("\n-- Producto Removido --");
+                                 } else {
+                                     System.out.println("\n-- Producto no removido --");
+                                 }
                              }
                         } catch (CanastaVaciaException e) {
-                            System.err.println(e);
-                        } catch (Exception e) { System.err.println("Error"+ e);}
+                            System.err.println("Error: "+ e.getMessage()+ " "+
+                                    e.getClass().getSimpleName());
+                        } catch (Exception e) { 
+                            System.err.println("Error: "+ e);
+                        }
                         salir = false;
                         break;
 
@@ -205,14 +213,14 @@ public class Main {
                                 System.out.println(clienteComprando.getCanasta());
                             }
                         } catch (CanastaVaciaException e) {
-                            System.err.println(e);
+                            System.err.println(e.getMessage() + " "+
+                                    e.getClass().getSimpleName());
                         }
                         salir = false;
                         break;
                     case 4: // Hacer Venta
                         try {
                             salir = clienteComprando.hacerVenta();
-
                         } catch (CanastaVaciaException e) {
                             System.err.println("Error: "+ e.getMessage()+
                                     " "+ e.getClass().getCanonicalName()); 
@@ -260,10 +268,28 @@ public class Main {
         return teclado.next();
     }
     
-    public static Producto askProducto() {
+    public static int askIdProducto() {
+//        throw new UnsupportedOperationException("Implement InventarioController");
+        int id = -1;
+        Scanner teclado = new Scanner(System.in);
+        int inventarioSize = 3; // replace var with inventario.size
         
-        throw new UnsupportedOperationException("Implement InventarioController");
+        while (id < 1 || id > inventarioSize) {
+            id = -1;
+            System.out.println("\n< Ingrese ID del Producto >");
+            try {
+                id = teclado.nextInt();
+            } catch (InputMismatchException e) {
+                System.err.println("Error: Ingrese un número "+ e);
+                teclado.next();
+            } catch (Exception e) {
+                System.err.println("Error: "+ e);
+                teclado.next();
+            }
+        }
+        System.out.println("\nSeleccionado: "+ id);
         
+        return id;
     }
     
 }

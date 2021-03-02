@@ -85,7 +85,7 @@ public class Cliente {
         contabilidad.addComprobante(comprobante); // Añade al objeto
         addToHistory(contabilidad); // Genera el JSON
 
-        // Asocia el historial de este cliente al comprobante trabajado
+        // Asocia el historial de este cliente al comprobante
         updateCliente(comprobante);
         
         comprobante.imprimir();
@@ -99,7 +99,7 @@ public class Cliente {
         while (numTipo < 1 || numTipo > 2) {
             numTipo = -1;
             
-            System.out.println("\nSeleccione tipo de Comprobante");
+            System.out.println("\n--< Seleccione tipo de Comprobante >--");
             System.out.println("1 - Boleta");
             System.out.println("2 - Factura");
             try {
@@ -152,11 +152,6 @@ public class Cliente {
         }
         
         return confirmo;
-    }
-    
-    // TODO - implementar updateIngresos
-    public boolean updateIngresos() {
-        throw new UnsupportedOperationException();
     }
     
     /**
