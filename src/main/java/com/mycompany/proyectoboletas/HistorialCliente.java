@@ -71,7 +71,7 @@ public class HistorialCliente {
         strBuilder = "Rut: "+ rut+ "\n";
         strBuilder += "Nombre: "+ nombre+ "\n";
         strBuilder += "Fecha de registro: "+  strFecha+ "\n";
-        strBuilder += "Comprobantes asociados: "+
+        strBuilder += "Id Comprobantes asociados: "+
                 comprobantesAsociadosPorId.toString()+ "\n";
         
         return strBuilder;

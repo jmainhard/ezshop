@@ -68,6 +68,9 @@ public class Cliente {
         this.setRut(askRut());
         if (!clientesHandler.existeCliente(this.getRut())) {
             this.setNombre(askNombre());
+        } else {
+            System.out.println("\n-- Cliente encontrado --");
+            this.setNombre(clientesHandler.getHistorialCliente(rut).getNombre());
         }
         
         comprobante = selectComprobante(); // Se crea el objeto <----
@@ -179,9 +182,10 @@ public class Cliente {
         } catch (NullPointerException e) {
             System.err.println("Error: cliente nulo o no inicializado "+ e);
         } catch (Exception e) {
-            System.err.println("Error al manejar cliente "+ e);
+            System.err.println("Error al actualizar cliente "+ e);
         }
     }
+    
     //JSON SERIALIZER
     //Genera JSON de comprobante
     public static void generarComprobanteJson(Comprobante comprobante){

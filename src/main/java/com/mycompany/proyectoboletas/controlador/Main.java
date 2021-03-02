@@ -90,8 +90,8 @@ public class Main {
                 salir = false;
                 opcion = -1;
                 System.out.println("\n------------< Menu Clientes >------------");
-                System.out.println("1 - Ver Historial de Clientes");
-                System.out.println("2 - Buscar Cliente por Rut");
+                System.out.println("1 - Ver historial de Clientes");
+                System.out.println("2 - Buscar Cliente");
                 System.out.println("3 - Eliminar Cliente");
                 System.out.println("4 - Salir");
                 
@@ -107,9 +107,10 @@ public class Main {
                         System.out.println(clientesHandler.toString());
                         break;
                     case 2: // Buscar cliente
-                        String rutBusqueda = askRut();
-                        if (clientesHandler.existeCliente(rutBusqueda)) {
-                            mostrarCliente(rutBusqueda);
+                        String rutCliente = askRut();
+                        if (clientesHandler.existeCliente(rutCliente)) {
+                            System.out.println("\n-- Cliente encontrado --");
+                            System.out.println(clientesHandler.getHistorialCliente(rutCliente));
                         } else {
                             System.out.println("\n-- Cliente no encontrado --");
                         }
@@ -226,11 +227,6 @@ public class Main {
             } while (!salir); // fin wh menu venta
             
     } 
-    
-    public static void mostrarCliente(String rutCliente) {
-        System.out.println("\n-- Cliente encontrado --");
-        System.out.println(clientesHandler.getHistorialCliente(rutCliente));
-    }
     
     public static boolean confirmarSalida() {
         Scanner teclado = new Scanner(System.in);
