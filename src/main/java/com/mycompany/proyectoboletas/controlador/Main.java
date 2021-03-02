@@ -105,24 +105,22 @@ public class Main {
                 switch (opcion) {
                     case 1: // Lista de clientes
                         System.out.println(clientesHandler.toString());
-                        salir = false;
                         break;
                     case 2: // Buscar cliente
                         String rutBusqueda = askRut();
-                        if ( clientesHandler.existeCliente(rutBusqueda) ) {
+                        if (clientesHandler.existeCliente(rutBusqueda)) {
                             mostrarCliente(rutBusqueda);
                         } else {
                             System.out.println("\n-- Cliente no encontrado --");
                         }
-                        salir = false;
                         break;
                     case 3: // Eliminar cliente
-                        if (eliminarCliente(askRut())) {
+                        if (clientesHandler.removeCliente(askRut())) {
                             System.out.println("\n-- Cliente removido exitosamente --");
+                            clientesHandler.guardar();
                         } else {
                             System.out.println("\n-- No se pudo eliminar este cliente --"); 
                         }
-                        salir = false;
                         break;
                     case 4: // Salir
                         salir = true;
@@ -229,19 +227,9 @@ public class Main {
             
     } 
     
-    public static boolean eliminarCliente(String rutBusqueda) {
-        if (clientesHandler.removeCliente(new Cliente("", rutBusqueda))) {
-            clientesHandler.guardar();
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    public static void mostrarCliente(String rutBusqueda) {
-        Cliente clienteBuscado = new Cliente("", rutBusqueda);
+    public static void mostrarCliente(String rutCliente) {
         System.out.println("\n-- Cliente encontrado --");
-        System.out.println(clientesHandler.getHistorialClienteComprando(clienteBuscado));
+        System.out.println(clientesHandler.getHistorialCliente(rutCliente));
     }
     
     public static boolean confirmarSalida() {

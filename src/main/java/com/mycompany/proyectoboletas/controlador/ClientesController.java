@@ -33,11 +33,9 @@ public class ClientesController {
         return false;
     }
     
-    // TODO, evaluar cambiar param de metodo existeCliente a String rut
-    public HistorialCliente getHistorialClienteComprando(Cliente clienteComprando) {
-        // clientes.forEach(System.out::println); // debug
+    public HistorialCliente getHistorialCliente(String rutCliente) {
         for (HistorialCliente historialCliente : clientes) {
-            if (clienteComprando.getRut().equals(historialCliente.getRut())) {
+            if (rutCliente.equals(historialCliente.getRut())) {
                 return historialCliente;
             }
         }
@@ -56,14 +54,14 @@ public class ClientesController {
         return false;
     }
     
-    public boolean removeCliente(Cliente cliente) {
+    public boolean removeCliente(String rutCliente) {
         clientes = clientesHandler.cargarObjetos();
         
-        if (!existeCliente(cliente.getRut())) {
+        if (!existeCliente(rutCliente)) {
             return false;
         }
         try {
-            return clientes.remove(this.getHistorialClienteComprando(cliente));
+            return clientes.remove(this.getHistorialCliente(rutCliente));
         } catch (Exception e) {
             System.err.println("Ocurrió un error al intentar remover Cliente"+ e);
         }

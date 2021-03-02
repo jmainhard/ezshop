@@ -1,8 +1,6 @@
 package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.SerializedName;
-import com.mycompany.proyectoboletas.controlador.FileController;
-import com.mycompany.proyectoboletas.controlador.ListController;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,8 +19,6 @@ public class HistorialCliente {
     private final Date fechaRegistro;
     @SerializedName("ID Comprobantes asociados")
     private final ArrayList<Integer> comprobantesAsociadosPorId;
-    // posible 
-    // private final ArrayList<HistorialComprobante> comprobantesAsociados; Atributos-> tipo : ? -> TipoComprobanteEnum, id : int
 
     public HistorialCliente(Cliente cliente) {
         this.rut = cliente.getRut();

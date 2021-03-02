@@ -170,8 +170,8 @@ public class Cliente {
                     System.out.println("Rut: "+ this.getRut()+ "\n");
                 }
             }
-            // consigue el historial creado ahora o el que ya existia sin diferenciar
-            historial = clientesHandler.getHistorialClienteComprando(this);
+            // consigue el historial creado ahora o el que ya existia indistintamente
+            historial = clientesHandler.getHistorialCliente(this.getRut());
             
             // añade comprobante y guarda archivo de clientes
             historial.addComprobante(comprobante.getNumComprobante());
