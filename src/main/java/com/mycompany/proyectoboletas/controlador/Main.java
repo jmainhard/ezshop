@@ -11,8 +11,14 @@ import java.util.Scanner;
 
 public class Main {
     private static final ClientesController clientesHandler = new ClientesController();
-    
+    public static Contabilidad contabilidad = new Contabilidad();
+    public static NumComprobanteController numComprobante = new NumComprobanteController();
+
     public static void main(String[] args) {
+
+        contabilidad.setComprobantesTotales();
+        numComprobante.setComprobantes();
+
         menuDePruebas();        
 
 //        Producto p = new Producto(1, "Martillo", 22222);
@@ -289,6 +295,7 @@ public class Main {
                     case 4: // Hacer Venta
                         try {
                             salir = clienteComprando.hacerVenta();
+
                         } catch (CanastaVaciaException e) {
                             System.err.println("Error: "+ e.getMessage()+
                                     " "+ e.getClass().getCanonicalName()); 

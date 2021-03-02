@@ -1,0 +1,26 @@
+{
+  "Numero Comprobante": 44,
+  "Fecha": "Mar 2, 2021, 12:45:34 AM",
+  "Cliente": {
+    "Nombre Cliente": "Joaquin",
+    "Rut": "11111111",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        }
+      ]
+    },
+    "historial": {
+      "Rut": "11111111",
+      "Nombre": "Joaquin",
+      "Fecha de registro": "Mar 2, 2021, 12:45:34 AM",
+      "ID Comprobantes asociados": [
+        0
+      ]
+    }
+  },
+  "Total Compra": 9999.0
+}

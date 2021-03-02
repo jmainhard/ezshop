@@ -1,0 +1,36 @@
+{
+  "Numero Comprobante": 45,
+  "Fecha": "Mar 2, 2021, 12:49:58 AM",
+  "Cliente": {
+    "Nombre Cliente": "rdfhf",
+    "Rut": "11111222",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        }
+      ]
+    },
+    "historial": {
+      "Rut": "11111222",
+      "Nombre": "rdfhf",
+      "Fecha de registro": "Mar 2, 2021, 12:49:58 AM",
+      "ID Comprobantes asociados": [
+        0
+      ]
+    }
+  },
+  "Total Compra": 29997.0
+}

@@ -1,11 +1,16 @@
 package com.mycompany.proyectoboletas;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.*;
 import com.mycompany.proyectoboletas.controlador.ClientesController;
-import static com.mycompany.proyectoboletas.controlador.Main.askNombre;
-import static com.mycompany.proyectoboletas.controlador.Main.askRut;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static com.mycompany.proyectoboletas.controlador.Main.*;
 
 /**
  * @author Jorge M., Esteban E., Maximiliano C.
@@ -60,15 +65,25 @@ public class Cliente {
             this.setNombre(askNombre());
         }
         
-        comprobante = selectComprobante();
+        comprobante = selectComprobante(); // Se crea el objeto <----
         
         // Asocia el historial de este cliente al comprobante seleccionado
         updateCliente(comprobante);
-
+        // Se genera el JSON del comprobante como archivo individual
         comprobante.calcTotal();
+        numComprobante.generarNumComprobante(comprobante);
+        generarComprobanteJson(comprobante);
+
+        //Se añade a la contabilidad
+
+        contabilidad.addComprobante(comprobante); // Añade al objeto
+        addToHistory(contabilidad); // Genera el JSON
+
+
         // TODO generar números de comprobante reales y posible guardado a JSON,
         // aunque el guardado  JSON talvez sea mas fácil en lógica implementarlo
         // en Main.java, revisar
+
         comprobante.imprimir();
         return true;
     }
@@ -167,7 +182,46 @@ public class Cliente {
             System.err.println("Error al manejar cliente "+ e);
         }
     }
-    
+    //JSON SERIALIZER
+    //Genera JSON de comprobante
+    public static void generarComprobanteJson(Comprobante comprobante){
+        String path = "jsons/comprobante-"+comprobante.getNumComprobante()+".json";
+
+        FileWriter writer;
+        try {
+            writer = new FileWriter(path);
+            //PrettyPrint para dar format al JSON
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String jsonString = gson.toJson(comprobante);
+            writer.write(jsonString);
+            writer.close();
+
+
+        } catch (IOException ex) {
+            System.out.println("Error al crear el archivo");
+        }
+
+    }
+    //Añade a contabilidad
+    public static void addToHistory(Contabilidad contabilidad){
+        String path = "jsons/historialComprobantes.json";
+
+        FileWriter writer;
+        try {
+            writer = new FileWriter(path);
+            //PrettyPrint para dar format al JSON
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String jsonString = gson.toJson(contabilidad);
+            writer.write(jsonString);
+            writer.close();
+
+
+        } catch (IOException ex) {
+            System.out.println("Error al crear el archivo");
+        }
+
+    }
+
     // getters y setters
     public String getNombre() {
         return nombre;

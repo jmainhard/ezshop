@@ -139,6 +139,63 @@
         }
       },
       "Total Compra": 11500.0
+    },
+    {
+      "Numero Comprobante": 42,
+      "Fecha": "Mar 2, 2021, 12:42:03 AM",
+      "Cliente": {
+        "Nombre Cliente": "Esteban Esparza",
+        "Rut": "20953304-9",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "20953304-9",
+          "Nombre": "Esteban Esparza",
+          "Fecha de registro": "Mar 2, 2021, 12:42:03 AM",
+          "ID Comprobantes asociados": [
+            0
+          ]
+        }
+      },
+      "Total Compra": 19998.0
+    },
+    {
+      "Numero Comprobante": 44,
+      "Fecha": "Mar 2, 2021, 12:45:34 AM",
+      "Cliente": {
+        "Nombre Cliente": "Joaquin",
+        "Rut": "11111111",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "11111111",
+          "Nombre": "Joaquin",
+          "Fecha de registro": "Mar 2, 2021, 12:45:34 AM",
+          "ID Comprobantes asociados": [
+            0
+          ]
+        }
+      },
+      "Total Compra": 9999.0
     }
   ],
   "Historial Boletas": [
@@ -197,6 +254,124 @@
         }
       },
       "Total Compra": 11500.0
+    },
+    {
+      "Numero Comprobante": 43,
+      "Fecha": "Mar 2, 2021, 12:44:35 AM",
+      "Cliente": {
+        "Nombre Cliente": "Esteban",
+        "Rut": "209533049",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "209533049",
+          "Nombre": "Esteban",
+          "Fecha de registro": "Mar 2, 2021, 12:44:35 AM",
+          "ID Comprobantes asociados": [
+            0
+          ]
+        }
+      },
+      "Total Compra": 29997.0
+    },
+    {
+      "Numero Comprobante": 45,
+      "Fecha": "Mar 2, 2021, 12:49:58 AM",
+      "Cliente": {
+        "Nombre Cliente": "rdfhf",
+        "Rut": "11111222",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "11111222",
+          "Nombre": "rdfhf",
+          "Fecha de registro": "Mar 2, 2021, 12:49:58 AM",
+          "ID Comprobantes asociados": [
+            0
+          ]
+        }
+      },
+      "Total Compra": 29997.0
+    },
+    {
+      "Numero Comprobante": 46,
+      "Fecha": "Mar 2, 2021, 12:50:39 AM",
+      "Cliente": {
+        "Nombre Cliente": "Pedro",
+        "Rut": "766666666",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "766666666",
+          "Nombre": "Pedro",
+          "Fecha de registro": "Mar 2, 2021, 12:50:39 AM",
+          "ID Comprobantes asociados": [
+            0
+          ]
+        }
+      },
+      "Total Compra": 49995.0
     }
   ]
 }

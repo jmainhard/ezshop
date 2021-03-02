@@ -28,15 +28,19 @@ public class MainPrueba {
         
         Cliente cliente = new Cliente("Esteban Esparza", "20953304-9");
         cliente.setCanasta(canasta);
-        
-        Comprobante comprobante = new Factura(cliente);
-        comprobante.calcTotal();
-        numCont.generarNumComprobante(comprobante);
-        
-        generarComprobanteJson(comprobante);
 
-        contabilidad.addComprobante(comprobante);
-        addToHistory(contabilidad);
+        // Generar comprobante
+        Comprobante comprobante = new Factura(cliente); // Paso 1 , se instancia el comprobante
+        comprobante.calcTotal(); // Paso 2, generar total compra
+        numCont.generarNumComprobante(comprobante); // Paso 3 , se genera el numComprobante
+        
+        generarComprobanteJson(comprobante); // Paso 4 se genera el comprobante en JSON
+
+        // añadir a la contabilidad
+        contabilidad.addComprobante(comprobante); // Añade al objeto
+        addToHistory(contabilidad); // Genera el JSON
+
+
         comprobante.imprimir();
         contabilidad.reporteMensual();
 
