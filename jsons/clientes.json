@@ -7,7 +7,9 @@
       0,
       0,
       0,
-      0
+      0,
+      0,
+      48
     ]
   },
   {
@@ -56,6 +58,23 @@
     "Fecha de registro": "Mar 2, 2021, 12:50:39 AM",
     "ID Comprobantes asociados": [
       0
+    ]
+  },
+  {
+    "Rut": "123456-7",
+    "Nombre": "asd",
+    "Fecha de registro": "Mar 2, 2021, 2:59:01 PM",
+    "ID Comprobantes asociados": [
+      49
+    ]
+  },
+  {
+    "Rut": "454545",
+    "Nombre": "astronomia",
+    "Fecha de registro": "Mar 2, 2021, 3:03:59 PM",
+    "ID Comprobantes asociados": [
+      50,
+      51
     ]
   }
 ]

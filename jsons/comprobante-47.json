@@ -1,0 +1,50 @@
+{
+  "Numero Comprobante": 47,
+  "Fecha": "Mar 2, 2021, 2:31:45 PM",
+  "Cliente": {
+    "Nombre Cliente": "Nombre Indefinido",
+    "Rut": "1234567-8",
+    "Canasta": {
+      "Productos": [
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        },
+        {
+          "ID Producto": -1,
+          "Nombre Producto": "PROD UNDEFINED",
+          "Precio": 9999.0
+        }
+      ]
+    },
+    "historial": {
+      "Rut": "1234567-8",
+      "Nombre": "Douglas Adams",
+      "Fecha de registro": "Mar 1, 2021, 3:43:59 PM",
+      "ID Comprobantes asociados": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "Total Compra": 49995.0
+}

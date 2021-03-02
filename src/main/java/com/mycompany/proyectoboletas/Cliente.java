@@ -44,10 +44,15 @@ public class Cliente {
         this.canasta = new Canasta();
     }
     
-    // TODO
-    // Disminuye el stock de los productos vendidos
-    // Genera comprobante
-    // Actualiza historial
+    /**
+     * Realiza la venta, en términos generales disminuye el stock de los prod.
+     * vendidos, genera el comprobante y actualiza el historial del cliente.
+     * 
+     * @return {@code true} si la venta fué realizada con éxito, {@code false}
+     * caso contrario.
+     * 
+     * @throws CanastaVaciaException 
+     */
     public boolean hacerVenta() throws CanastaVaciaException {
         ClientesController clientesHandler = new ClientesController();
         Comprobante comprobante;
@@ -67,23 +72,19 @@ public class Cliente {
         
         comprobante = selectComprobante(); // Se crea el objeto <----
         
-        // Asocia el historial de este cliente al comprobante seleccionado
-        updateCliente(comprobante);
         // Se genera el JSON del comprobante como archivo individual
         comprobante.calcTotal();
         numComprobante.generarNumComprobante(comprobante);
         generarComprobanteJson(comprobante);
 
+        
         //Se añade a la contabilidad
-
         contabilidad.addComprobante(comprobante); // Añade al objeto
         addToHistory(contabilidad); // Genera el JSON
 
-
-        // TODO generar números de comprobante reales y posible guardado a JSON,
-        // aunque el guardado  JSON talvez sea mas fácil en lógica implementarlo
-        // en Main.java, revisar
-
+        // Asocia el historial de este cliente al comprobante trabajado
+        updateCliente(comprobante);
+        
         comprobante.imprimir();
         return true;
     }
@@ -115,7 +116,6 @@ public class Cliente {
     }
     
     public Comprobante selectComprobante() {
-        Comprobante comprobante;
         switch (tipoComprobante()) {
             case 1:
                 return new Boleta(this);

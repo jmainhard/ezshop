@@ -196,6 +196,99 @@
         }
       },
       "Total Compra": 9999.0
+    },
+    {
+      "Numero Comprobante": 47,
+      "Fecha": "Mar 2, 2021, 2:31:45 PM",
+      "Cliente": {
+        "Nombre Cliente": "Nombre Indefinido",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        },
+        "historial": {
+          "Rut": "1234567-8",
+          "Nombre": "Douglas Adams",
+          "Fecha de registro": "Mar 1, 2021, 3:43:59 PM",
+          "ID Comprobantes asociados": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "Total Compra": 49995.0
+    },
+    {
+      "Numero Comprobante": 49,
+      "Fecha": "Mar 2, 2021, 2:59:01 PM",
+      "Cliente": {
+        "Nombre Cliente": "asd",
+        "Rut": "123456-7",
+        "Canasta": {
+          "Productos": []
+        },
+        "historial": {
+          "Rut": "123456-7",
+          "Nombre": "asd",
+          "Fecha de registro": "Mar 2, 2021, 2:59:01 PM",
+          "ID Comprobantes asociados": [
+            49
+          ]
+        }
+      },
+      "Total Compra": 0.0
+    },
+    {
+      "Numero Comprobante": 50,
+      "Fecha": "Mar 2, 2021, 3:03:59 PM",
+      "Cliente": {
+        "Nombre Cliente": "astronomia",
+        "Rut": "454545",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 19998.0
     }
   ],
   "Historial Boletas": [
@@ -372,6 +465,52 @@
         }
       },
       "Total Compra": 49995.0
+    },
+    {
+      "Numero Comprobante": 48,
+      "Fecha": "Mar 2, 2021, 2:50:10 PM",
+      "Cliente": {
+        "Nombre Cliente": "Nombre Indefinido",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 29997.0
+    },
+    {
+      "Numero Comprobante": 51,
+      "Fecha": "Mar 2, 2021, 3:05:06 PM",
+      "Cliente": {
+        "Nombre Cliente": "Nombre Indefinido",
+        "Rut": "454545",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 9999.0
     }
   ]
 }
