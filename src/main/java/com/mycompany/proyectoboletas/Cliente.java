@@ -66,7 +66,7 @@ public class Cliente {
         }
         
         this.setRut(askRut());
-        if (!clientesHandler.existeCliente(this)) {
+        if (!clientesHandler.existeCliente(this.getRut())) {
             this.setNombre(askNombre());
         }
         
@@ -164,7 +164,7 @@ public class Cliente {
         ClientesController clientesHandler = new ClientesController();
 
         try {
-            if (!clientesHandler.existeCliente(this)) {
+            if (!clientesHandler.existeCliente(this.getRut())) {
                 if (clientesHandler.addCliente(this)) {
                     System.out.println("\n-- Nuevo Cliente registrado --");
                     System.out.println("Rut: "+ this.getRut()+ "\n");

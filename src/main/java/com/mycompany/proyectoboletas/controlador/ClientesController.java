@@ -20,12 +20,12 @@ public class ClientesController {
         clientes = clientesHandler.cargarObjetos();
     }
     
-    public boolean existeCliente(Cliente clienteComprando) throws NullPointerException {
+    public boolean existeCliente(String rutClienteBuscado) throws NullPointerException {
             clientes = clientesHandler.cargarObjetos(); // actualiza
         try {
             return clientes.stream().
                 anyMatch(clienteRegistrado -> 
-                        (clienteComprando.getRut().equals(clienteRegistrado.getRut()))
+                        (rutClienteBuscado.equals(clienteRegistrado.getRut()))
                 );
         } catch (NullPointerException e) {
             System.err.println("Error: referencia nula o no inicilizada"+ e);
@@ -33,6 +33,7 @@ public class ClientesController {
         return false;
     }
     
+    // TODO, evaluar cambiar param de metodo existeCliente a String rut
     public HistorialCliente getHistorialClienteComprando(Cliente clienteComprando) {
         // clientes.forEach(System.out::println); // debug
         for (HistorialCliente historialCliente : clientes) {
@@ -58,7 +59,7 @@ public class ClientesController {
     public boolean removeCliente(Cliente cliente) {
         clientes = clientesHandler.cargarObjetos();
         
-        if (!existeCliente(cliente)) {
+        if (!existeCliente(cliente.getRut())) {
             return false;
         }
         try {

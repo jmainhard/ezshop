@@ -289,6 +289,29 @@
         }
       },
       "Total Compra": 19998.0
+    },
+    {
+      "Numero Comprobante": 53,
+      "Fecha": "Mar 2, 2021, 4:12:24 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            },
+            {
+              "ID Producto": -1,
+              "Nombre Producto": "PROD UNDEFINED",
+              "Precio": 9999.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 19998.0
     }
   ],
   "Historial Boletas": [
@@ -511,6 +534,18 @@
         }
       },
       "Total Compra": 9999.0
+    },
+    {
+      "Numero Comprobante": 52,
+      "Fecha": "Mar 2, 2021, 3:53:19 PM",
+      "Cliente": {
+        "Nombre Cliente": "Nombre Indefinido",
+        "Rut": "123456-7",
+        "Canasta": {
+          "Productos": []
+        }
+      },
+      "Total Compra": 0.0
     }
   ]
 }
