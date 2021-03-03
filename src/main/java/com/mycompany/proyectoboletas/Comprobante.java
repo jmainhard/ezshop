@@ -20,7 +20,6 @@ public abstract class Comprobante implements Imprimible {
     private double total;
 
     public Comprobante(){
-
     }
 
     public Comprobante(Cliente cliente) {

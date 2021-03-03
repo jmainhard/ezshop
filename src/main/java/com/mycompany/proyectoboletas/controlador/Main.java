@@ -19,8 +19,7 @@ public class Main {
         contabilidad.setComprobantesTotales();
         numComprobante.setComprobantes();
 
-        menuDePruebas();        
-
+        menuDePruebas();
         
     }
     

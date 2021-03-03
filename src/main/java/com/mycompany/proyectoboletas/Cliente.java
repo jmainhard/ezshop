@@ -160,12 +160,14 @@ public class Cliente {
      */
     private void updateCliente(Comprobante comprobante) {
         ClientesController clientesHandler = new ClientesController();
-
+        boolean existed = true;
+        
         try {
             if (!clientesHandler.existeCliente(this.getRut())) {
                 if (clientesHandler.addCliente(this)) {
                     System.out.println("\n-- Nuevo Cliente registrado --");
                     System.out.println("Rut: "+ this.getRut()+ "\n");
+                    existed = false;
                 }
             }
             // consigue el historial creado ahora o el que ya existia indistintamente
@@ -174,6 +176,10 @@ public class Cliente {
             // añade comprobante y guarda archivo de clientes
             historial.addComprobante(comprobante.getNumComprobante());
             clientesHandler.guardar();
+            
+            if (existed) {
+                System.out.println("\n-- Cliente Actualizado --");
+            }
         } catch (NullPointerException e) {
             System.err.println("Error: cliente nulo o no inicializado "+ e);
         } catch (Exception e) {
@@ -181,6 +187,7 @@ public class Cliente {
         }
     }
     
+    // TODO mover métodos a Main.java
     //JSON SERIALIZER
     //Genera JSON de comprobante
     public static void generarComprobanteJson(Comprobante comprobante){

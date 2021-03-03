@@ -7,9 +7,11 @@ import java.util.Date;
  * @author Esteban
  */
 public class Factura extends Comprobante {
+    private final double impuestoAplicado; 
 
     public Factura(Cliente cliente) {
         super(cliente);
+        this.impuestoAplicado = 0.19;
     }
 
     @Override
@@ -27,7 +29,7 @@ public class Factura extends Comprobante {
         for (Producto p: productos) {
             System.out.println("-> "+p.getNombre()+" / "+p.getPrecio()+" / " + p.getId());
         }
-        double iva = this.getTotal()*0.19;
+        double iva = this.getTotal() * impuestoAplicado;
         System.out.println("Total Neto: $"+ (this.getTotal()-iva));
         System.out.println("IVA (19%): $"+iva);
         System.out.println("Total compra: $"+this.getTotal()+" IVA inc.");
