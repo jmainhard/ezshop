@@ -17,9 +17,9 @@ import java.util.ArrayList;
  */
 
 public class ListController<E> {
-    private TypeToken<Collection<E>> collectionType; // se usa para parsear en runtime y no perder el tipo de origen
-    private static final String RUTA = "jsons/";
+    private final TypeToken<Collection<E>> collectionType; // se usa para parsear en runtime y no perder el tipo de origen
     private final String archivoJson;
+    private static final String RUTA = "jsons/";
 
     /**
      * @param archivoJson archivo json con los objetos de esta lista
