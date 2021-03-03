@@ -1,12 +1,15 @@
 package com.mycompany.proyectoboletas;
 
 import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
  * @author Esteban
  */
 public class Factura extends Comprobante {
+    @SerializedName("Impuesto aplicado")
     private final double impuestoAplicado; 
 
     public Factura(Cliente cliente) {
@@ -16,11 +19,16 @@ public class Factura extends Comprobante {
 
     @Override
     public void imprimir() {
+        
+        String strFecha = DateFormat.
+            getDateTimeInstance(DateFormat.LONG, DateFormat.MEDIUM).
+            format(this.getFecha());
+        
         System.out.println("---------------------------------------------");
         System.out.println("");
         System.out.println("Tipo: FACTURA");
         System.out.println("Num Comprobante: "+this.getNumComprobante());
-        System.out.println("Fecha: "+this.getFecha());
+        System.out.println("Fecha: " + strFecha);
         System.out.println("Nombre Cliente: "+this.getCliente().getNombre());
         System.out.println("Rut Cliente: "+this.getCliente().getRut());
         System.out.println("Productos: (Nombre / Precio / ID)");

@@ -29,8 +29,8 @@ public class Cliente {
     private String rut;
     @SerializedName("Canasta")
     private Canasta canasta;
-    @Expose
-    private HistorialCliente historial;
+//    @Expose // F expose, static permite ignorar el atributo al serializar
+    private static HistorialCliente historial;
 
     public Cliente() {
         this.nombre = "Nombre Indefinido";
@@ -88,7 +88,9 @@ public class Cliente {
         // Asocia el historial de este cliente al comprobante
         updateCliente(comprobante);
         
+        System.out.println("\n              -- COMPROBANTE --");
         comprobante.imprimir();
+        
         return true;
     }
     

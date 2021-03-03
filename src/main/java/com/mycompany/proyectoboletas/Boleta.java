@@ -1,5 +1,6 @@
 package com.mycompany.proyectoboletas;
 
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 /**
@@ -13,11 +14,16 @@ public class Boleta extends Comprobante {
 
     @Override
     public void imprimir(){
+        
+        String strFecha = DateFormat.
+                getDateTimeInstance(DateFormat.LONG, DateFormat.MEDIUM).
+                format(this.getFecha());
+        
         System.out.println("---------------------------------------------");
         System.out.println("");
         System.out.println("Tipo: BOLETA");
         System.out.println("Num Comprobante: "+this.getNumComprobante());
-        System.out.println("Fecha: "+this.getFecha());
+        System.out.println("Fecha: " + strFecha);
         System.out.println("Nombre Cliente: "+this.getCliente().getNombre());
         System.out.println("Rut Cliente: "+this.getCliente().getRut());
         System.out.println("Productos: (Nombre / Precio / ID)");
