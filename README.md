@@ -20,7 +20,6 @@ Boletero de ferretería con salida por consola (Java)
     - Cliente (Lado Vendedor) Funcionalidad venta  
         - // POSIBLE verificador de ruts  
         - updateInventario() -> al vender -> Baja Stock -> (InventarioController), genera comprobante, ? -> imprime y guarda  
-        - updateIngresos -> (ContabilidadController)  
         - updateClientes -> (ClientesController)
     - Producto  
     - Stock, atributos -> pdcto : Producto, cantidad : int

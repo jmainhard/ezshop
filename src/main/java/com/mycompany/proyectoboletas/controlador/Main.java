@@ -208,7 +208,7 @@ public class Main {
                     case 3: // Ver canasta
                         try {
                             if (clienteComprando.getCanasta().getProductos().isEmpty()) {
-                                throw new CanastaVaciaException("No ha agregado productos a la canasta aún");
+                                throw new CanastaVaciaException("La canasta no tiene productos");
                             } else {
                                 System.out.println(clienteComprando.getCanasta());
                             }
