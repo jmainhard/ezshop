@@ -1,11 +1,11 @@
 [{
-        "id": 0,
-        "nombre": "martillo",
-        "stock": 5,
-        "precio": 1000.0
+        "Stock": 5,
+        "ID Producto": 0,
+        "Nombre Producto": "martillo",
+        "Precio": 1000.0
     }, {
-        "id": 1,
-        "nombre": "sierra",
-        "stock": 5,
-        "precio": 2000.0
+        "Stock": 2,
+        "ID Producto": 1,
+        "Nombre Producto": "llave inglesa",
+        "Precio": 1500.0
     }]
