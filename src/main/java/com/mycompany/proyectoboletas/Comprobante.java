@@ -1,6 +1,7 @@
 package com.mycompany.proyectoboletas;
 
 import com.google.gson.annotations.SerializedName;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -72,7 +73,19 @@ public abstract class Comprobante implements Imprimible {
 
     @Override
     public String toString() {
-        return "Comprobante{" + "numComprobante=" + numComprobante + ", fecha=" + fecha + ", total=" + total + '}';
+        String strBuilder = "\n              -- COMPROBANTE --\n";
+        String strFecha = DateFormat.
+            getDateTimeInstance(DateFormat.LONG, DateFormat.MEDIUM).
+            format(this.getFecha());
+        
+        strBuilder += "---------------------------------------------\n\n";
+        strBuilder += "Tipo: "+ this.getClass().getSimpleName()+ "\n";
+        strBuilder += "Num comprobante: "+ this.getNumComprobante()+ "\n";
+        strBuilder += "Fecha: "+ strFecha+ "\n";
+        strBuilder += cliente.toString();
+        strBuilder += cliente.getCanasta().toString();
+        
+        return strBuilder;
     }
     
     

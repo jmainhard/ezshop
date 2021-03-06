@@ -82,8 +82,7 @@ public class Canasta {
     
     @Override
     public String toString() {
-        String strBuilder = "========== Productos en Canasta ==========\n";
-        strBuilder +=       "          (NOMBRE / PRECIO / ID)\n\n";
+        String strBuilder = "Productos: (Nombre / Precio / ID)\n";
         strBuilder = productos.stream().
                 map(p -> "-> "+ p.toString() + "\n").
                 reduce(strBuilder, String::concat);

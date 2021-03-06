@@ -257,9 +257,8 @@ public class Cliente {
     public String toString() {
         String strBuilder;
         
-        strBuilder = "========== Datos Cliente ==========\n";
-        strBuilder += "Nombre: "+ nombre+ "\n";
-        strBuilder += "Rut: "+ rut+ "\n";
+        strBuilder = "Nombre cliente: "+ nombre+ "\n";
+        strBuilder += "Rut cliente: "+ rut+ "\n";
         
         return strBuilder;
     }

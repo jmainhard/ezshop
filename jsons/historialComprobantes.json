@@ -493,6 +493,25 @@
         }
       },
       "Total Compra": 2000.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 71,
+      "Fecha": "Mar 6, 2021, 7:51:43 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 1000.0
     }
   ],
   "Historial Boletas": [
@@ -917,6 +936,98 @@
         }
       },
       "Total Compra": 2500.0
+    },
+    {
+      "Numero Comprobante": 67,
+      "Fecha": "Mar 6, 2021, 7:44:12 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 4,
+              "Nombre Producto": "Taladro Bauker",
+              "Precio": 19990.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 21990.0
+    },
+    {
+      "Numero Comprobante": 68,
+      "Fecha": "Mar 6, 2021, 7:45:03 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 3,
+              "Nombre Producto": "Destornillador",
+              "Precio": 11000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 14000.0
+    },
+    {
+      "Numero Comprobante": 69,
+      "Fecha": "Mar 6, 2021, 7:48:09 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 1500.0
+    },
+    {
+      "Numero Comprobante": 70,
+      "Fecha": "Mar 6, 2021, 7:49:27 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 1000.0
     }
   ]
 }
