@@ -4,7 +4,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---
 
-   Reuniones:
+   Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
     - Miércoles 17-febrero reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo  
     - Domingo 7-marzo reunión, presentación  
