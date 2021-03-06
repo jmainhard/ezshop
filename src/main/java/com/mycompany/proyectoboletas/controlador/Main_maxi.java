@@ -22,8 +22,8 @@ public class Main_maxi {
     public static void main(String[] args) {
         ArrayList<Producto> prod = new ArrayList<>();
 
-        prod.add(new Stock(5, 0, "martillo", 1000));
-        prod.add(new Stock(2, 1, "llave inglesa", 1500));
+        prod.add(new Stock(0, "martillo", 1000, 5));
+        prod.add(new Stock(1, "llave inglesa", 1500, 2));
 
         FileWriter writer;
         try {

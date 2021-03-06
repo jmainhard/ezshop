@@ -160,11 +160,11 @@ public class Main {
                 
                 switch (opcion) {
                     case 1: // Añadir productos
+                        boolean existe;
                         inventarioVolatil.imprimir();
                         
                         System.out.println("   Añadir Producto");
                         idProducto = askIdProducto();
-                        boolean existe;
                         
                         existe = inventarioVolatil.existeProducto(idProducto);
                         
@@ -185,7 +185,6 @@ public class Main {
                                                 ": "+
                                                 e.getMessage()
                                 );
-                                e.printStackTrace();
                             } catch (Exception e) {
                                 System.err.println(
                                         "Error al agregar producto: "+ e
@@ -294,14 +293,12 @@ public class Main {
         return !confirmar;
     }
     
-    // FIXME añadir control de excepciones
     public static String askNombre() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("\n   < Ingrese Nombre >");
         return teclado.nextLine();
     }
     
-    // FIXME añadir control de excepciones
     public static String askRut() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("   < Ingrese Rut >");

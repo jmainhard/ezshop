@@ -61,7 +61,9 @@ public class InventarioController implements Imprimible {
                 if (stockObj.getCantidad() == 0) {
                     throw new StockInsuficienteException("NO HAY STOCK!!");
                 } else if (stockObj.getId() == id) {
-                    return new Producto (stockObj.getId(), stockObj.getNombre(),
+                    return new Producto(
+                            stockObj.getId(),
+                            stockObj.getNombre(),
                             stockObj.getPrecio());
                 }
             }
@@ -96,23 +98,19 @@ public class InventarioController implements Imprimible {
     }
 
     ;
-    public void nuevoProducto(Stock p) {
-        JsonParser jsonParser = new JsonParser();
-        try {
-            FileWriter writer;
-            BufferedReader br = new BufferedReader(new FileReader("jsons/inventario.json"));
-            JsonElement jsonElement = jsonParser.parse(br);
-            ArrayList<Stock> objs = new Gson().fromJson(jsonElement, new TypeToken<List<Stock>>() {
-            }.getType());
-            objs.add(p);
-            writer = new FileWriter("jsons/inventario.json");
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(objs, writer);
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("no se ha podido agregar el producto");
+    public void nuevoProducto(String nombre, double precio, int cantidad) {
+        int id = inventario.size() + 1;
+        Stock stockProduct = new Stock(id, nombre, precio, cantidad);
+        
+        if (addProducto(stockProduct)) {
+            System.out.println("\n-- Producto agregado al Inventario --");
+            guardar();
         }
 
+    }
+    
+    public boolean addProducto(Stock stockProduct) {
+        return inventario.add(stockProduct);
     }
 
     public ArrayList<Stock> getInventario() {
@@ -123,6 +121,10 @@ public class InventarioController implements Imprimible {
         this.inventario = inventario;
     }
     
+    /**
+     * Guarda los objetos en inventario
+     * @return {@code true} si fueron guardado con exito
+     */
     public boolean guardar() {
         return inventarioController.guardarObjetos(inventario);
     }
