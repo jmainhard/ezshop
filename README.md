@@ -48,8 +48,8 @@ Boletero de ferretería con salida por consola (Java)
     - Main  
         - Menú Principal
             - Nueva venta ✅
-            - Boletas 
-            - Ingresos
+            - Buscar comprobante ✅
+            - Reporte de ingresos ✅
             - Ingresar Producto
             - Vista de Clientes ✅
             - Salir ✅
