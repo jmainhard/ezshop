@@ -26,13 +26,13 @@ public class Stock extends Producto {
     public String toString() {
         String strBuilder;
         
-        String pdctoId = super.getId()+ "\n";
         String pdctoNom = super.getNombre()+ "\n";
+        String pdctoId = super.getId()+ "\n";
         String pdctoPre = "$" + String.valueOf((int) super.getPrecio()+ "\n");
         String pdctoCant = String.valueOf(this.cantidad)+ "\n";
         
-        strBuilder = String.format("ID: %24s", pdctoId);
-        strBuilder += String.format("Nombre: %20s", pdctoNom);
+        strBuilder = String.format("Nombre: %20s", pdctoNom);
+        strBuilder += String.format("ID: %24s", pdctoId);
         strBuilder += String.format("Precio: %20s", pdctoPre);
         strBuilder += String.format("Cantidad disponible: %7s", pdctoCant);
         

@@ -185,7 +185,6 @@ public class Main {
                                 System.err.println("Error al agregar producto: "+ e);
                             }
                             
-                            
                             if (agregado && stockReducido) {
                                 inventarioVolatil.imprimir();
                                 System.out.println("\n-- Producto Agregado a la Canasta --");
