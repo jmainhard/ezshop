@@ -37,8 +37,8 @@ public class Main {
                 System.out.println("\nMenu de Ferretería [Beta]");
                 System.out.println("------------< >------------");
                 System.out.println("1 - Nueva Venta");
-                System.out.println("2 - UNDEFINED");
-                System.out.println("3 - UNDEFINED");
+                System.out.println("2 - Buscar Comprobante");
+                System.out.println("3 - Reporte de ingresos");
                 System.out.println("4 - Menu Clientes");
                 System.out.println("5 - Salir");
                 
@@ -55,11 +55,11 @@ public class Main {
                         salir = false;
                         break;
                     case 2:
-                        System.out.println("Unsupported operation");
+                        buscarComprobante();
                         salir = false;
                         break;
                     case 3:
-                        System.out.println("Unsupported operation");
+                        contabilidad.reporteIngresos();
                         salir = false;
                         break;
                     case 4:
@@ -293,7 +293,67 @@ public class Main {
 
         return !confirmar;
     }
-    
+
+    public static void buscarComprobante(){
+        Scanner teclado = new Scanner(System.in);
+        boolean salir = false;
+        int opcion; //Guardaremos la opcion del usuario
+        int num;
+        while (!salir) {
+            System.out.println("\nIngrse tipo de comprobante");
+            System.out.println("------------< >------------");
+            System.out.println("1. Factura");
+            System.out.println("2. Boleta");
+            System.out.println("3. Salir");
+            try {
+                System.out.println("Escribe una opción");
+                opcion = teclado.nextInt();
+                switch (opcion) {
+                    case 1:
+                        getNumeroComprobate(opcion);
+                        salir = true;
+                        break;
+                    case 2:
+                        getNumeroComprobate(opcion);
+                        salir = true;
+                        break;
+                    case 3:
+                        salir = true;
+                        break;
+                    default:
+                        System.out.println("Solo valores entre 1 y 2");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Valor ingresado no valido.");
+                teclado.next();
+            }
+        }
+    }
+    public static void getNumeroComprobate(int tipo){
+        Scanner teclado = new Scanner(System.in);
+        boolean salir = false;
+        int opcion = 1;
+        int num;
+        while (!salir) {
+            try {
+                System.out.println("\nIngrese el número de comprobante");
+                num = teclado.nextInt();
+                switch (opcion) {
+                    case 1:
+                        contabilidad.getComprobante(tipo, num);
+                        salir = true;
+                        break;
+
+                    default:
+                        System.out.println("Solo valores entre 1 y 2");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Valor ingresado no valido.");
+                teclado.next();
+            }
+        }
+    }
+
     // FIXME añadir control de excepciones
     public static String askNombre() {
         Scanner teclado = new Scanner(System.in);
