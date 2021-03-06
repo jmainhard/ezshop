@@ -31,7 +31,7 @@ public class Boleta extends Comprobante {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         productos = this.getCliente().getCanasta().getProductos();
         for (Producto p: productos) {
-            System.out.println("-> "+p.getNombre()+" / "+p.getPrecio()+" / " + p.getId());
+            System.out.println("-> "+ p.toString());
         }
         System.out.println("Total compra: $"+this.getTotal()+" IVA inc.");
         System.out.println("");

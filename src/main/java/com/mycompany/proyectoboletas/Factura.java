@@ -36,7 +36,7 @@ public class Factura extends Comprobante {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         productos = this.getCliente().getCanasta().getProductos();
         for (Producto p: productos) {
-            System.out.println("-> "+p.getNombre()+" / "+p.getPrecio()+" / " + p.getId());
+            System.out.println("-> "+ p.toString());
         }
         double iva = this.getTotal() * impuestoAplicado;
         System.out.println("Total Neto: $"+ (this.getTotal()-iva));
