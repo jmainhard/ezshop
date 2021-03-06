@@ -21,3 +21,4 @@ src/main/java/com/mycompany/proyectoboletas/Cliente.java
 
 /nbproject/
 .idea/uiDesigner.xml
+*.bak_014d

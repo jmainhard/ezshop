@@ -292,7 +292,6 @@ public class Main {
 
         return !confirmar;
     }
-    
 
     public static void buscarComprobante(){
         Scanner teclado = new Scanner(System.in);
@@ -329,6 +328,7 @@ public class Main {
             }
         }
     }
+    
     public static void getNumeroComprobate(int tipo){
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
@@ -354,7 +354,6 @@ public class Main {
         }
     }
 
-    // FIXME añadir control de excepciones
     public static String askNombre() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("\n   < Ingrese Nombre >");
