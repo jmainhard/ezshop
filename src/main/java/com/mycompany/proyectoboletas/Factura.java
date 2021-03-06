@@ -24,6 +24,7 @@ public class Factura extends Comprobante {
             getDateTimeInstance(DateFormat.LONG, DateFormat.MEDIUM).
             format(this.getFecha());
         
+        System.out.println("\n              -- COMPROBANTE --");
         System.out.println("---------------------------------------------");
         System.out.println("");
         System.out.println("Tipo: FACTURA");

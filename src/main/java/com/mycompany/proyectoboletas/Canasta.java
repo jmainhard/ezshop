@@ -82,7 +82,7 @@ public class Canasta {
     
     @Override
     public String toString() {
-        String strBuilder = "========== Productos en Canasta  ==========\n";
+        String strBuilder = "========== Productos en Canasta ==========\n";
         strBuilder +=       "          (NOMBRE / PRECIO / ID)\n\n";
         strBuilder = productos.stream().
                 map(p -> "-> "+ p.toString() + "\n").

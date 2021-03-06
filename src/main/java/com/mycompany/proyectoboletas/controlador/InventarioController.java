@@ -67,27 +67,14 @@ public class InventarioController implements Imprimible {
         return null;
     }
 
-    public boolean aumentarStock(Producto p) {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("jsons/inventario.json"));
-            ArrayList<Stock> objs = new Gson().fromJson(br, new TypeToken<List<Stock>>() {
-            }.getType());
-            
-            for (int i = 0; i < objs.size(); i++) {
-                if (objs.get(i).getId() == p.getId()) {
-                    objs.get(i).setCantidad(objs.get(i).getCantidad() + 1);
-                }
+    public boolean aumentarStock(int id) {
+        for (Stock stock : inventario) {
+            if (stock.getId() == id) {
+                stock.setCantidad(stock.getCantidad() + 1);
+                return true;
             }
-            
-            FileWriter writer;
-            writer = new FileWriter("jsons/inventario.json");
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(objs, writer);
-            writer.close();
-        } catch (IOException e) {
-            System.err.println("Error al manejar inventario "+ e);
         }
-        return true;
+        return false;
     }
 
   

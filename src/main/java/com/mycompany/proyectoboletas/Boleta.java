@@ -19,6 +19,7 @@ public class Boleta extends Comprobante {
                 getDateTimeInstance(DateFormat.LONG, DateFormat.MEDIUM).
                 format(this.getFecha());
         
+        System.out.println("\n              -- COMPROBANTE --");
         System.out.println("---------------------------------------------");
         System.out.println("");
         System.out.println("Tipo: BOLETA");

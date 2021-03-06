@@ -107,6 +107,7 @@ public class Main {
                         System.out.println(clientesHandler.toString());
                         break;
                     case 2: // Buscar cliente
+                        System.out.println("   Búsqueda de Cliente");
                         String rutCliente = askRut();
                         if (clientesHandler.existeCliente(rutCliente)) {
                             System.out.println("\n-- Cliente encontrado --");
@@ -116,6 +117,7 @@ public class Main {
                         }
                         break;
                     case 3: // Eliminar cliente
+                        System.out.println("   Remover Cliente");
                         if (clientesHandler.removeCliente(askRut())) {
                             System.out.println("\n-- Cliente removido exitosamente --");
                             clientesHandler.guardar();
@@ -133,6 +135,7 @@ public class Main {
             
     }
 
+    // TODO IMPORTANTE: FIXME, al quitar productos ya agregados a la canasta, recobrar su stock
     public static void menuVentas() {
         boolean salir;
         int opcion;
@@ -161,6 +164,7 @@ public class Main {
                     case 1: // Añadir productos
                         inventarioVolatil.imprimir();
                         
+                        System.out.println("   Añadir Producto");
                         int idProducto = askIdProducto();
                         boolean existe;
                         
@@ -183,7 +187,9 @@ public class Main {
                             
                             
                             if (agregado && stockReducido) {
+                                inventarioVolatil.imprimir();
                                 System.out.println("\n-- Producto Agregado a la Canasta --");
+                                System.out.println(clienteComprando.getCanasta());
                             } else {
                                 System.out.println("\n-- Producto no agregado --");
                             }
@@ -197,8 +203,12 @@ public class Main {
                                  throw new CanastaVaciaException("No hay productos para eliminar");
                              } else {
                                  System.out.println(clienteComprando.getCanasta());
-                                 if (clienteComprando.getCanasta().removeProducto(askIdProducto())) {
+                                 System.out.println("   Remover Producto");
+                                 int idProductoRemover = askIdProducto();
+                                 if (clienteComprando.getCanasta().removeProducto(idProductoRemover)) {
                                      System.out.println("\n-- Producto Removido --");
+                                     System.out.println(clienteComprando.getCanasta());
+                                     inventarioVolatil.aumentarStock(idProductoRemover);
                                  } else {
                                      System.out.println("\n-- Producto no removido --");
                                  }
@@ -268,14 +278,14 @@ public class Main {
     // FIXME añadir control de excepciones
     public static String askNombre() {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("\n< Ingrese Nombre Cliente >");
+        System.out.println("\n   < Ingrese Nombre >");
         return teclado.nextLine();
     }
     
     // FIXME añadir control de excepciones
     public static String askRut() {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("\n< Ingrese Rut Cliente >");
+        System.out.println("   < Ingrese Rut >");
         return teclado.next();
     }
     
@@ -286,7 +296,7 @@ public class Main {
         
         while (id < 1 || id > inventarioSize) {
             id = -1;
-            System.out.println("\n< Ingrese ID del Producto >");
+            System.out.println("   < Ingrese ID >");
             try {
                 id = teclado.nextInt();
             } catch (InputMismatchException e) {

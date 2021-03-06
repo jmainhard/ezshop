@@ -29,7 +29,6 @@ public class Cliente {
     private String rut;
     @SerializedName("Canasta")
     private Canasta canasta;
-//    @Expose // F expose, static permite ignorar el atributo al serializar
     private static HistorialCliente historial;
 
     public Cliente() {
@@ -58,13 +57,14 @@ public class Cliente {
         Comprobante comprobante;
         
         if (canasta.getProductos().isEmpty()) {
-            throw new CanastaVaciaException("Canasta sin productos");
+            throw new CanastaVaciaException("Canasta vacía");
         }
         
         if (!confirmarVenta()) {
             return false;
         }
         
+        System.out.println("   Ingresar Cliente");
         this.setRut(askRut());
         if (!clientesHandler.existeCliente(this.getRut())) {
             this.setNombre(askNombre());
@@ -80,7 +80,6 @@ public class Cliente {
         numComprobante.generarNumComprobante(comprobante);
         generarComprobanteJson(comprobante);
 
-        
         //Se añade a la contabilidad
         contabilidad.addComprobante(comprobante); // Añade al objeto
         addToHistory(contabilidad); // Genera el JSON
@@ -88,7 +87,6 @@ public class Cliente {
         // Asocia el historial de este cliente al comprobante
         updateCliente(comprobante);
         
-        System.out.println("\n              -- COMPROBANTE --");
         comprobante.imprimir();
         
         return true;
