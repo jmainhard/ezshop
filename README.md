@@ -9,6 +9,8 @@ Boletero de ferretería con salida por consola (Java)
     - Miércoles 17-febrero reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo  
     - Domingo 7-marzo reunión, presentación  
 
+---  
+
 - Planificación general Proyecto ✅
 - Diagrama UML VPP 🟨
 - Reparto de funcionalidades ✅
