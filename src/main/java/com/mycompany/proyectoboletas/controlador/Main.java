@@ -321,7 +321,7 @@ public class Main {
                         salir = true;
                         break;
                     default:
-                        System.out.println("Solo valores entre 1 y 2");
+                        System.out.println("Solo valores entre 1 y 3");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Valor ingresado no valido.");
