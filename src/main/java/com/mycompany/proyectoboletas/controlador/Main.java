@@ -180,9 +180,16 @@ public class Main {
                                 stockReducido = inventarioVolatil.reducirStock(idProducto);
                                 agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
                             } catch (StockInsuficienteException e) {
-                                System.out.println("Error: "+ e);
+                                System.err.println(
+                                        "Error: "+
+                                                e.getClass().getSimpleName()+
+                                                ": "+
+                                                e.getMessage()
+                                );
                             } catch (Exception e) {
-                                System.err.println("Error al agregar producto: "+ e);
+                                System.err.println(
+                                        "Error al agregar producto: "+ e
+                                );
                             }
                             
                             if (agregado && stockReducido) {
@@ -193,7 +200,6 @@ public class Main {
                                 System.out.println("\n-- Producto no agregado --");
                             }
                         }
-                        idProducto = -1;
                         salir = false;
                         break;
                     case 2: // Quitar productos 
@@ -213,8 +219,12 @@ public class Main {
                                  }
                              }
                         } catch (CanastaVaciaException e) {
-                            System.err.println("Error: "+ e.getMessage()+ " "+
-                                    e.getClass().getSimpleName());
+                            System.err.println(
+                                    "Error: "+
+                                            e.getClass().getSimpleName()+
+                                            ": "+
+                                            e.getMessage()
+                            );
                         } catch (Exception e) { 
                             System.err.println("Error: "+ e);
                         }
@@ -241,8 +251,12 @@ public class Main {
                                 inventarioHandler.guardar();
                             }
                         } catch (CanastaVaciaException e) {
-                            System.err.println("Error: "+ e.getMessage()+
-                                    " "+ e.getClass().getCanonicalName()); 
+                            System.err.println(
+                                    "Error: "+
+                                            e.getClass().getSimpleName()+
+                                            ": "+
+                                            e.getMessage()
+                            ); 
                         }
                         break;
                     case 5: // Salir

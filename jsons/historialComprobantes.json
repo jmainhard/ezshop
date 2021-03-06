@@ -469,6 +469,30 @@
         }
       },
       "Total Compra": 1500.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 65,
+      "Fecha": "Mar 6, 2021, 1:27:22 PM",
+      "Cliente": {
+        "Nombre Cliente": "asd",
+        "Rut": "123456-7",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 2000.0
     }
   ],
   "Historial Boletas": [

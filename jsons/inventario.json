@@ -1,12 +1,12 @@
 [
   {
-    "Cantidad": 2,
+    "Cantidad": 3,
     "ID Producto": 1,
     "Nombre Producto": "Martillo",
     "Precio": 1000.0
   },
   {
-    "Cantidad": 0,
+    "Cantidad": 3,
     "ID Producto": 2,
     "Nombre Producto": "Llave inglesa",
     "Precio": 1500.0
