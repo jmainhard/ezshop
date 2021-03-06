@@ -57,11 +57,13 @@ public class InventarioController implements Imprimible {
     
     public Producto getProducto(int id) throws StockInsuficienteException {
         for (Stock stockObj : inventario) {
-            if (stockObj.getCantidad() == 0) {
-                throw new StockInsuficienteException("NO HAY STOCK!!");
-            } else if (stockObj.getId() == id) {
-                return new Producto (stockObj.getId(), stockObj.getNombre(),
-                        stockObj.getPrecio());
+            if (stockObj.getId() == id) {
+                if (stockObj.getCantidad() == 0) {
+                    throw new StockInsuficienteException("NO HAY STOCK!!");
+                } else if (stockObj.getId() == id) {
+                    return new Producto (stockObj.getId(), stockObj.getNombre(),
+                            stockObj.getPrecio());
+                }
             }
         }
         return null;

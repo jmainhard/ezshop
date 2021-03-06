@@ -1,7 +1,6 @@
 package com.mycompany.proyectoboletas.controlador;
 
 import com.mycompany.proyectoboletas.*;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,11 +19,11 @@ public class Main {
         contabilidad.setComprobantesTotales();
         numComprobante.setComprobantes();
 
-        menuDePruebas();
+        menuPrincipal();
         
     }
     
-    public static void menuDePruebas() {
+    public static void menuPrincipal() {
         boolean repetir;
         boolean salir;
         int opcion;
@@ -135,10 +134,9 @@ public class Main {
             
     }
 
-    // TODO IMPORTANTE: FIXME, al quitar productos ya agregados a la canasta, recobrar su stock
     public static void menuVentas() {
         boolean salir;
-        int opcion;
+        int opcion, idProducto;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
         InventarioController inventarioVolatil = inventarioHandler;
@@ -165,7 +163,7 @@ public class Main {
                         inventarioVolatil.imprimir();
                         
                         System.out.println("   Añadir Producto");
-                        int idProducto = askIdProducto();
+                        idProducto = askIdProducto();
                         boolean existe;
                         
                         existe = inventarioVolatil.existeProducto(idProducto);
@@ -178,6 +176,7 @@ public class Main {
                             try {
                                 pdctoAgregado = inventarioVolatil.getProducto(idProducto);
                                 stockReducido = inventarioVolatil.reducirStock(idProducto);
+                                
                                 agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
                             } catch (StockInsuficienteException e) {
                                 System.err.println(
@@ -186,6 +185,7 @@ public class Main {
                                                 ": "+
                                                 e.getMessage()
                                 );
+                                e.printStackTrace();
                             } catch (Exception e) {
                                 System.err.println(
                                         "Error al agregar producto: "+ e
@@ -193,8 +193,14 @@ public class Main {
                             }
                             
                             if (agregado && stockReducido) {
+                                System.out.print(
+                                        "\n-- Inventario Actualizado --"
+                                );
                                 inventarioVolatil.imprimir();
-                                System.out.println("\n-- Producto Agregado a la Canasta --");
+                                
+                                System.out.println(
+                                        "\n-- Producto Agregado a la Canasta --"
+                                );
                                 System.out.println(clienteComprando.getCanasta());
                             } else {
                                 System.out.println("\n-- Producto no agregado --");
