@@ -138,7 +138,7 @@ public class Main {
         int opcion;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
-        Producto pdtoPrueba = new Producto(1, "PROD UNDEFINED", 9999);
+        InventarioController inventarioVolatil = inventarioHandler;
         
             do {
                 salir = false;
@@ -159,20 +159,21 @@ public class Main {
                 
                 switch (opcion) {
                     case 1: // Añadir productos
-                        inventarioHandler.imprimir();
+                        inventarioVolatil.imprimir();
                         
                         int idProducto = askIdProducto();
                         boolean existe;
                         
-                        existe = inventarioHandler.existeProducto(idProducto);
+                        existe = inventarioVolatil.existeProducto(idProducto);
                         
                         if (existe) {
                             boolean agregado = false;
+                            boolean stockReducido = false;
                             Producto pdctoAgregado;
                             
                             try {
-                                pdctoAgregado = inventarioHandler.getProducto(idProducto);
-                                inventarioHandler.reducirStock(idProducto);
+                                pdctoAgregado = inventarioVolatil.getProducto(idProducto);
+                                stockReducido = inventarioVolatil.reducirStock(idProducto);
                                 agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
                             } catch (StockInsuficienteException e) {
                                 System.out.println("Error: "+ e);
@@ -181,10 +182,13 @@ public class Main {
                             }
                             
                             
-                            if (agregado) {
+                            if (agregado && stockReducido) {
                                 System.out.println("\n-- Producto Agregado a la Canasta --");
+                            } else {
+                                System.out.println("\n-- Producto no agregado --");
                             }
                         }
+                        idProducto = -1;
                         salir = false;
                         break;
                     case 2: // Quitar productos 
@@ -224,13 +228,16 @@ public class Main {
                     case 4: // Hacer Venta
                         try {
                             salir = clienteComprando.hacerVenta();
-                            inventarioHandler.guardar();
+                            if (salir) {
+                                inventarioHandler.guardar();
+                            }
                         } catch (CanastaVaciaException e) {
                             System.err.println("Error: "+ e.getMessage()+
                                     " "+ e.getClass().getCanonicalName()); 
                         }
                         break;
                     case 5: // Salir
+                        inventarioVolatil.cargar();
                         salir = true;
                         break;
                     default:
@@ -273,10 +280,9 @@ public class Main {
     }
     
     public static int askIdProducto() {
-//        throw new UnsupportedOperationException("Implement InventarioController");
         int id = -1;
         Scanner teclado = new Scanner(System.in);
-        int inventarioSize = 3; // replace var with inventario.size
+        int inventarioSize = inventarioHandler.getInventario().size();
         
         while (id < 1 || id > inventarioSize) {
             id = -1;

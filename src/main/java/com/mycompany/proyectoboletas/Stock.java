@@ -6,10 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * @author Jorge M., Esteban E., Maximiliano C.
  */
 public class Stock extends Producto {
-//    @SerializedName("Producto")
-//    private Producto producto;
-
-    @SerializedName("Stock")
+    @SerializedName("Cantidad")
     private int cantidad;
 
     public Stock(int cantidad, int id, String nombre, double precio) {
@@ -17,14 +14,6 @@ public class Stock extends Producto {
         this.cantidad = cantidad;
     }
 
-    // Getters y Setters
-//    public Producto getProducto() {
-//        return producto;
-//    }
-//
-//    public void setProducto(Producto producto) {
-//        this.producto = producto;
-//    }
     public int getCantidad() {
         return cantidad;
     }
@@ -33,18 +22,20 @@ public class Stock extends Producto {
         this.cantidad = cantidad;
     }
 
-//    @Override
-//    public String toString() {
-//        String strBuilder;
-//        
-//        String pdctoNom = producto.getNombre()+ "\n";
-//        String pdctoPre = String.valueOf(producto.getPrecio()+ "\n");
-//        String pdctoCant = String.valueOf(cantidad)+ "\n";
-//        
-//        strBuilder = String.format("Producto: %17s", pdctoNom);
-//        strBuilder += String.format("Precio: %19s", pdctoPre);
-//        strBuilder += String.format("Stock: %20s", pdctoCant);
-//        
-//        return strBuilder;
-//    }
+    @Override
+    public String toString() {
+        String strBuilder;
+        
+        String pdctoId = super.getId()+ "\n";
+        String pdctoNom = super.getNombre()+ "\n";
+        String pdctoPre = "$" + String.valueOf((int) super.getPrecio()+ "\n");
+        String pdctoCant = String.valueOf(this.cantidad)+ "\n";
+        
+        strBuilder = String.format("ID: %24s", pdctoId);
+        strBuilder += String.format("Nombre: %20s", pdctoNom);
+        strBuilder += String.format("Precio: %20s", pdctoPre);
+        strBuilder += String.format("Cantidad disponible: %7s", pdctoCant);
+        
+        return strBuilder;
+    }
 }

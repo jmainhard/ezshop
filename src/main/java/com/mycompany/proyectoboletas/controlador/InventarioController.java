@@ -31,32 +31,19 @@ public class InventarioController implements Imprimible {
     @Override
     public String toString() {
         String strBuilder;
-        cargar();
+//        cargar(); // sólo si se desea mostrar por pantalla el objeto y fué modificado en runtime
         
         strBuilder = "\n========== Inventario de productos ==========\n";
+        strBuilder = inventario.stream().
+                map(p -> p.toString()+ "\n").
+                reduce(strBuilder, String::concat);
         
-    
-        return "asd";
+        return strBuilder;
     }
     
     @Override
     public void imprimir() {
-        JsonParser jsonParser = new JsonParser();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("jsons/inventario.json"));
-            JsonElement jsonElement = jsonParser.parse(br);
-            ArrayList<Stock> objs = new Gson().fromJson(jsonElement, new TypeToken<List<Stock>>() {
-            }.getType());
-            System.out.println("\n========== Inventario de productos ==========\n");
-            for (int i = 0; i < objs.size(); i++) {
-                System.out.println("ID: " + objs.get(i).getId());
-                System.out.println("Nombre: " + objs.get(i).getNombre());
-                System.out.println("Precio: $" + objs.get(i).getPrecio());
-                System.out.println("Cantidad disponible: " + objs.get(i).getCantidad()+ "\n");
-            }
-        } catch (IOException e) {
-            System.out.println("error al leer el archivo");
-        }
+        System.out.println(this.toString());
     }
     
     public boolean existeProducto(int id) {
@@ -103,14 +90,15 @@ public class InventarioController implements Imprimible {
         return true;
     }
 
-    ;
+  
     public boolean reducirStock(int id) throws StockInsuficienteException {
-        for (int i = 0; i < inventario.size(); i++) {
-            if (inventario.get(i).getId() == id) {
-                if (inventario.get(i).getCantidad() == 0) {
+        for (Stock stock : inventario) {
+            if (stock.getId() == id) {
+                if (stock.getCantidad() == 0) {
                     throw new StockInsuficienteException("NO HAY STOCK!!");
                 } else {
-                    inventario.get(i).setCantidad(inventario.get(i).getCantidad() - 1);
+                    int cantidad = stock.getCantidad();
+                    stock.setCantidad(cantidad - 1);
                     return true;
                 }
             }
@@ -136,6 +124,14 @@ public class InventarioController implements Imprimible {
             System.out.println("no se ha podido agregar el producto");
         }
 
+    }
+
+    public ArrayList<Stock> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(ArrayList<Stock> inventario) {
+        this.inventario = inventario;
     }
     
     public boolean guardar() {

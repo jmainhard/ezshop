@@ -311,6 +311,54 @@
         }
       },
       "Total Compra": 2500.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 55,
+      "Fecha": "Mar 5, 2021, 10:34:22 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 3500.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 57,
+      "Fecha": "Mar 5, 2021, 10:57:36 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 1500.0
     }
   ],
   "Historial Boletas": [
@@ -521,6 +569,174 @@
         }
       },
       "Total Compra": 0.0
+    },
+    {
+      "Numero Comprobante": 56,
+      "Fecha": "Mar 5, 2021, 10:51:31 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 45500.0
     }
   ]
 }

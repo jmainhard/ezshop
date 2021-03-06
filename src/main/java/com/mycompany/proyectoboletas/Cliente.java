@@ -58,7 +58,7 @@ public class Cliente {
         Comprobante comprobante;
         
         if (canasta.getProductos().isEmpty()) {
-//            throw new CanastaVaciaException("Canasta sin productos");
+            throw new CanastaVaciaException("Canasta sin productos");
         }
         
         if (!confirmarVenta()) {

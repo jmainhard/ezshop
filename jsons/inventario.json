@@ -1,12 +1,12 @@
 [
   {
-    "Stock": 4,
+    "Cantidad": 3,
     "ID Producto": 1,
     "Nombre Producto": "Martillo",
     "Precio": 1000.0
   },
   {
-    "Stock": 31,
+    "Cantidad": 2,
     "ID Producto": 2,
     "Nombre Producto": "Llave inglesa",
     "Precio": 1500.0
