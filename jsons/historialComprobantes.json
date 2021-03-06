@@ -1,6 +1,7 @@
 {
   "Historial Facturas": [
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 37,
       "Fecha": "Feb 28, 2021, 3:01:48 AM",
       "Cliente": {
@@ -29,6 +30,7 @@
       "Total Compra": 11500.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 38,
       "Fecha": "Feb 28, 2021, 3:02:11 AM",
       "Cliente": {
@@ -57,6 +59,7 @@
       "Total Compra": 11500.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 39,
       "Fecha": "Feb 28, 2021, 3:14:34 AM",
       "Cliente": {
@@ -85,6 +88,7 @@
       "Total Compra": 11500.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 40,
       "Fecha": "Feb 28, 2021, 3:16:13 AM",
       "Cliente": {
@@ -113,6 +117,7 @@
       "Total Compra": 11500.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 41,
       "Fecha": "Feb 28, 2021, 3:17:18 AM",
       "Cliente": {
@@ -141,6 +146,7 @@
       "Total Compra": 11500.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 42,
       "Fecha": "Mar 2, 2021, 12:42:03 AM",
       "Cliente": {
@@ -159,19 +165,12 @@
               "Precio": 9999.0
             }
           ]
-        },
-        "historial": {
-          "Rut": "20953304-9",
-          "Nombre": "Esteban Esparza",
-          "Fecha de registro": "Mar 2, 2021, 12:42:03 AM",
-          "ID Comprobantes asociados": [
-            0
-          ]
         }
       },
       "Total Compra": 19998.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 44,
       "Fecha": "Mar 2, 2021, 12:45:34 AM",
       "Cliente": {
@@ -185,19 +184,12 @@
               "Precio": 9999.0
             }
           ]
-        },
-        "historial": {
-          "Rut": "11111111",
-          "Nombre": "Joaquin",
-          "Fecha de registro": "Mar 2, 2021, 12:45:34 AM",
-          "ID Comprobantes asociados": [
-            0
-          ]
         }
       },
       "Total Compra": 9999.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 47,
       "Fecha": "Mar 2, 2021, 2:31:45 PM",
       "Cliente": {
@@ -231,23 +223,12 @@
               "Precio": 9999.0
             }
           ]
-        },
-        "historial": {
-          "Rut": "1234567-8",
-          "Nombre": "Douglas Adams",
-          "Fecha de registro": "Mar 1, 2021, 3:43:59 PM",
-          "ID Comprobantes asociados": [
-            0,
-            0,
-            0,
-            0,
-            0
-          ]
         }
       },
       "Total Compra": 49995.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 49,
       "Fecha": "Mar 2, 2021, 2:59:01 PM",
       "Cliente": {
@@ -255,19 +236,12 @@
         "Rut": "123456-7",
         "Canasta": {
           "Productos": []
-        },
-        "historial": {
-          "Rut": "123456-7",
-          "Nombre": "asd",
-          "Fecha de registro": "Mar 2, 2021, 2:59:01 PM",
-          "ID Comprobantes asociados": [
-            49
-          ]
         }
       },
       "Total Compra": 0.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 50,
       "Fecha": "Mar 2, 2021, 3:03:59 PM",
       "Cliente": {
@@ -291,6 +265,7 @@
       "Total Compra": 19998.0
     },
     {
+      "Impuesto aplicado": 0.0,
       "Numero Comprobante": 53,
       "Fecha": "Mar 2, 2021, 4:12:24 PM",
       "Cliente": {
@@ -312,6 +287,30 @@
         }
       },
       "Total Compra": 19998.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 54,
+      "Fecha": "Mar 5, 2021, 9:42:26 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 2500.0
     }
   ],
   "Historial Boletas": [
@@ -395,14 +394,6 @@
               "Precio": 9999.0
             }
           ]
-        },
-        "historial": {
-          "Rut": "209533049",
-          "Nombre": "Esteban",
-          "Fecha de registro": "Mar 2, 2021, 12:44:35 AM",
-          "ID Comprobantes asociados": [
-            0
-          ]
         }
       },
       "Total Compra": 29997.0
@@ -430,14 +421,6 @@
               "Nombre Producto": "PROD UNDEFINED",
               "Precio": 9999.0
             }
-          ]
-        },
-        "historial": {
-          "Rut": "11111222",
-          "Nombre": "rdfhf",
-          "Fecha de registro": "Mar 2, 2021, 12:49:58 AM",
-          "ID Comprobantes asociados": [
-            0
           ]
         }
       },
@@ -476,14 +459,6 @@
               "Nombre Producto": "PROD UNDEFINED",
               "Precio": 9999.0
             }
-          ]
-        },
-        "historial": {
-          "Rut": "766666666",
-          "Nombre": "Pedro",
-          "Fecha de registro": "Mar 2, 2021, 12:50:39 AM",
-          "ID Comprobantes asociados": [
-            0
           ]
         }
       },

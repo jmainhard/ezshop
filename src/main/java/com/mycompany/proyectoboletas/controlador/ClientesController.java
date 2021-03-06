@@ -3,6 +3,7 @@ package com.mycompany.proyectoboletas.controlador;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.Cliente;
 import com.mycompany.proyectoboletas.HistorialCliente;
+import com.mycompany.proyectoboletas.Imprimible;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -10,7 +11,7 @@ import java.util.Collection;
  * @author Jorge M.
  */
 
-public class ClientesController {
+public class ClientesController implements Imprimible {
     private static ListController<HistorialCliente> clientesHandler;
     private ArrayList<HistorialCliente> clientes;
     
@@ -68,12 +69,12 @@ public class ClientesController {
         return false;
     }
     
-    public void guardar() {
-        clientesHandler.guardarObjetos(clientes);
+    public boolean guardar() {
+        return clientesHandler.guardarObjetos(clientes);
     }
     
-    public ArrayList<HistorialCliente> cargar() {
-        return clientesHandler.cargarObjetos();
+    public void cargar() {
+        clientes = clientesHandler.cargarObjetos();
     }
 
     public ArrayList<HistorialCliente> getClientes() {
@@ -85,8 +86,8 @@ public class ClientesController {
     }
     
     public String toString() {
-        clientes = clientesHandler.cargarObjetos();
         String strBuilder;
+        cargar();
         
         strBuilder = "\n========== Clientes registrados ==========\n";
         strBuilder = clientes.stream().
@@ -94,6 +95,11 @@ public class ClientesController {
                 reduce(strBuilder, String::concat);
         
         return strBuilder;
+    }
+    
+    @Override
+    public void imprimir() {
+        System.out.println(this.toString());
     }
     
 }

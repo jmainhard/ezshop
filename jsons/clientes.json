@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "Rut": "1234567-8",
+    "Nombre": "Dummy Adams",
+    "Fecha de registro": "Mar 5, 2021, 9:42:26 PM",
+    "ID Comprobantes asociados": [
+      54
+    ]
+  }
+]

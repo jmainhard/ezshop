@@ -162,23 +162,18 @@ public class Main {
                         inventarioHandler.imprimir();
                         
                         int idProducto = askIdProducto();
-                        boolean existe, tieneStock;
+                        boolean existe;
                         
                         existe = inventarioHandler.existeProducto(idProducto);
                         
                         if (existe) {
                             boolean agregado = false;
-                            Producto pdctoCanasta;
-                            Producto pdctoInventario;
+                            Producto pdctoAgregado;
                             
                             try {
-                                pdctoInventario = inventarioHandler.getProducto(idProducto);
-                                
-                                pdctoCanasta = new Producto(pdctoInventario.getId()
-                                        , pdctoInventario.getNombre(),
-                                        pdctoInventario.getPrecio());
-                                
-                                agregado = clienteComprando.getCanasta().addProducto(pdctoCanasta);
+                                pdctoAgregado = inventarioHandler.getProducto(idProducto);
+                                inventarioHandler.reducirStock(idProducto);
+                                agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
                             } catch (StockInsuficienteException e) {
                                 System.out.println("Error: "+ e);
                             } catch (Exception e) {
@@ -192,15 +187,7 @@ public class Main {
                         }
                         salir = false;
                         break;
-                    case 2: // Quitar productos TODO implement InventarioController
-                        // Mostrar canasta
-                        // seleccionar por id
-                        // quitar
-//                        try {
-//                            throw new UnsupportedOperationException("Implement InventarioController");
-//                        } catch (UnsupportedOperationException e) {
-//                            System.err.println(e);
-//                        }
+                    case 2: // Quitar productos 
                          try {
                              if (clienteComprando.getCanasta().getProductos().isEmpty()) {
                                  throw new CanastaVaciaException("No hay productos para eliminar");
@@ -237,6 +224,7 @@ public class Main {
                     case 4: // Hacer Venta
                         try {
                             salir = clienteComprando.hacerVenta();
+                            inventarioHandler.guardar();
                         } catch (CanastaVaciaException e) {
                             System.err.println("Error: "+ e.getMessage()+
                                     " "+ e.getClass().getCanonicalName()); 
