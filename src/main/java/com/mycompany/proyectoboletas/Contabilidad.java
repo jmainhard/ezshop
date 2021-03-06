@@ -41,6 +41,36 @@ public class Contabilidad {
         this.boletasTotales = num.getBoletasTotales();
     }
 
+    public void getComprobante(int tipo, int num){
+        // 1 = Factura
+        if (tipo == 1){
+            boolean encontrado = false;
+            for (Comprobante comprobante: facturasTotales) {
+                if(comprobante.getNumComprobante() == num){
+                    System.out.println("Comprobante encontrado!");
+                    encontrado = true;
+                    comprobante.imprimir();
+                }
+            }
+            if (encontrado == false){
+                System.out.println("Comprobante no encontrado.");
+            }
+        }
+        // 2 = Boleta
+        if(tipo == 2){
+            boolean encontrado = false;
+            for (Comprobante comprobante: boletasTotales) {
+                if(comprobante.getNumComprobante() == num){
+                    System.out.println("Comprobante encontrado!");
+                    encontrado = true;
+                    comprobante.imprimir();
+                }
+            }
+            if (encontrado == false){
+                System.out.println("Comprobante no encontrado.");
+            }
+        }
+    }
 
     public ArrayList<Factura> getFacturasTotales() {
         return facturasTotales;
@@ -59,7 +89,7 @@ public class Contabilidad {
         }
     }
 
-    public void reporteMensual(){
+    public void reporteIngresos(){
         double ingresos = 0;
         int cont = 0;
         for(Factura f : facturasTotales){
@@ -72,7 +102,7 @@ public class Contabilidad {
             cont++;
         }
         System.out.println("Cantidad de ventas realizada: "+cont);
-        System.out.println("Los ingresos historicos son: $"+ingresos);
+        System.out.println("Los ingresos registrados son: $"+ingresos);
     }
 
 

@@ -42,7 +42,7 @@ public class MainPrueba {
 
 
         comprobante.imprimir();
-        contabilidad.reporteMensual();
+        contabilidad.reporteIngresos();
 
         
         
