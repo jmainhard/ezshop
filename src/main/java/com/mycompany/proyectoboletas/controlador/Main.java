@@ -9,10 +9,10 @@ import java.util.Scanner;
  */
 
 public class Main {
-    public static ClientesController clientesHandler = new ClientesController();
+    public static ClientesController clientesController = new ClientesController();
     public static Contabilidad contabilidad = new Contabilidad();
     public static NumComprobanteController numComprobante = new NumComprobanteController();
-    public static InventarioController inventarioHandler = new InventarioController();
+    public static InventarioController inventarioController = new InventarioController();
 
     public static void main(String[] args) {
 
@@ -103,23 +103,23 @@ public class Main {
                 
                 switch (opcion) {
                     case 1: // Lista de clientes
-                        System.out.println(clientesHandler.toString());
+                        System.out.println(clientesController.toString());
                         break;
                     case 2: // Buscar cliente
                         System.out.println("   Búsqueda de Cliente");
                         String rutCliente = askRut();
-                        if (clientesHandler.existeCliente(rutCliente)) {
+                        if (clientesController.existeCliente(rutCliente)) {
                             System.out.println("\n-- Cliente encontrado --");
-                            System.out.println(clientesHandler.getHistorialCliente(rutCliente));
+                            System.out.println(clientesController.getHistorialCliente(rutCliente));
                         } else {
                             System.out.println("\n-- Cliente no encontrado --");
                         }
                         break;
                     case 3: // Eliminar cliente
                         System.out.println("   Remover Cliente");
-                        if (clientesHandler.removeCliente(askRut())) {
+                        if (clientesController.removeCliente(askRut())) {
                             System.out.println("\n-- Cliente removido exitosamente --");
-                            clientesHandler.guardar();
+                            clientesController.guardar();
                         } else {
                             System.out.println("\n-- No se pudo eliminar este cliente --"); 
                         }
@@ -139,7 +139,7 @@ public class Main {
         int opcion, idProducto;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
-        InventarioController inventarioVolatil = inventarioHandler;
+        InventarioController inventarioVolatil = inventarioController;
         
             do {
                 salir = false;
@@ -253,7 +253,7 @@ public class Main {
                         try {
                             salir = clienteComprando.hacerVenta();
                             if (salir) {
-                                inventarioHandler.guardar();
+                                inventarioController.guardar();
                             }
                         } catch (CanastaVaciaException e) {
                             System.err.println(
@@ -308,7 +308,7 @@ public class Main {
     public static int askIdProducto() {
         int id = -1;
         Scanner teclado = new Scanner(System.in);
-        int inventarioSize = inventarioHandler.getInventario().size();
+        int inventarioSize = inventarioController.getInventario().size();
         
         while (id < 1 || id > inventarioSize) {
             id = -1;

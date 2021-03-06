@@ -1,31 +1,25 @@
 package com.mycompany.proyectoboletas.controlador;
 
 import com.mycompany.proyectoboletas.StockInsuficienteException;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.Imprimible;
 import com.mycompany.proyectoboletas.Producto;
 import com.mycompany.proyectoboletas.Stock;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @author Maximiliano C., Esteban E., Jorge M.
  */
 public class InventarioController implements Imprimible {
-    private static ListController<Stock> inventarioController;
+    private static ListController<Stock> inventarioHandler;
     private ArrayList<Stock> inventario; 
 
     public InventarioController() {
-        inventarioController = new ListController<>("inventario.json",
+        inventarioHandler = new ListController<>("inventario.json",
         new TypeToken<Collection<Stock>>(){});
-        inventario = inventarioController.cargarObjetos();
+        inventario = inventarioHandler.cargarObjetos();
     }
     
     @Override
@@ -126,11 +120,11 @@ public class InventarioController implements Imprimible {
      * @return {@code true} si fueron guardado con exito
      */
     public boolean guardar() {
-        return inventarioController.guardarObjetos(inventario);
+        return inventarioHandler.guardarObjetos(inventario);
     }
     
     public void cargar() {
-        inventario = inventarioController.cargarObjetos();
+        inventario = inventarioHandler.cargarObjetos();
     }
 
 }
