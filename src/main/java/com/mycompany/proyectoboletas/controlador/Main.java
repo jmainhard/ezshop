@@ -10,9 +10,10 @@ import java.util.Scanner;
  */
 
 public class Main {
-    private static final ClientesController clientesHandler = new ClientesController();
+    public static ClientesController clientesHandler = new ClientesController();
     public static Contabilidad contabilidad = new Contabilidad();
     public static NumComprobanteController numComprobante = new NumComprobanteController();
+    public static InventarioController inventarioHandler = new InventarioController();
 
     public static void main(String[] args) {
 
@@ -158,20 +159,36 @@ public class Main {
                 
                 switch (opcion) {
                     case 1: // Añadir productos
-                        // Mostrar inventario
-                        // seleccionar por id
-                        // agregar
-//                        try {
-//                            throw new UnsupportedOperationException("Implement InventarioController");
-//                        } catch (UnsupportedOperationException e) {
-//                            System.err.println(e);
-//                        }
-                        try {
-                            if (clienteComprando.getCanasta().addProducto(pdtoPrueba)) {
+                        inventarioHandler.imprimir();
+                        
+                        int idProducto = askIdProducto();
+                        boolean existe, tieneStock;
+                        
+                        existe = inventarioHandler.existeProducto(idProducto);
+                        
+                        if (existe) {
+                            boolean agregado = false;
+                            Producto pdctoCanasta;
+                            Producto pdctoInventario;
+                            
+                            try {
+                                pdctoInventario = inventarioHandler.getProducto(idProducto);
+                                
+                                pdctoCanasta = new Producto(pdctoInventario.getId()
+                                        , pdctoInventario.getNombre(),
+                                        pdctoInventario.getPrecio());
+                                
+                                agregado = clienteComprando.getCanasta().addProducto(pdctoCanasta);
+                            } catch (StockInsuficienteException e) {
+                                System.out.println("Error: "+ e);
+                            } catch (Exception e) {
+                                System.err.println("Error al agregar producto: "+ e);
+                            }
+                            
+                            
+                            if (agregado) {
                                 System.out.println("\n-- Producto Agregado a la Canasta --");
                             }
-                        } catch (Exception e) {
-                            System.out.println(e);
                         }
                         salir = false;
                         break;

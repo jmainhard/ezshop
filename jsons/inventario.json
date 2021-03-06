@@ -1,11 +1,14 @@
-[{
-        "Stock": 5,
-        "ID Producto": 0,
-        "Nombre Producto": "martillo",
-        "Precio": 1000.0
-    }, {
-        "Stock": 2,
-        "ID Producto": 1,
-        "Nombre Producto": "llave inglesa",
-        "Precio": 1500.0
-    }]
+[
+  {
+    "Stock": 4,
+    "ID Producto": 1,
+    "Nombre Producto": "Martillo",
+    "Precio": 1000.0
+  },
+  {
+    "Stock": 31,
+    "ID Producto": 2,
+    "Nombre Producto": "Llave inglesa",
+    "Precio": 1500.0
+  }
+]
