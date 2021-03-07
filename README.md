@@ -4,7 +4,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---
 
-[***Presentación***](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
+[***LINK Presentación***](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
 
    Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
@@ -14,7 +14,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---  
 
-- [X] Planificación general Proyecto ✅
+- Planificación general Proyecto ✅
 - Diagrama UML VPP 🟨
 - Reparto de funcionalidades ✅
 - Código ✅
