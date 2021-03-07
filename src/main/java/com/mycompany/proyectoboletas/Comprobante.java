@@ -38,9 +38,8 @@ public abstract class Comprobante implements Imprimible {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         productos = this.cliente.getCanasta().getProductos();
         for (Producto p: productos) {
-            this.total+=p.getPrecio();
+            this.total += p.getPrecio();
         }
-        //System.out.println("Total calculado");
     }
     
     public int getNumComprobante() {
