@@ -1,8 +1,6 @@
 # Proyecto aplicación POO marzo 2021  
 
-Boletero de ferretería con salida por consola (Java)
-
----
+Boletero de ferretería con salida por consola (Java)  
 
 [***LINK Presentación***](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
 
@@ -25,7 +23,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---  
 
-- **Clases Modelo
+- **Clases Modelo**
     - Cliente (Lado Vendedor) Funcionalidad venta  
         - // POSIBLE verificador de ruts  
         - updateInventario() -> al vender -> confirma -> genera comprobante -> imprime y guarda  
