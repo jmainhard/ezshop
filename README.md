@@ -1,10 +1,12 @@
 # Proyecto aplicación POO marzo 2021  
 
 Boletero de ferretería con salida por consola (Java)  
+Integrantes: 
+   - Maximiliano Campos
+   - Esteban Esparza
+   - Jorge Mainhard
 
 ---
-
-[**LINK Presentación**](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
 
    Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
