@@ -18,8 +18,15 @@ public class Main {
 
         contabilidad.setComprobantesTotales();
         numComprobante.setComprobantes();
-
+        
+        System.out.printf("%n%25s%n", "Hola!");
+        System.out.println("> Ingrese opciones con las teclas numéricas <\n");
+        
+        System.out.printf("%35s", "| Boletero de Ferretería |");
+        
         menuPrincipal();
+        
+        System.out.printf("%27s%n", "Gracias! :)");
         
     }
     
@@ -34,8 +41,7 @@ public class Main {
             do {
                 salir = false;
                 opcion = -1;
-                System.out.println("\nMenu de Ferretería [Beta]");
-                System.out.println("------------< >------------");
+                System.out.println("\n------------< Menu Principal >------------");
                 System.out.println("1 - Nueva Venta");
                 System.out.println("2 - Buscar Comprobante");
                 System.out.println("3 - Reporte de ingresos");

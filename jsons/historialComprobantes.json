@@ -512,6 +512,80 @@
         }
       },
       "Total Compra": 1000.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 72,
+      "Fecha": "Mar 6, 2021, 9:19:58 PM",
+      "Cliente": {
+        "Nombre Cliente": "Dummy Adams",
+        "Rut": "1234567-8",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 12500.0
     }
   ],
   "Historial Boletas": [
