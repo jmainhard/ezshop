@@ -21,9 +21,11 @@ Boletero de ferretería con salida por consola (Java)
 - 2 Excepciones personalizadas (2 / 2 mínimo pauta) ✅
 - Tests (2 / 2 mínimo pauta) ✅
 - Revisión 
-- Presentación 
+- Presentación
 
-- Clases Modelo
+---  
+
+- **Clases Modelo
     - Cliente (Lado Vendedor) Funcionalidad venta  
         - // POSIBLE verificador de ruts  
         - updateInventario() -> al vender -> confirma -> genera comprobante -> imprime y guarda  
