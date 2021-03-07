@@ -1,17 +1,20 @@
 # Proyecto aplicación POO marzo 2021  
 
-Boletero de ferretería con salida por consola (Java)  
+Boletero de ferretería con salida por consola (Java)
 
 ---
+
+[***Presentación***](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
 
    Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
     - Miércoles 17-febrero reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo  
-    - Domingo 7-marzo reunión, presentación  
+    - Domingo 7-marzo reunión, presentación
+   Presentación:
 
 ---  
 
-- Planificación general Proyecto ✅
+- [ ] Planificación general Proyecto ✅
 - Diagrama UML VPP 🟨
 - Reparto de funcionalidades ✅
 - Código ✅
