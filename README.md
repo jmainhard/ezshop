@@ -2,7 +2,9 @@
 
 Boletero de ferretería con salida por consola (Java)  
 
-[***LINK Presentación***](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
+[**LINK Presentación**](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)
+
+---  
 
    Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
@@ -12,16 +14,41 @@ Boletero de ferretería con salida por consola (Java)
 
 ---  
 
-- Planificación general Proyecto ✅
-- Diagrama UML VPP 🟨
-- Reparto de funcionalidades ✅
-- Código ✅
-- 2 Excepciones personalizadas (2 / 2 mínimo pauta) ✅
-- Tests (2 / 2 mínimo pauta) ✅
-- Revisión 
-- Presentación
+##### Hitos
+   - Planificación general Proyecto ✅
+   - Diagrama UML VPP ✅
+   - Reparto de funcionalidades ✅
+   - Código ✅
+   - 2 Excepciones personalizadas (2 / 2 mínimo pauta) ✅
+   - Tests (2 / 2 mínimo pauta) ✅
+   - Revisión ✅
+   - Presentación 🟨
+
+---
+
+
+##### Pauta Presentación 
+
+Tiempo por grupo 12 min + 3 para preguntas
+     
+
+##### Pauta Proyecto 
+La solución debe contener al menos:
+   - 1 Clase de herencia
+   - 1 Clase Abstracta
+   - 1 Interface
+   - 1 Relación de Agregación
+   - 1 Relación de Composición
+   - 1 Relación de Dependencia   
+  
+Adicionalmente debe contener los siguientes contenidos:
+   - Pruebas Unitarias para al menos 2 funcionalidades
+   - Programación funcional cada vez que se requiera trabajar con listas.
+   - Implementar en su solución al menos 2 excepciones.
 
 ---  
+
+##### Planificación clases
 
 - **Clases Modelo**
     - Cliente (Lado Vendedor) Funcionalidad venta  
@@ -40,7 +67,7 @@ Boletero de ferretería con salida por consola (Java)
         - Reporta -> ingresos.json (Json archivo) 
 
 
-- Clases Controller
+- **Clases Controller**
     - InventarioController  
         - inventario.json (Json), almacena objetos de tipo Stock  
 
