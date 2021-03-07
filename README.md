@@ -14,11 +14,11 @@ Boletero de ferretería con salida por consola (Java)
 - Planificación general Proyecto ✅
 - Diagrama UML VPP 🟨
 - Reparto de funcionalidades ✅
-- Código (Escribir testeos si surgen) 🟨
+- Código ✅
 - 2 Excepciones personalizadas (2 / 2 mínimo pauta) ✅
-- Tests (1 / 2 mínimo pauta) 🟨
-- Revisión
-- Presentación
+- Tests (2 / 2 mínimo pauta) ✅
+- Revisión 
+- Presentación 
 
 - Clases Modelo
     - Cliente (Lado Vendedor) Funcionalidad venta  
@@ -33,14 +33,13 @@ Boletero de ferretería con salida por consola (Java)
         - Factura extends  
     - Canasta  
         - addProducto/removeProducto  
+    - Contabilidad
+        - Reporta -> ingresos.json (Json archivo) 
 
 
 - Clases Controller
     - InventarioController  
         - inventario.json (Json), almacena objetos de tipo Stock  
-
-    - Contabilidad
-        - Reporta -> ingresos.json (Json archivo) 
 
     - ClientesController  
         - clientes.json (Json), almacena objetos de tipo HistorialCliente
@@ -52,5 +51,3 @@ Boletero de ferretería con salida por consola (Java)
             - Reporte de ingresos ✅
             - Vista de Clientes ✅
             - Salir ✅
-
-
