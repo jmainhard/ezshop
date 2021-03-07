@@ -19,6 +19,9 @@ public class Main {
         contabilidad.setComprobantesTotales();
         numComprobante.setComprobantes();
         
+//        inventarioController.nuevoProducto(askNombre(), 1993, 43);
+        
+        
         System.out.printf("%n%25s%n", "Hola!");
         System.out.println("> Ingrese opciones con las teclas numéricas <\n");
         
@@ -46,7 +49,8 @@ public class Main {
                 System.out.println("2 - Buscar Comprobante");
                 System.out.println("3 - Reporte de ingresos");
                 System.out.println("4 - Menu Clientes");
-                System.out.println("5 - Salir");
+                System.out.println("5 - Aumentar stock de un producto");
+                System.out.println("6 - Salir");
                 
                 try {
                     opcion = teclado.nextInt();
@@ -73,6 +77,16 @@ public class Main {
                         salir = false;
                         break;
                     case 5:
+                        System.out.println("\n-- Producto a aumentar --");
+                        if ( inventarioController.aumentarStock(askIdProducto())) {
+                            inventarioController.guardar();
+                            System.out.println("-- Aumentado con éxito --");
+                        } else {
+                            System.out.println("No se pudo aumentar el stock");
+                        }
+                        salir = false;
+                        break;
+                    case 6:
                         salir = true;
                         break;
                     default:
