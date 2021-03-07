@@ -2,9 +2,9 @@
 
 Boletero de ferretería con salida por consola (Java)  
 
-[**LINK Presentación**](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)
+---
 
----  
+[**LINK Presentación**](https://docs.google.com/presentation/d/1I5EQ86TiMiDpk-DpyJEOj4hgxOGv0--WW2y1cKNZm5g/edit?usp=sharing)  
 
    Reuniones:  
     - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
@@ -14,7 +14,7 @@ Boletero de ferretería con salida por consola (Java)
 
 ---  
 
-##### Hitos
+#### Hitos
    - Planificación general Proyecto ✅
    - Diagrama UML VPP ✅
    - Reparto de funcionalidades ✅
@@ -27,12 +27,17 @@ Boletero de ferretería con salida por consola (Java)
 ---
 
 
-##### Pauta Presentación 
+#### Pauta Presentación 
 
 Tiempo por grupo 12 min + 3 para preguntas
-     
+   - Presentación de integrantes y nombre aplicación
+   - Contexto/Problema en que se desenvuelve la aplicación
+   - Nombrar funcionalidades que su solución implementó
+   - Diagrama de clases
+   - Mostrar pruebas unitarias, Excepciones y algoritmos "funcionales" implementados
+   - Demostración de la aplicación
 
-##### Pauta Proyecto 
+#### Pauta Proyecto 
 La solución debe contener al menos:
    - 1 Clase de herencia
    - 1 Clase Abstracta
@@ -48,7 +53,7 @@ Adicionalmente debe contener los siguientes contenidos:
 
 ---  
 
-##### Planificación clases
+#### Planificación clases
 
 - **Clases Modelo**
     - Cliente (Lado Vendedor) Funcionalidad venta  
