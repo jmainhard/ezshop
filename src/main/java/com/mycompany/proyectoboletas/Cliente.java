@@ -191,7 +191,7 @@ public class Cliente {
     //JSON SERIALIZER
     //Genera JSON de comprobante
     public static void generarComprobanteJson(Comprobante comprobante){
-        String path = "jsons/comprobante-"+comprobante.getNumComprobante()+".json";
+        String path = "jsons/comprobantes/comprobante-"+comprobante.getNumComprobante()+".json";
 
         FileWriter writer;
         try {
