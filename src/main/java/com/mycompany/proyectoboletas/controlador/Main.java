@@ -109,7 +109,7 @@ public class Main {
                 
                 switch (opcion) {
                     case 1: // Lista de clientes
-                        System.out.println(clientesController.toString());
+                        clientesController.imprimir();
                         break;
                     case 2: // Buscar cliente
                         System.out.println("   Búsqueda de Cliente");

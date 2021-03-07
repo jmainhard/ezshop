@@ -85,6 +85,7 @@ public class ClientesController implements Imprimible {
         this.clientes = clientes;
     }
     
+    @Override
     public String toString() {
         String strBuilder;
         cargar();
