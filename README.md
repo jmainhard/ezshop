@@ -6,7 +6,7 @@ Colaboradores originales:
    - Esteban Esparza
    - Jorge Mainhard
 
-Este proyecto fue iniciado y desarrollado durante gran parte enero de 2021 como parte de una
+Este proyecto fue iniciado y desarrollado durante febrero de 2021 como parte de una
 evaluación académica.  
 [>> Repositorio disponible en GitHub <<](https://github.com/Esteb4nx/proyectoBoletas)
 
