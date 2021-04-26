@@ -1,22 +1,21 @@
-# Proyecto aplicación POO marzo 2021  
+# Ex Proyecto aplicación POO marzo 2021
 
 Boletero de ferretería con salida por consola (Java)  
-Integrantes: 
+Colaboradores originales: 
    - Maximiliano Campos
    - Esteban Esparza
    - Jorge Mainhard
 
+Este proyecto fue iniciado y desarrollado durante gran parte enero de 2021 como parte de una
+evaluación académica.  
+[>> Repositorio disponible en GitHub <<](https://github.com/Esteb4nx/proyectoBoletas)
+
+Continuación del proyecto por: Jorge Mainhard   
+retomado: 25-04-2021  
+
 ---
 
-   Reuniones:  
-    - Lunes 8-febrero reunión, Reparto de funcionalidades, dependencias entorno de trabajo  
-    - Miércoles 17-febrero reunión, cambios en la lógica del inventario del proyecto, ubicación de jsons y manejo de comprobantes.json en un archivo  
-    - Domingo 7-marzo reunión, presentación
-   Presentación:
-
----  
-
-#### Hitos
+### Hitos alcanzados
    - Planificación general Proyecto ✅
    - Diagrama UML VPP ✅
    - Reparto de funcionalidades ✅
@@ -28,19 +27,12 @@ Integrantes:
 
 ---
 
+### MIGRANDO: incluir pautas, detalles del proyecto en su continuación, detalles importantes para la colaboración, etc.
 
-#### Pauta Presentación 
+---
 
-Tiempo por grupo 12 min + 3 para preguntas
-   - Presentación de integrantes y nombre aplicación
-   - Contexto/Problema en que se desenvuelve la aplicación
-   - Nombrar funcionalidades que su solución implementó
-   - Diagrama de clases
-   - Mostrar pruebas unitarias, Excepciones y algoritmos "funcionales" implementados
-   - Demostración de la aplicación
-
-#### Pauta Proyecto 
-La solución debe contener al menos:
+#### Características mínimas
+La solución contiene al menos:
    - 1 Clase de herencia
    - 1 Clase Abstracta
    - 1 Interface
@@ -48,10 +40,10 @@ La solución debe contener al menos:
    - 1 Relación de Composición
    - 1 Relación de Dependencia   
   
-Adicionalmente debe contener los siguientes contenidos:
+Adicionalmente cumple con los siguientes contenidos:
    - Pruebas Unitarias para al menos 2 funcionalidades
-   - Programación funcional cada vez que se requiera trabajar con listas.
-   - Implementar en su solución al menos 2 excepciones.
+   - Programación funcional cada vez que se requiere trabajar con listas.
+   - Al menos 2 excepciones.
 
 ---  
 
