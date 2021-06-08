@@ -1,53 +1,36 @@
-# Ex Proyecto aplicación POO marzo 2021
+# ProyectoBoletasFX
 
-Boletero de ferretería con salida por consola (Java)  
-Colaboradores originales: 
-   - Maximiliano Campos
-   - Esteban Esparza
-   - Jorge Mainhard
+Boletero de ferretería con salida por consola (Java)
 
-Este proyecto fue iniciado y desarrollado durante febrero de 2021 como parte de una
-evaluación académica.  
+Este proyecto es una continuación de ProyectoBoletas  
 [>> Repositorio disponible en GitHub <<](https://github.com/Esteb4nx/proyectoBoletas)
 
-Continuación del proyecto por: Jorge Mainhard   
-retomado: 25-04-2021  
+---
+
+### Este repo:
+La continuación del proyecto tiene como fin aplicar teoría de TDD, refactoring, calidad del código y documentación.
+
+No se descarta la incorporación de nuevas funcionalidades aunque no es objetivo prioritario
 
 ---
 
-### Hitos alcanzados
-   - Planificación general Proyecto ✅
-   - Diagrama UML VPP ✅
-   - Reparto de funcionalidades ✅
-   - Código ✅
-   - 2 Excepciones personalizadas (2 / 2 mínimo pauta) ✅
-   - Tests (2 / 2 mínimo pauta) ✅
-   - Revisión ✅
-   - Presentación ✅
-
----
-
-### MIGRANDO: incluir pautas, detalles del proyecto en su continuación, detalles importantes para la colaboración, etc.
-
----
-
-#### Características mínimas
+#### Características del proyecto
 La solución contiene al menos:
-   - 1 Clase de herencia
-   - 1 Clase Abstracta
-   - 1 Interface
-   - 1 Relación de Agregación
-   - 1 Relación de Composición
-   - 1 Relación de Dependencia   
+- 1 Clase de herencia
+- 1 Clase Abstracta
+- 1 Interface
+- 1 Relación de Agregación
+- 1 Relación de Composición
+- 1 Relación de Dependencia   
   
-Adicionalmente cumple con los siguientes contenidos:
-   - Pruebas Unitarias para al menos 2 funcionalidades
-   - Programación funcional cada vez que se requiere trabajar con listas.
-   - Al menos 2 excepciones.
+Adicionalmente cumple con los siguientes características:
+- Pruebas Unitarias para al menos 2 funcionalidades
+- Programación funcional cada vez que se requiere trabajar con listas.
+- Al menos 2 excepciones.
 
 ---  
 
-#### Planificación clases
+#### Clases
 
 - **Clases Modelo**
     - Cliente (Lado Vendedor) Funcionalidad venta  
@@ -80,3 +63,12 @@ Adicionalmente cumple con los siguientes contenidos:
             - Reporte de ingresos ✅
             - Vista de Clientes ✅
             - Salir ✅
+
+---
+Colaboradores originales:
+- Maximiliano Campos
+- Esteban Esparza
+- Jorge Mainhard
+
+Continuación del proyecto por: Jorge Mainhard   
+retomado: 25-04-2021  

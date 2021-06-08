@@ -1,4 +1,34 @@
 {
-  "Historial Facturas": [],
+  "Historial Facturas": [
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 1,
+      "Fecha": "Jun 8, 2021, 4:15:10 PM",
+      "Cliente": {
+        "Nombre Cliente": "Jorge Mainhard",
+        "Rut": "20794270-7",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            },
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            },
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 8970.0
+    }
+  ],
   "Historial Boletas": []
 }

@@ -6,76 +6,73 @@ import com.mycompany.proyectoboletas.Cliente;
 import com.mycompany.proyectoboletas.Producto;
 import java.util.ArrayList;
 import java.util.Collection;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
  * @author Jorge M.
+ * FIXME: Test no debiera modificar archivos
  */
 public class ListControllerTest {
-    ListController<Cliente> listHandler = new ListController("clientesTest.json", new TypeToken<Collection<Cliente>>(){});
-    ArrayList<Cliente> objetosCliente = new ArrayList<>();
+    static ListController<Cliente> listHandler;
+    static ArrayList<Cliente> clientList;
     String jsonText;
-    
-    public ListControllerTest() {
-    }
-    
+
+    Cliente cliente_1;
+    Cliente cliente_2;
+    Producto producto_1;
+    Producto producto_2;
+    Producto producto_3;
+
     @BeforeAll
-    public static void setUpClass() {
+    static void beforeAll() {
+        listHandler  = new ListController("clientesTest.json", new TypeToken<Collection<Cliente>>(){});
     }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
+
     @BeforeEach
     public void setUp() {
-        Cliente cliente1 = new Cliente("Cliente Default 1", "111111-1");
-        Cliente cliente2 = new Cliente("Cliente Default 2", "222222-2");
-        Producto producto1 = new Producto(1, "Producto Default 1", 19990);
-        Producto producto2 = new Producto(1, "Producto Default 2", 37000);
-        Producto producto3 = new Producto(1, "Producto Default 3", 450000);
+        clientList = new ArrayList<>();
+        cliente_1 = new Cliente("Cliente Default 1", "111111-1");
+        cliente_2= new Cliente("Cliente Default 2", "222222-2");
+        producto_1 = new Producto(1, "Producto Default 1", 19990);
+        producto_2 = new Producto(1, "Producto Default 2", 37000);
+        producto_3 = new Producto(1, "Producto Default 3", 450000);
+
+        cliente_1.getCanasta().addProducto(producto_1);
+        cliente_1.getCanasta().addProducto(producto_2);
+        cliente_1.getCanasta().addProducto(producto_3);
         
+        cliente_2.getCanasta().addProducto(producto_1);
+        cliente_2.getCanasta().addProducto(producto_2);
+        cliente_2.getCanasta().addProducto(producto_3);
         
-        cliente1.getCanasta().addProducto(producto1);
-        cliente1.getCanasta().addProducto(producto2);
-        cliente1.getCanasta().addProducto(producto3);
-        
-        cliente2.getCanasta().addProducto(producto1);
-        cliente2.getCanasta().addProducto(producto2);
-        cliente2.getCanasta().addProducto(producto3);
-        
-        objetosCliente.add(cliente1);
-        objetosCliente.add(cliente2);
-        objetosCliente.add(cliente2);
+        clientList.add(cliente_1);
+        clientList.add(cliente_2);
+        clientList.add(cliente_2);
     }
     
     @AfterEach
     public void tearDown() {
+        cliente_1 = null;
+        cliente_2 = null;
+        producto_1 = null;
+        producto_2 = null;
+        producto_3 = null;
+        clientList.clear();
     }
 
-    /**
-     * Test de método guardarObjetos, clase ListController.
-     */
     @Test
     public void testGuardarObjetos() {
-        System.out.println("guardarObjetos");
-        assertTrue(listHandler.guardarObjetos(objetosCliente));
+        assertTrue(listHandler.guardarObjetos(clientList));
     }
 
-    /**
-     * Test de método cargarObjetos, clase ListController.
-     */
     @Test
     public void testCargarObjetos() {
-        System.out.println("cargarObjetos");
         Gson gson = new Gson();
-        String jsonString = gson.toJson(objetosCliente);
+        String jsonString = gson.toJson(clientList);
         
         ArrayList esperado = gson.fromJson(jsonString, new TypeToken<Collection<Cliente>>(){}.getType());
         ArrayList obtenido = listHandler.cargarObjetos();
