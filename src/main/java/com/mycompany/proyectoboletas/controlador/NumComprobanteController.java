@@ -3,7 +3,7 @@ package com.mycompany.proyectoboletas.controlador;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import com.mycompany.proyectoboletas.Comprobante;
+import com.mycompany.proyectoboletas.modelo.Comprobante;
 
 import java.io.*;
 
@@ -15,8 +15,6 @@ public class NumComprobanteController {
     private int comprobantes;
 
     public NumComprobanteController() {
-
-
     }
 
     public void setComprobantes() {

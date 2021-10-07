@@ -1,9 +1,9 @@
 package com.mycompany.proyectoboletas.controlador;
 
 import com.google.gson.reflect.TypeToken;
-import com.mycompany.proyectoboletas.Cliente;
-import com.mycompany.proyectoboletas.HistorialCliente;
-import com.mycompany.proyectoboletas.Imprimible;
+import com.mycompany.proyectoboletas.modelo.Cliente;
+import com.mycompany.proyectoboletas.modelo.HistorialCliente;
+import com.mycompany.proyectoboletas.modelo.Imprimible;
 import java.util.ArrayList;
 import java.util.Collection;
 

@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import com.mycompany.proyectoboletas.controlador.NumComprobanteController;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -79,7 +77,7 @@ public class Contabilidad {
     public ArrayList<Boleta> getBoletasTotales() {
         return boletasTotales;
     }
-    //Añade un comprobante al historial, separa por tipo (FACTURA O BOLETA)
+    // Añade un comprobante al historial, separa por tipo (FACTURA O BOLETA)
     public void addComprobante(Comprobante comprobante){
         if (comprobante.getClass() == Factura.class){
             facturasTotales.add((Factura) comprobante);

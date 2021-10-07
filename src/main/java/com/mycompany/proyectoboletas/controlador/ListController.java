@@ -20,7 +20,7 @@ public class ListController<E> {
 
     /**
      * @param archivoJson archivo json con los objetos de esta lista
-     * @param collectionType typetoken con el tipo de colección de esta lista
+     * @param collectionType {@code TypeToken} del tipo de colección de esta lista
      */    
     public ListController(String archivoJson, TypeToken<Collection<E>> collectionType) {
         this.archivoJson = archivoJson;

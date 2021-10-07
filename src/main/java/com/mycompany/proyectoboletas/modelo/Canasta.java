@@ -1,4 +1,4 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 public class Canasta {
-    //Nombres Serializados para dar limpieza al JSON
+    // Nombres Serializados para dar limpieza al JSON
     @SerializedName("Productos")
     private ArrayList<Producto> productos;
         
@@ -17,7 +17,7 @@ public class Canasta {
     }
     
     public Canasta(ArrayList<Producto> productos) {
-        this.productos = productos;    
+        this.productos = productos;
     }
     
     public boolean addProducto(Producto p) {
@@ -38,14 +38,12 @@ public class Canasta {
         } catch (Exception e) {
             System.err.println(e + ": Error al intentar añadir producto");
         }
-        
         return false;
     }
     
     public boolean removeProducto(int id) {
         try {
             for (Producto producto : productos) {
-                // existeProducto
                 if (producto.getId() == id) {
                     return productos.remove(producto);
                 }
@@ -55,7 +53,6 @@ public class Canasta {
         } catch (Exception e) {
             System.err.println(e + ": Error al intentar eliminar producto");
         }
-        
         return false;
     }
     

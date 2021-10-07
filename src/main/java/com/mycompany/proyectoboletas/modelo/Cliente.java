@@ -1,9 +1,10 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.*;
 import com.mycompany.proyectoboletas.controlador.ClientesController;
+import com.mycompany.proyectoboletas.utilidades.CanastaVaciaException;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -50,7 +51,7 @@ public class Cliente {
      * @return {@code true} si la venta fué realizada con éxito, {@code false}
      * caso contrario.
      * 
-     * @throws CanastaVaciaException 
+     * @throws CanastaVaciaException
      */
     public boolean hacerVenta() throws CanastaVaciaException {
         ClientesController clientesHandler = new ClientesController();
@@ -208,7 +209,8 @@ public class Cliente {
         }
 
     }
-    //Añade a contabilidad
+
+    // Añade a contabilidad
     public static void addToHistory(Contabilidad contabilidad){
         String path = "jsons/historialComprobantes.json";
 

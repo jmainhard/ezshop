@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
+import com.mycompany.proyectoboletas.modelo.*;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,15 +17,8 @@ import java.util.ArrayList;
  */
 public class ComprobanteTest {
     public static ArrayList<Comprobante> comprobantes = new ArrayList<>();
+
     public ComprobanteTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
     }
     
     @BeforeEach
@@ -59,24 +53,18 @@ public class ComprobanteTest {
         comprobante2.calcTotal();
         comprobantes.add(comprobante1);
         comprobantes.add(comprobante2);
-
     }
     
     @AfterEach
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
+
     @Test
     @RepeatedTest(5)
     public void TestCalcTotal(){
-
         assertEquals(comprobantes.get(0).getTotal(),11500);
         assertEquals(comprobantes.get(1).getTotal(),12500);
-        //assertEquals(comprobantes.get(0).getTotal(),11500);
-        //assertEquals(comprobantes.get(1).getTotal(),12500);
 
     }
 }

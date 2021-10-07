@@ -1,4 +1,4 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 import com.google.gson.annotations.SerializedName;
 import java.text.DateFormat;

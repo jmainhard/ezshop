@@ -1,10 +1,10 @@
 package com.mycompany.proyectoboletas.controlador;
 
-import com.mycompany.proyectoboletas.StockInsuficienteException;
+import com.mycompany.proyectoboletas.utilidades.StockInsuficienteException;
 import com.google.gson.reflect.TypeToken;
-import com.mycompany.proyectoboletas.Imprimible;
-import com.mycompany.proyectoboletas.Producto;
-import com.mycompany.proyectoboletas.Stock;
+import com.mycompany.proyectoboletas.modelo.Imprimible;
+import com.mycompany.proyectoboletas.modelo.Producto;
+import com.mycompany.proyectoboletas.modelo.Stock;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,12 +26,8 @@ public class InventarioController implements Imprimible {
     public String toString() {
         String strBuilder;
 //        cargar(); // sólo si se desea mostrar por pantalla el objeto y fué modificado en runtime
-        
         strBuilder = "\n========== Inventario de productos ==========\n";
-        strBuilder = inventario.stream().
-                map(p -> p.toString()+ "\n").
-                reduce(strBuilder, String::concat);
-        
+        strBuilder = inventario.stream().map(p -> p.toString()+ "\n").reduce(strBuilder, String::concat);
         return strBuilder;
     }
     

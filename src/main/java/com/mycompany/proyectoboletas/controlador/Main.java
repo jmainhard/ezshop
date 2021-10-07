@@ -1,6 +1,9 @@
 package com.mycompany.proyectoboletas.controlador;
 
-import com.mycompany.proyectoboletas.*;
+import com.mycompany.proyectoboletas.modelo.*;
+import com.mycompany.proyectoboletas.utilidades.CanastaVaciaException;
+import com.mycompany.proyectoboletas.utilidades.StockInsuficienteException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

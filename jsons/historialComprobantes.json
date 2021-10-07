@@ -28,6 +28,75 @@
         }
       },
       "Total Compra": 8970.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 2,
+      "Fecha": "Jun 17, 2021, 2:18:49 PM",
+      "Cliente": {
+        "Nombre Cliente": "Jorge Mainhard",
+        "Rut": "20794270-7",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            },
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 12990.0
     }
   ],
   "Historial Boletas": []

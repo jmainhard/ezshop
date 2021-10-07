@@ -1,4 +1,4 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 /**
  * @author Maximiliano C., Esteban E., Jorge M.

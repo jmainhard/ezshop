@@ -1,4 +1,4 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 import com.google.gson.annotations.SerializedName;
 import java.text.DateFormat;
@@ -9,7 +9,7 @@ import java.util.Date;
  * @author Esteban
  */
 public abstract class Comprobante implements Imprimible {
-    //Nombres Serializados para dar limpieza al JSON
+    // Nombres Serializados para dar limpieza al JSON
     @SerializedName("Numero Comprobante")
     private int numComprobante;
     @SerializedName("Fecha")
@@ -19,13 +19,12 @@ public abstract class Comprobante implements Imprimible {
     @SerializedName("Total Compra")
     private double total;
 
-    public Comprobante(){
+    public Comprobante() {
     }
 
     public Comprobante(Cliente cliente) {
         this.cliente = cliente;
         this.fecha = new Date();
-        // TODO
     }
 
     @Override
@@ -33,8 +32,9 @@ public abstract class Comprobante implements Imprimible {
         System.out.println("");
     }
     
-    //Actualiza TOTAL
-    public void calcTotal(){
+    // Actualiza TOTAL
+    // TODO TDD y refactor full funcional
+    public void calcTotal() {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         productos = this.cliente.getCanasta().getProductos();
         for (Producto p: productos) {

@@ -6,7 +6,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>proyectoBoletas</artifactId>
-    <version>2.0-SNAPSHOT-FX</version>
+    <version>1.1-SNAPSHOT-FX</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

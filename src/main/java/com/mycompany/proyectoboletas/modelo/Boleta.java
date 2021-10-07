@@ -1,4 +1,4 @@
-package com.mycompany.proyectoboletas;
+package com.mycompany.proyectoboletas.modelo;
 
 /**
  * @author Esteban
@@ -10,7 +10,7 @@ public class Boleta extends Comprobante {
     }
 
     @Override
-    public void imprimir(){
+    public void imprimir() {
         System.out.println(this.toString());
     }
     

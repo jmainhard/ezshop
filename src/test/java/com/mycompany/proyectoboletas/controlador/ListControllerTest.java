@@ -2,8 +2,8 @@ package com.mycompany.proyectoboletas.controlador;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mycompany.proyectoboletas.Cliente;
-import com.mycompany.proyectoboletas.Producto;
+import com.mycompany.proyectoboletas.modelo.Cliente;
+import com.mycompany.proyectoboletas.modelo.Producto;
 import java.util.ArrayList;
 import java.util.Collection;
 

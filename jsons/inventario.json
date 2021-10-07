@@ -1,6 +1,6 @@
 [
   {
-    "Cantidad": 11,
+    "Cantidad": 2,
     "ID Producto": 1,
     "Nombre Producto": "Martillo",
     "Precio": 1000.0
@@ -24,7 +24,7 @@
     "Precio": 19990.0
   },
   {
-    "Cantidad": 40,
+    "Cantidad": 39,
     "ID Producto": 5,
     "Nombre Producto": "Alicate",
     "Precio": 2990.0
