@@ -20,7 +20,13 @@ public class ClientesController implements Imprimible {
                 new TypeToken<Collection<HistorialCliente>>(){});
         clientes = clientesHandler.cargarObjetos();
     }
-    
+
+    public ClientesController(String pathFile) {
+        clientesHandler = new ListController<>(pathFile,
+                new TypeToken<Collection<HistorialCliente>>(){});
+        clientes = clientesHandler.cargarObjetos();
+    }
+
     public boolean existeCliente(String rutClienteBuscado) throws NullPointerException {
             clientes = clientesHandler.cargarObjetos(); // actualiza
         try {
