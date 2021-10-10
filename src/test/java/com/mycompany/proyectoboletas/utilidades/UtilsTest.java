@@ -6,16 +6,16 @@
 package com.mycompany.proyectoboletas.utilidades;
 
 import org.junit.jupiter.api.*;
-
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class UtilsTest {
 
     // Hecho con TDD
-    @Test
-    void testValidarRut() {
-        String rutToValidate = "65157593-1";
-        Assertions.assertTrue(Utils.validarRut(rutToValidate));
+    @ParameterizedTest
+    @ValueSource(strings = { "57179825-5", "48544323-1", "29597718-3" })
+    void testValidarRut(String rut) {
+        Assertions.assertTrue(Utils.validarRut(rut));
     }
 
 
