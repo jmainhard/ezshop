@@ -2,6 +2,7 @@
   {
     "Nombre Cliente": "Cliente Default 1",
     "Rut": "111111-1",
+    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
     "Canasta": {
       "Productos": [
         {
@@ -25,6 +26,7 @@
   {
     "Nombre Cliente": "Cliente Default 2",
     "Rut": "222222-2",
+    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
     "Canasta": {
       "Productos": [
         {
@@ -48,6 +50,7 @@
   {
     "Nombre Cliente": "Cliente Default 2",
     "Rut": "222222-2",
+    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
     "Canasta": {
       "Productos": [
         {

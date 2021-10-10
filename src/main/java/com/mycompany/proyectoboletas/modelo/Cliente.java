@@ -164,7 +164,9 @@ public class Cliente {
         boolean existed = true;
         
         try {
+            //Verifica si existe cliente en los archivos
             if (!clientesHandler.existeCliente(this.getRut())) {
+                //Si no existe lo agrega
                 if (clientesHandler.addCliente(this)) {
                     System.out.println("\n-- Nuevo Cliente registrado --");
                     System.out.println("Rut: "+ this.getRut()+ "\n");
@@ -191,6 +193,7 @@ public class Cliente {
     // TODO mover métodos a Main.java
     //JSON SERIALIZER
     //Genera JSON de comprobante
+    // TODO refactorizar usando ListController<>
     public static void generarComprobanteJson(Comprobante comprobante){
         String path = "jsons/comprobantes/comprobante-"+comprobante.getNumComprobante()+".json";
 

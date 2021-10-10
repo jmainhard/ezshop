@@ -99,5 +99,24 @@
       "Total Compra": 12990.0
     }
   ],
-  "Historial Boletas": []
+  "Historial Boletas": [
+    {
+      "Numero Comprobante": 3,
+      "Fecha": "Oct 10, 2021, 12:46:25 PM",
+      "Cliente": {
+        "Nombre Cliente": "Cliente Default 1",
+        "Rut": "111111-1",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 2990.0
+    }
+  ]
 }
