@@ -30,9 +30,9 @@ public class UtilsTest {
     @Nested
     class Un_rut_es_valido {
 
-        @DisplayName("Si tiene sólo digitos y dígito verificador")
+        @DisplayName("Si tiene sólo digitos")
         @ParameterizedTest(name = "Por ejemplo, {0} es un rut válido.")
-        @ValueSource(strings = { "73798773-6", "93831953-7", "44866941-6" })
+        @ValueSource(strings = { "73798773-6", "57959612-0", "85323172-K" })
         void testIfOnlyDigits(String rutWithLetters) {
             Assertions.assertTrue(validarRut(rutWithLetters));
         }
