@@ -9,12 +9,16 @@ public class Utils {
 
     public static boolean validarRut(String rut) {
         String[] rutParts = rut.split("-");
-        int rutDigits = Integer.parseInt(rutParts[0]);
+        int rutDigits;
         char rutDv;
         try {
+            rutDigits = Integer.parseInt(rutParts[0]);
             rutDv = rutParts[1].charAt(0);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.err.println(e + ": Rut incompleto");
+            return false;
+        } catch (NumberFormatException e) {
+            System.err.println(e + ": Rut sólo debe contener dígitos");
             return false;
         }
         return validarDv(rutDigits) == rutDv;
