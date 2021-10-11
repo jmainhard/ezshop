@@ -6,36 +6,22 @@
 package com.mycompany.proyectoboletas.utilidades;
 
 public class Utils {
-    public Utils() {
-    }
 
-    //TODO crear logica de verificación de Ruts, para no dejarlo en blanco y pasar el test, cree una validación de DV y
-    // un pár de flags, que si todas son verdaderas el rut es valido, tu decides si lo mantienes, lo cree para pasar el
-    // test y ya. :)
     public static boolean validarRut(String rut) {
-        boolean flagDv = false;
         String[] rutParts = rut.split("-");
         int rutDigits = Integer.parseInt(rutParts[0]);
-        System.out.println(rutParts[1]);
-        String rutDV = rutParts[1];
-
-
-        //Verificar DV
-        System.out.println(validarDv(rutDigits));
-        if(rutDV.equals(validarDv(rutDigits))){
-            flagDv = true;
-        }
-
-        if(flagDv){
-            return true;
-        }else {
+        char rutDv;
+        try {
+            rutDv = rutParts[1].charAt(0);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println(e + ": Rut incompleto");
             return false;
         }
+        return validarDv(rutDigits) == rutDv;
     }
 
-    // TODO: Método para desarrollar en TDD, moudulariza método validadRut() obteniendo el DV (dígito verificador),
-    //  validarRut() sólo comprobaría que el DV es el que corresponde retornando true o false.
-    public static String validarDv(int rutDigits) {
+    // Sugiero cambiar nombre de método a getDv para evitar confusiones en los test
+    public static char validarDv(int rutDigits) {
         int accumulator = 0, serie = 2;
         int lastDigit;
         int large = String.valueOf(rutDigits).length();
@@ -44,23 +30,16 @@ public class Utils {
             lastDigit = rutDigits % 10;
             accumulator += lastDigit * serie;
             rutDigits = rutDigits / 10;
-
-
-            // DEBUGGING
-            /**
-            System.out.println(
-                    "lastDigit: " + lastDigit + "\n"
-                            + "accumuluator: " + accumulator + "\n"
-                            + "rutDigits: " + rutDigits + "\n"
-                            + "serie: " + serie + "\n"
-            );
-             **/
             serie++;
         }
-
-        // DEBUGGING
-        System.out.println("DV: " + (11 - (accumulator % 11)));
-
-        return ""+(11 - (accumulator % 11));
+        int dv = 11 - (accumulator % 11);
+        if (dv == 10) {
+            return 'K';
+        } else if (dv == 11) {
+            return '0';
+        } else {
+            // 0 representa el código 48 en ASCII, la suma representa un valor de 1 al 9
+            return (char)(dv + '0');
+        }
     }
 }
