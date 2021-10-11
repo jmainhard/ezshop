@@ -11,11 +11,26 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class UtilsTest {
 
+    static String rut;
+    static int rutDigits;
+    static int rutDv;
+
+    @BeforeAll
+    static void setUp(){
+        rut = "20953304-9";
+        rutDigits = 20953304;
+    }
+
     // Hecho con TDD
-    @ParameterizedTest
-    @ValueSource(strings = { "57179825-5", "48544323-1", "29597718-3" })
-    void testValidarRut(String rut) {
+    @Test
+    void testValidarRut() {
         Assertions.assertTrue(Utils.validarRut(rut));
+    }
+
+    @Test
+    void testValidarDV() {
+        String DvCorrecto = "9";
+        Assertions.assertEquals(DvCorrecto, Utils.validarDv(rutDigits));
     }
 
 
