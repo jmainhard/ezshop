@@ -1,4 +1,4 @@
-# ProyectoBoletasFX
+# Ezshop
 
 Boletero de ferretería con salida por consola (Java)
 
@@ -70,5 +70,5 @@ Colaboradores originales:
 - Esteban Esparza
 - Jorge Mainhard
 
-Continuación del proyecto por: Jorge Mainhard   
-retomado: 25-04-2021  
+Continuación del proyecto por: Esteban Esparza y Jorge Mainhard
+retomado: 07 oct. 2021
