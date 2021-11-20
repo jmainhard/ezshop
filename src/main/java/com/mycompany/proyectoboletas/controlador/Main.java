@@ -157,13 +157,15 @@ public class Main {
             
     }
 
+    // FIXME clase de codesmells con compañeros:
+    // método bastante largo, revisar opción de separar
     public static void menuVentas() {
         boolean salir;
         int opcion, idProducto;
         Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
         InventarioController inventarioVolatil = inventarioController;
-        
+
             do {
                 salir = false;
                 opcion = -1;
@@ -316,13 +318,14 @@ public class Main {
         return !confirmar;
     }
 
+    // FIXME clase de codesmells, talvez no es necesario el switch
     public static void buscarComprobante(){
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
         int num;
         while (!salir) {
-            System.out.println("\nIngrse tipo de comprobante");
+            System.out.println("\nIngrese tipo de comprobante");
             System.out.println("------------< >------------");
             System.out.println("1. Factura");
             System.out.println("2. Boleta");
@@ -332,6 +335,7 @@ public class Main {
                 opcion = teclado.nextInt();
                 switch (opcion) {
                     case 1:
+                        // FIXME: método mal nombrado
                         getNumeroComprobate(opcion);
                         salir = true;
                         break;
@@ -351,7 +355,8 @@ public class Main {
             }
         }
     }
-    
+
+    // FIXME clase code smells: utilizar teclado global, se utiliza en varias funciones
     public static void getNumeroComprobate(int tipo){
         Scanner teclado = new Scanner(System.in);
         boolean salir = false;

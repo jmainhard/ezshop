@@ -53,6 +53,7 @@ public class Cliente {
      * 
      * @throws CanastaVaciaException
      */
+    // FIXME: método hace muchas cosas
     public boolean hacerVenta() throws CanastaVaciaException {
         ClientesController clientesHandler = new ClientesController();
         Comprobante comprobante;
@@ -73,21 +74,25 @@ public class Cliente {
             System.out.println("\n-- Cliente encontrado --");
             this.setNombre(clientesHandler.getHistorialCliente(rut).getNombre());
         }
-        
+
+        // FIXME clase codesmells: caso default no maneja AssertionError (aunque al parecer nunca ocurra)
         comprobante = selectComprobante(); // Se crea el objeto <----
         
         // Se genera el JSON del comprobante como archivo individual
         comprobante.calcTotal();
+
+        // FIXME Clase code smells: Revisar, variable se llama desde el Main
         numComprobante.generarNumComprobante(comprobante);
         generarComprobanteJson(comprobante);
 
-        //Se añade a la contabilidad
+        // Se añade a la contabilidad
         contabilidad.addComprobante(comprobante); // Añade al objeto
         addToHistory(contabilidad); // Genera el JSON
 
         // Asocia el historial de este cliente al comprobante
         updateCliente(comprobante);
-        
+
+        // FIXME code smells, revisar esto ta raro
         comprobante.imprimir();
         
         return true;
@@ -125,6 +130,7 @@ public class Cliente {
                 return new Boleta(this);
             case 2:
                 return new Factura(this);
+                // No es necesario mantenerlo
             default:
                 throw new AssertionError();
         }
@@ -205,8 +211,6 @@ public class Cliente {
             String jsonString = gson.toJson(comprobante);
             writer.write(jsonString);
             writer.close();
-
-
         } catch (IOException ex) {
             System.out.println("Error al crear el archivo");
         }

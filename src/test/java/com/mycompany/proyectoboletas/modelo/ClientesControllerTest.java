@@ -10,6 +10,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ClientesControllerTest {
 
     static ClientesController clientsTester;
@@ -33,13 +35,12 @@ public class ClientesControllerTest {
 
     @Test
     void testExisteCliente() {
-        Assertions.assertTrue(clientsTester.existeCliente(rutClienteBuscado));
+        assertTrue(clientsTester.existeCliente(rutClienteBuscado));
     }
 
     @Test
-    void testRemoveCliente(){
-        Assertions.assertTrue(clientsTester.removeCliente(rutClienteBuscado));
-
+    void testRemoveCliente() {
+        assertTrue(clientsTester.removeCliente(rutClienteBuscado));
     }
 
     @AfterAll

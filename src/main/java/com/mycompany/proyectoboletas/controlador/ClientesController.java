@@ -28,7 +28,7 @@ public class ClientesController implements Imprimible {
     }
 
     public boolean existeCliente(String rutClienteBuscado) throws NullPointerException {
-            clientes = clientesHandler.cargarObjetos(); // actualiza
+        clientes = clientesHandler.cargarObjetos(); // actualiza
         try {
             return clientes.stream().
                 anyMatch(clienteRegistrado -> 

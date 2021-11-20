@@ -11,11 +11,16 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static com.mycompany.proyectoboletas.utilidades.Utils.validarRut;
 import static com.mycompany.proyectoboletas.utilidades.Utils.validarDv;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static java.lang.Integer.parseInt;
 
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class UtilsTest {
 
+    // Valores de setup para probar la obtención individual del dígito verificador
     static String rut_dv_1_9;
     static String rut_dv_k;
     static String rut_dv_0;
@@ -30,11 +35,11 @@ public class UtilsTest {
     @Nested
     class Un_rut_es_valido {
 
-        @DisplayName("Si tiene sólo digitos")
+        @DisplayName("Si tiene sólo dígitos")
         @ParameterizedTest(name = "Por ejemplo, {0} es un rut válido.")
         @ValueSource(strings = { "73798773-6", "57959612-0", "85323172-K" })
-        void testIfOnlyDigits(String rutWithLetters) {
-            Assertions.assertTrue(validarRut(rutWithLetters));
+        void testIfOnlyDigits(String rut) {
+            assertTrue(validarRut(rut));
         }
 
         @Nested
@@ -44,8 +49,8 @@ public class UtilsTest {
                 char dvCorrecto;
                 int rutDigits;
                 dvCorrecto = rut_dv_1_9.split("-")[1].charAt(0);
-                rutDigits = Integer.parseInt(rut_dv_1_9.split("-")[0]);
-                Assertions.assertEquals(dvCorrecto, validarDv(rutDigits));
+                rutDigits = parseInt(rut_dv_1_9.split("-")[0]);
+                assertEquals(dvCorrecto, validarDv(rutDigits));
             }
 
             @Test
@@ -53,8 +58,8 @@ public class UtilsTest {
                 char dvCorrecto;
                 int rutDigits;
                 dvCorrecto = rut_dv_k.split("-")[1].charAt(0);
-                rutDigits = Integer.parseInt(rut_dv_k.split("-")[0]);
-                Assertions.assertEquals(dvCorrecto, validarDv(rutDigits));
+                rutDigits = parseInt(rut_dv_k.split("-")[0]);
+                assertEquals(dvCorrecto, validarDv(rutDigits));
             }
 
             @Test
@@ -62,20 +67,19 @@ public class UtilsTest {
                 char dvCorrecto;
                 int rutDigits;
                 dvCorrecto = rut_dv_0.split("-")[1].charAt(0);
-                rutDigits = Integer.parseInt(rut_dv_0.split("-")[0]);
-                Assertions.assertEquals(dvCorrecto, validarDv(rutDigits));
+                rutDigits = parseInt(rut_dv_0.split("-")[0]);
+                assertEquals(dvCorrecto, validarDv(rutDigits));
             }
         }
     }
 
     @Nested
     class Un_rut_no_es_valido {
-
         @DisplayName("Si no posee un dígito verificador separado por un guión")
         @ParameterizedTest(name = "Por ejemplo, {0} es un rut no válido.")
         @ValueSource(strings = { "87397881", "44781924", "65539736" })
         void si_no_tiene_digito_verificador(String rutIncompleto) {
-            Assertions.assertFalse(validarRut(rutIncompleto));
+            assertFalse(validarRut(rutIncompleto));
         }
     }
 
