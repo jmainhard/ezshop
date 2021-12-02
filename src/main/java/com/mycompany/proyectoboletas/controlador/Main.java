@@ -315,7 +315,6 @@ public class Main {
         return !confirmar;
     }
 
-    // FIXME clase de codesmells, talvez no es necesario el switch
     public static void buscarComprobante(){
         boolean salir = false;
         while (!salir) {
@@ -334,7 +333,8 @@ public class Main {
                     if(opcion==3){
                         salir = true;
                     }else{
-                        getNumeroComprobate(opcion);
+                        getComprobante(opcion);
+                        salir = true;
                     }
                 }
 
@@ -345,14 +345,19 @@ public class Main {
         }
     }
 
-    // FIXME clase code smells: utilizar teclado global, se utiliza en varias funciones
-    public static void getNumeroComprobate(int tipo){
+    public static void getComprobante(int tipo){
         boolean salir = false;
         while (!salir) {
             try {
                 System.out.println("\nIngrese el número de comprobante");
                 int num = teclado.nextInt();
-                contabilidad.getComprobante(tipo, num);
+                if(tipo == 1){
+                    contabilidad.getFactura(num);
+                }
+
+                if(tipo == 2){
+                    contabilidad.getBoleta(num);
+                }
                 salir = true;
 
             } catch (InputMismatchException e) {

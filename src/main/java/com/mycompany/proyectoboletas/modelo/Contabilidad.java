@@ -39,36 +39,34 @@ public class Contabilidad {
         this.boletasTotales = num.getBoletasTotales();
     }
 
-    public void getComprobante(int tipo, int num){
-        // 1 = Factura
-        if (tipo == 1){
-            boolean encontrado = false;
-            for (Comprobante comprobante: facturasTotales) {
-                if(comprobante.getNumComprobante() == num){
-                    System.out.println("Comprobante encontrado!");
-                    encontrado = true;
-                    comprobante.imprimir();
-                }
-            }
-            if (encontrado == false){
-                System.out.println("Comprobante no encontrado.");
+    public void getFactura(int num){
+        boolean encontrado = false;
+        for (Comprobante comprobante: facturasTotales) {
+            if(comprobante.getNumComprobante() == num){
+                System.out.println("Factura encontrado!");
+                encontrado = true;
+                comprobante.imprimir();
             }
         }
-        // 2 = Boleta
-        if(tipo == 2){
-            boolean encontrado = false;
-            for (Comprobante comprobante: boletasTotales) {
-                if(comprobante.getNumComprobante() == num){
-                    System.out.println("Comprobante encontrado!");
-                    encontrado = true;
-                    comprobante.imprimir();
-                }
-            }
-            if (encontrado == false){
-                System.out.println("Comprobante no encontrado.");
-            }
+        if (!encontrado){
+            System.out.println("Factura no encontrado.");
         }
     }
+
+    public void getBoleta(int num){
+        boolean encontrado = false;
+        for (Comprobante comprobante: boletasTotales) {
+            if(comprobante.getNumComprobante() == num){
+                System.out.println("Boleta encontrado!");
+                encontrado = true;
+                comprobante.imprimir();
+            }
+        }
+        if (!encontrado){
+            System.out.println("Boleta no encontrado.");
+        }
+    }
+
 
     public ArrayList<Factura> getFacturasTotales() {
         return facturasTotales;
