@@ -130,7 +130,7 @@ public class Cliente {
                 return new Boleta(this);
             case 2:
                 return new Factura(this);
-                // No es necesario mantenerlo
+                // default No es necesario mantenerlo
             default:
                 throw new AssertionError();
         }
@@ -199,7 +199,7 @@ public class Cliente {
     // TODO mover métodos a Main.java
     //JSON SERIALIZER
     //Genera JSON de comprobante
-    // TODO refactorizar usando ListController<>
+    // FIXME Extract class json
     public static void generarComprobanteJson(Comprobante comprobante){
         String path = "jsons/comprobantes/comprobante-"+comprobante.getNumComprobante()+".json";
 
@@ -218,6 +218,7 @@ public class Cliente {
     }
 
     // Añade a contabilidad
+    // FIXME Extract class json
     public static void addToHistory(Contabilidad contabilidad){
         String path = "jsons/historialComprobantes.json";
 

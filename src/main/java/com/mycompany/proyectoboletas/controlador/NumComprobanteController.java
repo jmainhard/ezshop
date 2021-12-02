@@ -3,9 +3,14 @@ package com.mycompany.proyectoboletas.controlador;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.modelo.Comprobante;
+import com.mycompany.proyectoboletas.modelo.Stock;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * @author Esteban
@@ -13,19 +18,16 @@ import java.io.*;
 public class NumComprobanteController {
     @SerializedName("Num Comprobantes Generados")
     private int comprobantes;
+    private static ListController<NumComprobanteController> numComprobanteHandler;
 
     public NumComprobanteController() {
+        numComprobanteHandler = new ListController<>("numComprobantes.json",
+                new TypeToken<Collection<NumComprobanteController>>(){});
     }
 
+    // FIXME Extract class json
     public void setComprobantes() {
-        Gson gson = new Gson();
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader("jsons/numComprobantes.json"));
-        } catch (FileNotFoundException e) {
-        }
-
-        NumComprobanteController num = gson.fromJson(br, NumComprobanteController.class);
+        NumComprobanteController num = numComprobanteHandler.cargarObjetos().get(0);
         this.comprobantes = num.getComprobantes();
     }
 
@@ -33,8 +35,7 @@ public class NumComprobanteController {
     public void generarNumComprobante(Comprobante comprobante) {
         comprobantes++;
         comprobante.setNumComprobante(comprobantes);
-        generarJson();
-
+        actualizarNumero();
     }
 
     public int getComprobantes() {
@@ -45,20 +46,10 @@ public class NumComprobanteController {
         this.comprobantes = comprobantes;
     }
 
-    public void generarJson() {
+    // FIXME Extract class json
+    public void actualizarNumero() {
         NumComprobanteController num = new NumComprobanteController();
         num.setComprobantes(comprobantes);
-        FileWriter writer;
-        try {
-            writer = new FileWriter("jsons/numComprobantes.json");
-            //PrettyPrint para dar format al JSON
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String jsonString = gson.toJson(num);
-            writer.write(jsonString);
-            writer.close();
-        } catch (IOException ex) {
-            System.out.println("Error al crear el archivo");
-        }
-
+        numComprobanteHandler.guardarObjetos(new ArrayList<NumComprobanteController>(Arrays.asList(num)));
     }
 }

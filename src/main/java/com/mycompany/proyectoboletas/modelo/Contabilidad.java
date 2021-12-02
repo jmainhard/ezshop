@@ -26,6 +26,7 @@ public class Contabilidad {
 
     // Se debe llamar cada vez que se instancia al objeto, almenos una vez en la ejecución
     // Lee el json y restablece los datos de los Comprobantes
+    // FIXME Extract class json
     public void setComprobantesTotales(){
         Gson gson = new Gson();
         BufferedReader br = null;

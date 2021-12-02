@@ -97,6 +97,25 @@
         }
       },
       "Total Compra": 12990.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 1,
+      "Fecha": "Dec 2, 2021, 8:12:58 PM",
+      "Cliente": {
+        "Nombre Cliente": "Cliente Default 1",
+        "Rut": "111111-1",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 1,
+              "Nombre Producto": "Martillo",
+              "Precio": 1000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 1000.0
     }
   ],
   "Historial Boletas": [

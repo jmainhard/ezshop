@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * 
  * @see FileController
  */
+// FIXME Evaluar refactor de nombre ya que no siempre guarda listas (p.ej JsonController)
 public class ListController<E> {
     private final TypeToken<Collection<E>> collectionType; // se usa para parsear en runtime y no perder el tipo de origen
     private final String archivoJson;
