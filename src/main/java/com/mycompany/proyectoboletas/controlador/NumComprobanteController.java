@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author Esteban
@@ -25,12 +26,10 @@ public class NumComprobanteController {
                 new TypeToken<Collection<NumComprobanteController>>(){});
     }
 
-    // FIXME Extract class json
     public void setComprobantes() {
         NumComprobanteController num = numComprobanteHandler.cargarObjetos().get(0);
         this.comprobantes = num.getComprobantes();
     }
-
 
     public void generarNumComprobante(Comprobante comprobante) {
         comprobantes++;
@@ -46,10 +45,9 @@ public class NumComprobanteController {
         this.comprobantes = comprobantes;
     }
 
-    // FIXME Extract class json
     public void actualizarNumero() {
         NumComprobanteController num = new NumComprobanteController();
         num.setComprobantes(comprobantes);
-        numComprobanteHandler.guardarObjetos(new ArrayList<NumComprobanteController>(Arrays.asList(num)));
+        numComprobanteHandler.guardarObjetos(new ArrayList<NumComprobanteController>(List.of(num)));
     }
 }
