@@ -16,6 +16,7 @@ public class Main {
     public static Contabilidad contabilidad = new Contabilidad();
     public static NumComprobanteController numComprobante = new NumComprobanteController();
     public static InventarioController inventarioController = new InventarioController();
+    public static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -40,7 +41,6 @@ public class Main {
         boolean repetir;
         boolean salir;
         int opcion;
-        Scanner teclado = new Scanner(System.in);
         
         do {
             repetir = true;
@@ -106,7 +106,6 @@ public class Main {
     public static void menuClientes() {
         boolean salir;
         int opcion;
-        Scanner teclado = new Scanner(System.in);
         
             do {
                 salir = false;
@@ -162,7 +161,6 @@ public class Main {
     public static void menuVentas() {
         boolean salir;
         int opcion, idProducto;
-        Scanner teclado = new Scanner(System.in);
         Cliente clienteComprando = new Cliente();
         InventarioController inventarioVolatil = inventarioController;
 
@@ -301,7 +299,6 @@ public class Main {
     } 
     
     public static boolean confirmarSalida() {
-        Scanner teclado = new Scanner(System.in);
         boolean confirmar;
         String respuesta = "";
         
@@ -320,10 +317,7 @@ public class Main {
 
     // FIXME clase de codesmells, talvez no es necesario el switch
     public static void buscarComprobante(){
-        Scanner teclado = new Scanner(System.in);
         boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
-        int num;
         while (!salir) {
             System.out.println("\nIngrese tipo de comprobante");
             System.out.println("------------< >------------");
@@ -332,25 +326,20 @@ public class Main {
             System.out.println("3. Salir");
             try {
                 System.out.println("Escribe una opción");
-                opcion = teclado.nextInt();
-                switch (opcion) {
-                    case 1:
-                        // FIXME: método mal nombrado
+                int opcion = teclado.nextInt();
+                if(!(opcion == 1 || opcion ==2 || opcion ==3)){
+                    System.out.println("Solo valores entre 1 y 3");
+
+                }else{
+                    if(opcion==3){
+                        salir = true;
+                    }else{
                         getNumeroComprobate(opcion);
-                        salir = true;
-                        break;
-                    case 2:
-                        getNumeroComprobate(opcion);
-                        salir = true;
-                        break;
-                    case 3:
-                        salir = true;
-                        break;
-                    default:
-                        System.out.println("Solo valores entre 1 y 3");
+                    }
                 }
+
             } catch (InputMismatchException e) {
-                System.out.println("Valor ingresado no valido.");
+                System.out.println("Valor ingresado no valido. Solo valores númericos.");
                 teclado.next();
             }
         }
@@ -358,23 +347,14 @@ public class Main {
 
     // FIXME clase code smells: utilizar teclado global, se utiliza en varias funciones
     public static void getNumeroComprobate(int tipo){
-        Scanner teclado = new Scanner(System.in);
         boolean salir = false;
-        int opcion = 1;
-        int num;
         while (!salir) {
             try {
                 System.out.println("\nIngrese el número de comprobante");
-                num = teclado.nextInt();
-                switch (opcion) {
-                    case 1:
-                        contabilidad.getComprobante(tipo, num);
-                        salir = true;
-                        break;
+                int num = teclado.nextInt();
+                contabilidad.getComprobante(tipo, num);
+                salir = true;
 
-                    default:
-                        System.out.println("Solo valores entre 1 y 2");
-                }
             } catch (InputMismatchException e) {
                 System.out.println("Valor ingresado no valido.");
                 teclado.next();
@@ -383,20 +363,17 @@ public class Main {
     }
 
     public static String askNombre() {
-        Scanner teclado = new Scanner(System.in);
         System.out.println("\n   < Ingrese Nombre >");
         return teclado.nextLine();
     }
     
     public static String askRut() {
-        Scanner teclado = new Scanner(System.in);
         System.out.println("   < Ingrese Rut >");
         return teclado.next();
     }
     
     public static int askIdProducto() {
         int id = -1;
-        Scanner teclado = new Scanner(System.in);
         int inventarioSize = inventarioController.getInventario().size();
         
         while (id < 1 || id > inventarioSize) {
