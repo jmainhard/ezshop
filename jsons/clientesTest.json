@@ -1,74 +1,14 @@
 [
   {
-    "Nombre Cliente": "Cliente Default 1",
-    "Rut": "111111-1",
-    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
-    "Canasta": {
-      "Productos": [
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 1",
-          "Precio": 19990.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 2",
-          "Precio": 37000.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 3",
-          "Precio": 450000.0
-        }
-      ]
-    }
+    "Rut": "11111111-1",
+    "Nombre": "Test cliente 1",
+    "Fecha de registro": "Dec 4, 2021, 5:31:27 PM",
+    "ID Comprobantes asociados": []
   },
   {
-    "Nombre Cliente": "Cliente Default 2",
-    "Rut": "222222-2",
-    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
-    "Canasta": {
-      "Productos": [
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 1",
-          "Precio": 19990.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 2",
-          "Precio": 37000.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 3",
-          "Precio": 450000.0
-        }
-      ]
-    }
-  },
-  {
-    "Nombre Cliente": "Cliente Default 2",
-    "Rut": "222222-2",
-    "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
-    "Canasta": {
-      "Productos": [
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 1",
-          "Precio": 19990.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 2",
-          "Precio": 37000.0
-        },
-        {
-          "ID Producto": 1,
-          "Nombre Producto": "Producto Default 3",
-          "Precio": 450000.0
-        }
-      ]
-    }
+    "Rut": "22222222-2",
+    "Nombre": "Test cliente 2",
+    "Fecha de registro": "Dec 4, 2021, 5:31:27 PM",
+    "ID Comprobantes asociados": []
   }
 ]

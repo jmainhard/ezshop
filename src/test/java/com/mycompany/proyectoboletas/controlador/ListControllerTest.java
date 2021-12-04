@@ -3,6 +3,7 @@ package com.mycompany.proyectoboletas.controlador;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.modelo.Cliente;
+import com.mycompany.proyectoboletas.modelo.HistorialCliente;
 import com.mycompany.proyectoboletas.modelo.Producto;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,53 +15,38 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * @author Jorge M.
- * FIXME: Test no debiera modificar archivos
  */
 public class ListControllerTest {
-    static ListController<Cliente> listHandler;
-    static ArrayList<Cliente> clientList;
+    static ListController<HistorialCliente> listHandler;
+    static ArrayList<HistorialCliente> clientList;
     String jsonText;
 
     Cliente cliente_1;
     Cliente cliente_2;
-    Producto producto_1;
-    Producto producto_2;
-    Producto producto_3;
+    HistorialCliente histCliente_1;
+    HistorialCliente histCliente_2;
 
     @BeforeAll
     static void beforeAll() {
-        listHandler  = new ListController("clientesTest.json", new TypeToken<Collection<Cliente>>(){});
+        listHandler  = new ListController("clientesTest.json", new TypeToken<Collection<HistorialCliente>>(){});
     }
 
     @BeforeEach
     public void setUp() {
         clientList = new ArrayList<>();
-        cliente_1 = new Cliente("Cliente Default 1", "111111-1");
-        cliente_2= new Cliente("Cliente Default 2", "222222-2");
-        producto_1 = new Producto(1, "Producto Default 1", 19990);
-        producto_2 = new Producto(1, "Producto Default 2", 37000);
-        producto_3 = new Producto(1, "Producto Default 3", 450000);
+        cliente_1 = new Cliente("Test cliente 1", "11111111-1");
+        cliente_2 = new Cliente("Test cliente 2", "22222222-2");
+        histCliente_1 = new HistorialCliente(cliente_1);
+        histCliente_2 = new HistorialCliente(cliente_2);
 
-        cliente_1.getCanasta().addProducto(producto_1);
-        cliente_1.getCanasta().addProducto(producto_2);
-        cliente_1.getCanasta().addProducto(producto_3);
-        
-        cliente_2.getCanasta().addProducto(producto_1);
-        cliente_2.getCanasta().addProducto(producto_2);
-        cliente_2.getCanasta().addProducto(producto_3);
-        
-        clientList.add(cliente_1);
-        clientList.add(cliente_2);
-        clientList.add(cliente_2);
+        clientList.add(histCliente_1);
+        clientList.add(histCliente_2);
     }
     
     @AfterEach
     public void tearDown() {
         cliente_1 = null;
         cliente_2 = null;
-        producto_1 = null;
-        producto_2 = null;
-        producto_3 = null;
         clientList.clear();
     }
 
@@ -73,8 +59,8 @@ public class ListControllerTest {
     public void testCargarObjetos() {
         Gson gson = new Gson();
         String jsonString = gson.toJson(clientList);
-        
-        ArrayList esperado = gson.fromJson(jsonString, new TypeToken<Collection<Cliente>>(){}.getType());
+
+        ArrayList esperado = gson.fromJson(jsonString, new TypeToken<Collection<HistorialCliente>>(){}.getType());
         ArrayList obtenido = listHandler.cargarObjetos();
         
         assertEquals(esperado.size(), obtenido.size());

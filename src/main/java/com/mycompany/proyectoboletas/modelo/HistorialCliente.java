@@ -9,7 +9,7 @@ import java.util.Date;
  * Clase que controla el Historial de un Cliente
  * @author Jorge M.
  */
-
+// FIXME code smell: probablemente debiera heredar de Cliente.java
 public class HistorialCliente {
     @SerializedName("Rut")
     private final String rut;

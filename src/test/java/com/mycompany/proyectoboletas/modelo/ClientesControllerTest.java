@@ -21,16 +21,13 @@ public class ClientesControllerTest {
     static void showClientes(){
         System.out.println("/************ Clientes inicio ***************/");
         ArrayList<HistorialCliente> clientes = clientsTester.getClientes();
-        for (HistorialCliente cliente:
-                clientes) {
-            System.out.println(cliente.toString());
-        }
+        System.out.println(clientsTester.toString());
     }
 
     @BeforeAll
     static void beforeAll() {
-        rutClienteBuscado = "111111-1";
-        clientsTester = new ClientesController("clientesTest2.json");
+        rutClienteBuscado = "22222222-2";
+        clientsTester = new ClientesController("clientesTest.json");
     }
 
     @Test
@@ -47,9 +44,6 @@ public class ClientesControllerTest {
     static void AfterAll(){
         System.out.println("/************ Clientes final ***************/");
         ArrayList<HistorialCliente> clientes = clientsTester.getClientes();
-        for (HistorialCliente cliente:
-             clientes) {
-            System.out.println(cliente.toString());
-        }
+        System.out.println(clientsTester.toString());
     }
 }

@@ -59,12 +59,9 @@ public class ComprobanteTest {
     public void tearDown() {
     }
 
-
-    @Test
     @RepeatedTest(5)
     public void TestCalcTotal(){
         assertEquals(comprobantes.get(0).getTotal(),11500);
         assertEquals(comprobantes.get(1).getTotal(),12500);
-
     }
 }
