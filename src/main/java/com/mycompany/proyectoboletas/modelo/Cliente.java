@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.*;
 import com.mycompany.proyectoboletas.controlador.ClientesController;
 import com.mycompany.proyectoboletas.utilidades.CanastaVaciaException;
+import com.mycompany.proyectoboletas.utilidades.Utils;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -66,10 +67,10 @@ public class Cliente {
             return false;
         }
         
-        System.out.println("   Ingresar Cliente");
-        this.setRut(askRut());
+        System.out.printf("%36s%n", "Ingresar Cliente");
+        this.setRut(Utils.askRut());
         if (!clientesHandler.existeCliente(this.getRut())) {
-            this.setNombre(askNombre());
+            this.setNombre(Utils.askNombre());
         } else {
             System.out.println("\n-- Cliente encontrado --");
             this.setNombre(clientesHandler.getHistorialCliente(rut).getNombre());

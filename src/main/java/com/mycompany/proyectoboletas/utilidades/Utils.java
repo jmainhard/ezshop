@@ -5,6 +5,10 @@
 
 package com.mycompany.proyectoboletas.utilidades;
 
+import com.mycompany.proyectoboletas.controlador.Main;
+
+import java.util.InputMismatchException;
+
 public class Utils {
 
     public static boolean validarRut(String rut) {
@@ -24,7 +28,6 @@ public class Utils {
         return validarDv(rutDigits) == rutDv;
     }
 
-    // Sugiero cambiar nombre de método a getDv para evitar confusiones en los test
     public static char validarDv(int rutDigits) {
         int accumulator = 0, serie = 2;
         int lastDigit;
@@ -45,5 +48,48 @@ public class Utils {
             // 0 representa el código 48 en ASCII, la suma representa un valor de 1 al 9
             return (char)(dv + '0');
         }
+    }
+
+    public static String askNombre() {
+        System.out.println("\n   < Ingrese Nombre >");
+        return Main.teclado.nextLine();
+    }
+
+    public static String askRut() {
+        boolean valido = false;
+        String rut = "NO-DEFINIDO";
+        while (!valido) {
+            System.out.println("   < Ingrese Rut, sin puntos y con guión (ej. 95797534-8) >");
+            rut = Main.teclado.next();
+            if (validarRut(rut)) {
+                valido = true;
+            } else {
+                System.err.println("Error: Rut no válido, intente nuevamente\n");
+            }
+        }
+        Main.teclado.nextLine(); // Flush scanner
+        return rut;
+    }
+
+    public static int askIdProducto() {
+        int id = -1;
+        int inventarioSize = Main.inventarioController.getInventario().size();
+
+        while (id < 1 || id > inventarioSize) {
+            id = -1;
+            System.out.println("   < Ingrese ID >");
+            try {
+                id = Main.teclado.nextInt();
+            } catch (InputMismatchException e) {
+                System.err.println("Error: Ingrese un número "+ e);
+                Main.teclado.next();
+            } catch (Exception e) {
+                System.err.println("Error: "+ e);
+                Main.teclado.next();
+            }
+        }
+        System.out.println("\nSeleccionado: "+ id);
+
+        return id;
     }
 }

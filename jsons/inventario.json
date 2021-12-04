@@ -1,6 +1,6 @@
 [
   {
-    "Cantidad": 1,
+    "Cantidad": 0,
     "ID Producto": 1,
     "Nombre Producto": "Martillo",
     "Precio": 1000.0
@@ -12,13 +12,13 @@
     "Precio": 1500.0
   },
   {
-    "Cantidad": 18,
+    "Cantidad": 17,
     "ID Producto": 3,
     "Nombre Producto": "Destornillador",
     "Precio": 11000.0
   },
   {
-    "Cantidad": 12,
+    "Cantidad": 11,
     "ID Producto": 4,
     "Nombre Producto": "Taladro Bauker",
     "Precio": 19990.0

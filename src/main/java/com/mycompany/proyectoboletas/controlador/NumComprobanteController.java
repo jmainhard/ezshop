@@ -1,15 +1,10 @@
 package com.mycompany.proyectoboletas.controlador;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.modelo.Comprobante;
-import com.mycompany.proyectoboletas.modelo.Stock;
 
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 

@@ -1,18 +1,10 @@
 [
   {
-    "Rut": "111111-1",
-    "Nombre": "Cliente Default 1",
+    "Rut": "11111111-1",
+    "Nombre": "admin",
     "Fecha de registro": "Oct 10, 2021, 12:46:25 PM",
     "ID Comprobantes asociados": [
-      3,
-      1
-    ]
-  },
-  {
-    "Rut": "1111111-1",
-    "Nombre": "",
-    "Fecha de registro": "Dec 2, 2021, 8:35:30 PM",
-    "ID Comprobantes asociados": [
+      1,
       2
     ]
   }

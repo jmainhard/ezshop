@@ -2,147 +2,36 @@
   "Historial Facturas": [
     {
       "Impuesto aplicado": 0.19,
-      "Numero Comprobante": 1,
-      "Fecha": "Jun 8, 2021, 4:15:10 PM",
-      "Cliente": {
-        "Nombre Cliente": "Jorge Mainhard",
-        "Rut": "20794270-7",
-        "Canasta": {
-          "Productos": [
-            {
-              "ID Producto": 5,
-              "Nombre Producto": "Alicate",
-              "Precio": 2990.0
-            },
-            {
-              "ID Producto": 5,
-              "Nombre Producto": "Alicate",
-              "Precio": 2990.0
-            },
-            {
-              "ID Producto": 5,
-              "Nombre Producto": "Alicate",
-              "Precio": 2990.0
-            }
-          ]
-        }
-      },
-      "Total Compra": 8970.0
-    },
-    {
-      "Impuesto aplicado": 0.19,
       "Numero Comprobante": 2,
-      "Fecha": "Jun 17, 2021, 2:18:49 PM",
+      "Fecha": "Dec 4, 2021, 4:53:23 PM",
       "Cliente": {
-        "Nombre Cliente": "Jorge Mainhard",
-        "Rut": "20794270-7",
-        "Canasta": {
-          "Productos": [
-            {
-              "ID Producto": 5,
-              "Nombre Producto": "Alicate",
-              "Precio": 2990.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            },
-            {
-              "ID Producto": 1,
-              "Nombre Producto": "Martillo",
-              "Precio": 1000.0
-            }
-          ]
-        }
-      },
-      "Total Compra": 12990.0
-    },
-    {
-      "Impuesto aplicado": 0.19,
-      "Numero Comprobante": 1,
-      "Fecha": "Dec 2, 2021, 8:12:58 PM",
-      "Cliente": {
-        "Nombre Cliente": "Cliente Default 1",
-        "Rut": "111111-1",
+        "Nombre Cliente": "admin",
+        "Rut": "11111111-1",
         "Canasta": {
           "Productos": [
             {
               "ID Producto": 1,
               "Nombre Producto": "Martillo",
               "Precio": 1000.0
+            },
+            {
+              "ID Producto": 3,
+              "Nombre Producto": "Destornillador",
+              "Precio": 11000.0
             }
           ]
         }
       },
-      "Total Compra": 1000.0
+      "Total Compra": 12000.0
     }
   ],
   "Historial Boletas": [
     {
-      "Numero Comprobante": 3,
-      "Fecha": "Oct 10, 2021, 12:46:25 PM",
+      "Numero Comprobante": 1,
+      "Fecha": "Dec 4, 2021, 4:52:41 PM",
       "Cliente": {
-        "Nombre Cliente": "Cliente Default 1",
-        "Rut": "111111-1",
-        "Canasta": {
-          "Productos": [
-            {
-              "ID Producto": 5,
-              "Nombre Producto": "Alicate",
-              "Precio": 2990.0
-            }
-          ]
-        }
-      },
-      "Total Compra": 2990.0
-    },
-    {
-      "Numero Comprobante": 2,
-      "Fecha": "Dec 2, 2021, 8:35:30 PM",
-      "Cliente": {
-        "Nombre Cliente": "",
-        "Rut": "1111111-1",
+        "Nombre Cliente": "admin",
+        "Rut": "11111111-1",
         "Canasta": {
           "Productos": [
             {

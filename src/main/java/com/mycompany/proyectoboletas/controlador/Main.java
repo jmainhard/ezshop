@@ -3,6 +3,7 @@ package com.mycompany.proyectoboletas.controlador;
 import com.mycompany.proyectoboletas.modelo.*;
 import com.mycompany.proyectoboletas.utilidades.CanastaVaciaException;
 import com.mycompany.proyectoboletas.utilidades.StockInsuficienteException;
+import com.mycompany.proyectoboletas.utilidades.Utils;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -81,7 +82,7 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("\n-- Producto a aumentar --");
-                        if ( inventarioController.aumentarStock(askIdProducto())) {
+                        if ( inventarioController.aumentarStock(Utils.askIdProducto())) {
                             inventarioController.guardar();
                             System.out.println("-- Aumentado con éxito --");
                         } else {
@@ -128,8 +129,9 @@ public class Main {
                         clientesController.imprimir();
                         break;
                     case 2: // Buscar cliente
-                        System.out.println("   Búsqueda de Cliente");
-                        String rutCliente = askRut();
+//                        System.out.println("   Búsqueda de Cliente");
+                        System.out.printf("%39s%n", "Búsqueda de Cliente");
+                        String rutCliente = Utils.askRut();
                         if (clientesController.existeCliente(rutCliente)) {
                             System.out.println("\n-- Cliente encontrado --");
                             System.out.println(clientesController.getHistorialCliente(rutCliente));
@@ -138,8 +140,8 @@ public class Main {
                         }
                         break;
                     case 3: // Eliminar cliente
-                        System.out.println("   Remover Cliente");
-                        if (clientesController.removeCliente(askRut())) {
+                        System.out.printf("%39s%n", "Remover Cliente");
+                        if (clientesController.removeCliente(Utils.askRut())) {
                             System.out.println("\n-- Cliente removido exitosamente --");
                             clientesController.guardar();
                         } else {
@@ -187,7 +189,7 @@ public class Main {
                         inventarioVolatil.imprimir();
                         
                         System.out.println("   Añadir Producto");
-                        idProducto = askIdProducto();
+                        idProducto = Utils.askIdProducto();
                         
                         existe = inventarioVolatil.existeProducto(idProducto);
                         
@@ -237,7 +239,7 @@ public class Main {
                              } else {
                                  System.out.println(clienteComprando.getCanasta());
                                  System.out.println("   Remover Producto");
-                                 int idProductoRemover = askIdProducto();
+                                 int idProductoRemover = Utils.askIdProducto();
                                  if (clienteComprando.getCanasta().removeProducto(idProductoRemover)) {
                                      System.out.println("\n-- Producto Removido --");
                                      System.out.println(clienteComprando.getCanasta());
@@ -367,36 +369,4 @@ public class Main {
         }
     }
 
-    public static String askNombre() {
-        System.out.println("\n   < Ingrese Nombre >");
-        return teclado.nextLine();
-    }
-    
-    public static String askRut() {
-        System.out.println("   < Ingrese Rut >");
-        return teclado.next();
-    }
-    
-    public static int askIdProducto() {
-        int id = -1;
-        int inventarioSize = inventarioController.getInventario().size();
-        
-        while (id < 1 || id > inventarioSize) {
-            id = -1;
-            System.out.println("   < Ingrese ID >");
-            try {
-                id = teclado.nextInt();
-            } catch (InputMismatchException e) {
-                System.err.println("Error: Ingrese un número "+ e);
-                teclado.next();
-            } catch (Exception e) {
-                System.err.println("Error: "+ e);
-                teclado.next();
-            }
-        }
-        System.out.println("\nSeleccionado: "+ id);
-        
-        return id;
-    }
-    
 }
