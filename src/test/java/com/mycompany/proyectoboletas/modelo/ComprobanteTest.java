@@ -15,14 +15,14 @@ import java.util.ArrayList;
  *
  * @author Esteban
  */
-public class ComprobanteTest {
+class ComprobanteTest {
     public static ArrayList<Comprobante> comprobantes = new ArrayList<>();
 
     public ComprobanteTest() {
     }
     
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         Producto p1 = new Producto(1,"Producto 1",5000);
         Producto p2 = new Producto(2,"Producto 2",4000);
         Producto p3 = new Producto(3,"Producto 3",2500);
@@ -56,12 +56,12 @@ public class ComprobanteTest {
     }
     
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
     }
 
     @RepeatedTest(5)
-    public void TestCalcTotal(){
-        assertEquals(comprobantes.get(0).getTotal(),11500);
-        assertEquals(comprobantes.get(1).getTotal(),12500);
+    void TestCalcTotal(){
+        assertEquals(11500, comprobantes.get(0).getTotal());
+        assertEquals(12500, comprobantes.get(1).getTotal());
     }
 }

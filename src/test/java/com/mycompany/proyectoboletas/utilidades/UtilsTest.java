@@ -18,7 +18,7 @@ import static java.lang.Integer.parseInt;
 
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class UtilsTest {
+class UtilsTest {
 
     // Valores de setup para probar la obtención individual del dígito verificador
     static String rut_dv_1_9;

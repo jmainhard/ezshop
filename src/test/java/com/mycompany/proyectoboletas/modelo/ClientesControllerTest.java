@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ClientesControllerTest {
+class ClientesControllerTest {
 
     static ClientesController clientsTester;
     static String rutClienteBuscado;

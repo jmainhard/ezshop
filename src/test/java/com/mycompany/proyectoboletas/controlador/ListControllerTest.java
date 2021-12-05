@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Jorge M.
  */
-public class ListControllerTest {
+class ListControllerTest {
     static ListController<HistorialCliente> listHandler;
     static ArrayList<HistorialCliente> clientList;
     String jsonText;
@@ -32,7 +32,7 @@ public class ListControllerTest {
     }
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         clientList = new ArrayList<>();
         cliente_1 = new Cliente("Test cliente 1", "11111111-1");
         cliente_2 = new Cliente("Test cliente 2", "22222222-2");
@@ -44,19 +44,19 @@ public class ListControllerTest {
     }
     
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         cliente_1 = null;
         cliente_2 = null;
         clientList.clear();
     }
 
     @Test
-    public void testGuardarObjetos() {
+    void testGuardarObjetos() {
         assertTrue(listHandler.guardarObjetos(clientList));
     }
 
     @Test
-    public void testCargarObjetos() {
+    void testCargarObjetos() {
         Gson gson = new Gson();
         String jsonString = gson.toJson(clientList);
 

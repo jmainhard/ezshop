@@ -12,7 +12,7 @@ import java.util.Collection;
  */
 
 public class ClientesController implements Imprimible {
-    private static ListController<HistorialCliente> clientesHandler;
+    private ListController<HistorialCliente> clientesHandler;
     private ArrayList<HistorialCliente> clientes;
     
     public ClientesController() {

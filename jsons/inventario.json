@@ -6,13 +6,13 @@
     "Precio": 1000.0
   },
   {
-    "Cantidad": 12,
+    "Cantidad": 11,
     "ID Producto": 2,
     "Nombre Producto": "Llave inglesa",
     "Precio": 1500.0
   },
   {
-    "Cantidad": 17,
+    "Cantidad": 16,
     "ID Producto": 3,
     "Nombre Producto": "Destornillador",
     "Precio": 11000.0
@@ -24,7 +24,7 @@
     "Precio": 19990.0
   },
   {
-    "Cantidad": 38,
+    "Cantidad": 36,
     "ID Producto": 5,
     "Nombre Producto": "Alicate",
     "Precio": 2990.0

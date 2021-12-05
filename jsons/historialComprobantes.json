@@ -23,6 +23,30 @@
         }
       },
       "Total Compra": 12000.0
+    },
+    {
+      "Impuesto aplicado": 0.19,
+      "Numero Comprobante": 3,
+      "Fecha": "Dec 5, 2021, 12:55:28 AM",
+      "Cliente": {
+        "Nombre Cliente": "admin",
+        "Rut": "11111111-1",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 2,
+              "Nombre Producto": "Llave inglesa",
+              "Precio": 1500.0
+            },
+            {
+              "ID Producto": 3,
+              "Nombre Producto": "Destornillador",
+              "Precio": 11000.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 12500.0
     }
   ],
   "Historial Boletas": [
@@ -43,6 +67,42 @@
         }
       },
       "Total Compra": 19990.0
+    },
+    {
+      "Numero Comprobante": 4,
+      "Fecha": "Dec 5, 2021, 1:14:55 AM",
+      "Cliente": {
+        "Nombre Cliente": "admin",
+        "Rut": "11111111-1",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 2990.0
+    },
+    {
+      "Numero Comprobante": 5,
+      "Fecha": "Dec 5, 2021, 2:10:25 AM",
+      "Cliente": {
+        "Nombre Cliente": "admin",
+        "Rut": "11111111-1",
+        "Canasta": {
+          "Productos": [
+            {
+              "ID Producto": 5,
+              "Nombre Producto": "Alicate",
+              "Precio": 2990.0
+            }
+          ]
+        }
+      },
+      "Total Compra": 2990.0
     }
   ]
 }

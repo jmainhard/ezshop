@@ -39,9 +39,16 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // init app
+        logger.info("Aplicación Ezshop iniciada");
         loggerSetup();
+
+        logger.info("Cargando historial de contabilidad dir: jsons/historialComprobantes.json");
         contabilidad.setComprobantesTotales();
+        logger.info("Información cargada correctamente");
+
+        logger.info("Cargando cantidad de comprobantes dir: jsons/numComprobantes.json");
         numComprobante.setComprobantes();
+        logger.info("Información cargada correctamente");
 
         System.out.printf("%n%25s%n", "Hola!");
         System.out.println("> Ingrese opciones con las teclas numéricas <\n");
@@ -50,6 +57,7 @@ public class Main {
         menuPrincipal();
 
         System.out.printf("%27s%n", "Gracias! :)");
+        logger.info("Aplicación Ezshop finalizada");
     }
     
     public static void menuPrincipal() {
@@ -217,13 +225,11 @@ public class Main {
                                 stockReducido = inventarioVolatil.reducirStock(idProducto);
                                 
                                 agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
-                                logger.info("Producto agregado id:" + pdctoAgregado.getId()
-                                        + "nombre: " + pdctoAgregado.getNombre()
-                                        + "cliente: " + clienteComprando.getRut());
+                                logger.info("Producto agregado id: " + pdctoAgregado.getId()
+                                        + " nombre: " + pdctoAgregado.getNombre());
                             } catch (StockInsuficienteException e) {
                                 System.err.println( "Error: "+ e.getClass().getSimpleName()+ ": "+ e.getMessage());
-                                logger.warning("Stock insuficiente id:" + idProducto
-                                        + "cliente: " + clienteComprando.getRut());
+                                logger.warning("Stock insuficiente id: " + idProducto);
                             } catch (Exception e) {
                                 String msg = "Error al agregar producto: " + e;
                                 System.err.println(msg);
@@ -237,10 +243,10 @@ public class Main {
                                 System.out.println("\n-- Producto Agregado a la Canasta --");
                                 System.out.println(clienteComprando.getCanasta());
 
-                                logger.info("Inventario actualizado");
+                                logger.info("Inventario temporal actualizado");
                             } else {
                                 System.out.println("\n-- Producto no agregado --");
-                                logger.info("Stock no incrementado id: " +  idProducto);
+                                logger.info("Stock no reducido id: " +  idProducto);
                             }
                         }
                         salir = false;
@@ -279,7 +285,7 @@ public class Main {
                                 throw new CanastaVaciaException("La canasta no tiene productos");
                             } else {
                                 System.out.println(clienteComprando.getCanasta());
-                                logger.info("Ver canasta cliente id: " + clienteComprando.getRut());
+                                logger.info("Ver canasta venta");
                             }
                         } catch (CanastaVaciaException e) {
                             String msg = e.getMessage() + " " + e.getClass().getSimpleName();
@@ -292,8 +298,11 @@ public class Main {
                         try {
                             salir = clienteComprando.hacerVenta();
                             logger.info("Hacer venta cliente: " + clienteComprando.getRut());
+
+                            // no estoy seguro de si esta condición se cumple alguna vez
                             if (salir) {
                                 inventarioController.guardar();
+                                logger.info("Inventario actualizado dir: jsons/inventario.json");
                             }
                         } catch (CanastaVaciaException e) {
                             String msg = "Error: " + e.getClass().getSimpleName() + ": " + e.getMessage();
@@ -309,8 +318,7 @@ public class Main {
                         salir = false;
                 }
             } while (!salir); // fin wh menu venta
-            
-    } 
+    }
     
     public static boolean confirmarSalida() {
         boolean confirmar;
@@ -342,7 +350,6 @@ public class Main {
                 int opcion = teclado.nextInt();
                 if(!(opcion == 1 || opcion ==2 || opcion ==3)){
                     System.out.println("Solo valores entre 1 y 3");
-
                 }else{
                     if(opcion==3){
                         salir = true;
@@ -351,7 +358,6 @@ public class Main {
                         salir = true;
                     }
                 }
-
             } catch (InputMismatchException e) {
                 System.out.println("Valor ingresado no valido. Solo valores númericos.");
                 teclado.next();
@@ -367,15 +373,17 @@ public class Main {
                 int num = teclado.nextInt();
                 if(tipo == 1){
                     contabilidad.getFactura(num);
+                    logger.info("Obtener factura num: " + num);
                 }
-
                 if(tipo == 2){
                     contabilidad.getBoleta(num);
+                    logger.info("Obtener boleta num: " + num);
                 }
                 salir = true;
-
             } catch (InputMismatchException e) {
-                System.out.println("Valor ingresado no valido.");
+                String msg = "Valor ingresado no válido " + e;
+                System.out.println(msg);
+                logger.warning("Obtener comprobante. " + msg);
                 teclado.next();
             }
         }
