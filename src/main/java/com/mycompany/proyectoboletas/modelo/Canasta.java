@@ -26,11 +26,7 @@ public class Canasta {
             if (p.getClass() != Producto.class) {
                 throw new IllegalArgumentException();
             }
-            if (p == null) {
-                throw new NullPointerException();
-            } else {
-                return productos.add(p);
-            }
+            return productos.add(p);
         } catch (NullPointerException e) {
             System.err.println(e + ": Producto nulo o no inicializado");
         } catch (IllegalArgumentException e) { // este catch: debiera sólo en caso de polimorfismo
