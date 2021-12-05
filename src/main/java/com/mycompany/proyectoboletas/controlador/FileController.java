@@ -55,7 +55,6 @@ public class FileController<E> {
             try (FileWriter writer = new FileWriter(ruta)) {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 gson.toJson(lista, collectionType.getType(), writer);
-                writer.close();
                 return true;
             } catch (IOException ex) {
                 System.err.println("Error al crear el archivo");
@@ -64,7 +63,6 @@ public class FileController<E> {
             } catch (Exception e) {
                 System.err.println("Error "+ e);
             }
-            
             return false;
     }
 

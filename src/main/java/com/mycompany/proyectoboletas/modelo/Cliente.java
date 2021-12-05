@@ -209,14 +209,10 @@ public class Cliente {
     // Extract method temporal para resolver código duplicado
     // FIXME Extract class json
     private static void toJson(Object obj, String path) {
-        FileWriter writer;
-        try {
-            writer = new FileWriter(path);
-            //PrettyPrint para dar format al JSON
+        try (FileWriter writer = new FileWriter(path)) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String jsonString = gson.toJson(obj);
             writer.write(jsonString);
-            writer.close();
         } catch (IOException ex) {
             System.out.println("Error al crear el archivo");
         }
