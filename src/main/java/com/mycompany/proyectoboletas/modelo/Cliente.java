@@ -222,7 +222,6 @@ public class Cliente {
     // FIXME Extract class json
     public static void addToHistory(Contabilidad contabilidad){
         String path = "jsons/historialComprobantes.json";
-
         FileWriter writer;
         try {
             writer = new FileWriter(path);
@@ -231,8 +230,6 @@ public class Cliente {
             String jsonString = gson.toJson(contabilidad);
             writer.write(jsonString);
             writer.close();
-
-
         } catch (IOException ex) {
             System.out.println("Error al crear el archivo");
         }
@@ -267,13 +264,10 @@ public class Cliente {
     @Override
     public String toString() {
         String strBuilder;
-        
+
         strBuilder = "Nombre cliente: "+ nombre+ "\n";
         strBuilder += "Rut cliente: "+ rut+ "\n";
-        
+
         return strBuilder;
     }
-    
-    
-    
 }

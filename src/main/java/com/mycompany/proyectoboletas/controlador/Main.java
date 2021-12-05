@@ -5,8 +5,10 @@ import com.mycompany.proyectoboletas.utilidades.CanastaVaciaException;
 import com.mycompany.proyectoboletas.utilidades.StockInsuficienteException;
 import com.mycompany.proyectoboletas.utilidades.Utils;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.*;
 
 /**
  * @author Esteban E., Maximiliano C., Jorge M.
@@ -18,24 +20,36 @@ public class Main {
     public static NumComprobanteController numComprobante = new NumComprobanteController();
     public static InventarioController inventarioController = new InventarioController();
     public static Scanner teclado = new Scanner(System.in);
+    private static FileHandler fileLog;
+    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-    public static void main(String[] args) {
+    public static void loggerSetup() {
+        try {
+            fileLog = new FileHandler("log.log");
+        } catch (SecurityException | IOException e) {
+            logger.warning("Filehandler not functional");
+        }
+        logger.addHandler(fileLog);
+        // setear formato del log, https://stackoverflow.com/questions/194765, https://www.logicbig.com/tutorials/core-java-tutorial/logging/customizing-default-format.html
+        // dir: JAVA_HOME/conf/logging.properties
+        // java.util.logging.SimpleFormatter.format=[%1$tF %1$tT] [%4$-7s] %5$s %n
+        SimpleFormatter formatterTxt = new SimpleFormatter();
+        fileLog.setFormatter(formatterTxt);
+    }
 
+    public static void main(String[] args) throws IOException {
+        // init app
+        loggerSetup();
         contabilidad.setComprobantesTotales();
         numComprobante.setComprobantes();
-        
-//        inventarioController.nuevoProducto(askNombre(), 1993, 43);
-        
-        
+
         System.out.printf("%n%25s%n", "Hola!");
         System.out.println("> Ingrese opciones con las teclas numéricas <\n");
-        
         System.out.printf("%35s", "| Boletero de Ferretería |");
-        
+
         menuPrincipal();
-        
+
         System.out.printf("%27s%n", "Gracias! :)");
-        
     }
     
     public static void menuPrincipal() {
@@ -203,31 +217,30 @@ public class Main {
                                 stockReducido = inventarioVolatil.reducirStock(idProducto);
                                 
                                 agregado = clienteComprando.getCanasta().addProducto(pdctoAgregado);
+                                logger.info("Producto agregado id:" + pdctoAgregado.getId()
+                                        + "nombre: " + pdctoAgregado.getNombre()
+                                        + "cliente: " + clienteComprando.getRut());
                             } catch (StockInsuficienteException e) {
-                                System.err.println(
-                                        "Error: "+
-                                                e.getClass().getSimpleName()+
-                                                ": "+
-                                                e.getMessage()
-                                );
+                                System.err.println( "Error: "+ e.getClass().getSimpleName()+ ": "+ e.getMessage());
+                                logger.warning("Stock insuficiente id:" + idProducto
+                                        + "cliente: " + clienteComprando.getRut());
                             } catch (Exception e) {
-                                System.err.println(
-                                        "Error al agregar producto: "+ e
-                                );
+                                String msg = "Error al agregar producto: " + e;
+                                System.err.println(msg);
+                                logger.warning(msg);
                             }
                             
                             if (agregado && stockReducido) {
-                                System.out.print(
-                                        "\n-- Inventario Actualizado --"
-                                );
+                                System.out.print("-- Inventario Actualizado --");
                                 inventarioVolatil.imprimir();
                                 
-                                System.out.println(
-                                        "\n-- Producto Agregado a la Canasta --"
-                                );
+                                System.out.println("\n-- Producto Agregado a la Canasta --");
                                 System.out.println(clienteComprando.getCanasta());
+
+                                logger.info("Inventario actualizado");
                             } else {
                                 System.out.println("\n-- Producto no agregado --");
+                                logger.info("Stock no incrementado id: " +  idProducto);
                             }
                         }
                         salir = false;
@@ -244,49 +257,48 @@ public class Main {
                                      System.out.println("\n-- Producto Removido --");
                                      System.out.println(clienteComprando.getCanasta());
                                      inventarioVolatil.aumentarStock(idProductoRemover);
+                                     logger.info("Producto removido id: " + idProductoRemover);
                                  } else {
                                      System.out.println("\n-- Producto no removido --");
+                                     logger.info("Producto no removido id: " + idProductoRemover);
                                  }
                              }
                         } catch (CanastaVaciaException e) {
-                            System.err.println(
-                                    "Error: "+
-                                            e.getClass().getSimpleName()+
-                                            ": "+
-                                            e.getMessage()
-                            );
-                        } catch (Exception e) { 
-                            System.err.println("Error: "+ e);
+                             String msg = "Error: " + e.getClass().getSimpleName() + ": " + e.getMessage();
+                            System.err.println(msg);
+                            logger.warning(msg);
+                        } catch (Exception e) {
+                            System.err.println("Error: " + e);
+                            logger.warning("Error: " + e);
                         }
                         salir = false;
                         break;
-
                     case 3: // Ver canasta
                         try {
                             if (clienteComprando.getCanasta().getProductos().isEmpty()) {
                                 throw new CanastaVaciaException("La canasta no tiene productos");
                             } else {
                                 System.out.println(clienteComprando.getCanasta());
+                                logger.info("Ver canasta cliente id: " + clienteComprando.getRut());
                             }
                         } catch (CanastaVaciaException e) {
-                            System.err.println(e.getMessage() + " "+
-                                    e.getClass().getSimpleName());
+                            String msg = e.getMessage() + " " + e.getClass().getSimpleName();
+                            System.err.println(msg);
+                            logger.warning(msg);
                         }
                         salir = false;
                         break;
                     case 4: // Hacer Venta
                         try {
                             salir = clienteComprando.hacerVenta();
+                            logger.info("Hacer venta cliente: " + clienteComprando.getRut());
                             if (salir) {
                                 inventarioController.guardar();
                             }
                         } catch (CanastaVaciaException e) {
-                            System.err.println(
-                                    "Error: "+
-                                            e.getClass().getSimpleName()+
-                                            ": "+
-                                            e.getMessage()
-                            ); 
+                            String msg = "Error: " + e.getClass().getSimpleName() + ": " + e.getMessage();
+                            System.err.println(msg);
+                            logger.warning(msg);
                         }
                         break;
                     case 5: // Salir
