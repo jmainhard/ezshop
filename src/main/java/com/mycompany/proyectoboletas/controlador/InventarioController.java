@@ -13,7 +13,7 @@ import java.util.Collection;
  * @author Maximiliano C., Esteban E., Jorge M.
  */
 public class InventarioController implements Imprimible {
-    private static ListController<Stock> inventarioHandler;
+    private ListController<Stock> inventarioHandler;
     private ArrayList<Stock> inventario; 
 
     public InventarioController() {

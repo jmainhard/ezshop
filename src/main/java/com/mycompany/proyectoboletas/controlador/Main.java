@@ -21,7 +21,7 @@ public class Main {
     public static InventarioController inventarioController = new InventarioController();
     public static Scanner teclado = new Scanner(System.in);
     private static FileHandler fileLog;
-    public final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    public static final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     public static void loggerSetup() {
         try {

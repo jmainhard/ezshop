@@ -43,6 +43,6 @@ public class NumComprobanteController {
     public void actualizarNumero() {
         NumComprobanteController num = new NumComprobanteController();
         num.setComprobantes(comprobantes);
-        numComprobanteHandler.guardarObjetos(new ArrayList<NumComprobanteController>(List.of(num)));
+        numComprobanteHandler.guardarObjetos(new ArrayList<>(List.of(num)));
     }
 }
