@@ -24,14 +24,9 @@ import static com.mycompany.proyectoboletas.controlador.Main.*;
  */
 
 public class Cliente {
-    //Nombres Serializados para dar limpieza al JSON
-    @SerializedName("Nombre Cliente")
     private String nombre;
-    @SerializedName("Rut")
     private String rut;
-    @SerializedName("Canasta")
     private Canasta canasta;
-    private static HistorialCliente historial;
 
     public Cliente() {
         this.nombre = "Nombre Indefinido";
@@ -181,7 +176,7 @@ public class Cliente {
                 }
             }
             // consigue el historial creado ahora o el que ya existia indistintamente
-            historial = clientesHandler.getHistorialCliente(this.getRut());
+            HistorialCliente historial = clientesHandler.getHistorialCliente(this.getRut());
             
             // añade comprobante y guarda archivo de clientes
             historial.addComprobante(comprobante.getNumComprobante());
@@ -197,43 +192,34 @@ public class Cliente {
         }
     }
     
-    // TODO mover métodos a Main.java
-    //JSON SERIALIZER
-    //Genera JSON de comprobante
-    // FIXME Extract class json
+    // Genera JSON de comprobante
+    // FIXME Extract class Venta o relacionado
     public static void generarComprobanteJson(Comprobante comprobante){
         String path = "jsons/comprobantes/comprobante-"+comprobante.getNumComprobante()+".json";
-
-        FileWriter writer;
-        try {
-            writer = new FileWriter(path);
-            //PrettyPrint para dar format al JSON
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String jsonString = gson.toJson(comprobante);
-            writer.write(jsonString);
-            writer.close();
-        } catch (IOException ex) {
-            System.out.println("Error al crear el archivo");
-        }
-
+        toJson(comprobante, path);
     }
 
     // Añade a contabilidad
-    // FIXME Extract class json
+    // FIXME Extract class Venta o relacionado
     public static void addToHistory(Contabilidad contabilidad){
         String path = "jsons/historialComprobantes.json";
+        toJson(contabilidad, path);
+    }
+
+    // Extract method temporal para resolver código duplicado
+    // FIXME Extract class json
+    private static void toJson(Object obj, String path) {
         FileWriter writer;
         try {
             writer = new FileWriter(path);
             //PrettyPrint para dar format al JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String jsonString = gson.toJson(contabilidad);
+            String jsonString = gson.toJson(obj);
             writer.write(jsonString);
             writer.close();
         } catch (IOException ex) {
             System.out.println("Error al crear el archivo");
         }
-
     }
 
     // getters y setters

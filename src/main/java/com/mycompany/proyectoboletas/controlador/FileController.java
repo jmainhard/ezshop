@@ -49,14 +49,10 @@ public class FileController<E> {
      * @throws NullPointerException 
      */
     public boolean saveToJson(List<E> lista, String ruta) throws NullPointerException{
-            FileWriter writer;
-            
             if (lista == null) {
                 throw new NullPointerException("Lista nula o no inicializada\n");
             }
-            
-            try {
-                writer = new FileWriter(ruta);
+            try (FileWriter writer = new FileWriter(ruta)) {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 gson.toJson(lista, collectionType.getType(), writer);
                 writer.close();
@@ -81,8 +77,7 @@ public class FileController<E> {
      */
     public ArrayList<E> loadFromJson(String ruta) {
             ArrayList<E> lista = new ArrayList<>();
-            try {
-                BufferedReader br = new BufferedReader(new FileReader(ruta));
+            try (BufferedReader br = new BufferedReader(new FileReader(ruta))){
                 Gson gson = new Gson();
                 lista = gson.fromJson(br, collectionType.getType());
             } catch (IOException ex) {

@@ -27,7 +27,7 @@ public class ListController<E> {
         this.archivoJson = archivoJson;
         this.collectionType = collectionType;
     }
-    
+
     /**
      * Guarda una lista de objetos en formato JSON
      * @param listaObjetos lista que se desea guardar al archivo json
@@ -37,7 +37,6 @@ public class ListController<E> {
         FileController<E> jsonHandler = new FileController<>(collectionType);
          try {
             if ( jsonHandler.saveToJson(listaObjetos, RUTA+archivoJson) ) {
-//                System.out.println("\nLista guardada exitosamente\n");
                 return true;
             }
         } catch (NullPointerException ex) {
