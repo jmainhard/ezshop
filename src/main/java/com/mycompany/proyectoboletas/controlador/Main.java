@@ -39,8 +39,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // init app
-        logger.info("Aplicación Ezshop iniciada");
         loggerSetup();
+        logger.info("Aplicación Ezshop iniciada");
 
         logger.info("Cargando historial de contabilidad dir: jsons/historialComprobantes.json");
         contabilidad.setComprobantesTotales();
