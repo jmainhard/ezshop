@@ -18,8 +18,8 @@ public class Boleta extends Comprobante {
     public String toString() {
         String strBuilder = super.toString();
         
-        strBuilder += "Total compra: $"+ this.getTotal()+ " IVA inc.\n\n";
-        strBuilder += "---------------------------------------------\n";
+        strBuilder += "Total compra: $"+ this.getTotal()+ " IVA inc.\n";
+        strBuilder += "---------------------------------------------";
         
         return strBuilder;
     }
