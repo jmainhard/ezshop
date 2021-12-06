@@ -45,4 +45,12 @@ public class NumComprobanteController {
         num.setComprobantes(comprobantes);
         numComprobanteHandler.guardarObjetos(new ArrayList<>(List.of(num)));
     }
+
+    public static ListController<NumComprobanteController> getNumComprobanteHandler() {
+        return numComprobanteHandler;
+    }
+
+    public static void setNumComprobanteHandler(ListController<NumComprobanteController> numComprobanteHandler) {
+        NumComprobanteController.numComprobanteHandler = numComprobanteHandler;
+    }
 }
