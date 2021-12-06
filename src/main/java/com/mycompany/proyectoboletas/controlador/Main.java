@@ -43,7 +43,7 @@ public class Main {
         logger.info("Aplicación Ezshop iniciada");
 
         logger.info("Cargando historial de contabilidad dir: jsons/historialComprobantes.json");
-        contabilidad.setComprobantesTotales();
+        contabilidad.setComprobantesTotales("jsons/historialComprobantes.json");
         logger.info("Información cargada correctamente");
 
         logger.info("Cargando cantidad de comprobantes dir: jsons/numComprobantes.json");
@@ -369,15 +369,15 @@ public class Main {
         boolean salir = false;
         while (!salir) {
             try {
-                System.out.println("\nIngrese el número de comprobante");
+                System.out.println("Ingrese el número de comprobante");
                 int num = teclado.nextInt();
                 if(tipo == 1){
                     contabilidad.getFactura(num);
-                    logger.info("Obtener factura num: " + num);
+//                    logger.info("Obtener factura num: " + num);
                 }
                 if(tipo == 2){
                     contabilidad.getBoleta(num);
-                    logger.info("Obtener boleta num: " + num);
+//                    logger.info("Obtener boleta num: " + num);
                 }
                 salir = true;
             } catch (InputMismatchException e) {

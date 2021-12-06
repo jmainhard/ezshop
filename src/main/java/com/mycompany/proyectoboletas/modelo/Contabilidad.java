@@ -27,11 +27,11 @@ public class Contabilidad {
     // Se debe llamar cada vez que se instancia al objeto, almenos una vez en la ejecución
     // Lee el json y restablece los datos de los Comprobantes
     // FIXME Extract class json
-    public void setComprobantesTotales(){
+    public void setComprobantesTotales(String path){
         Gson gson = new Gson();
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("jsons/historialComprobantes.json"));
+            br = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException e) {
         }
 
