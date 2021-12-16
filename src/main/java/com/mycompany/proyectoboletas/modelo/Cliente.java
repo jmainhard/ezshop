@@ -20,9 +20,7 @@ import static com.mycompany.proyectoboletas.controlador.Main.*;
  *  Cliente corresponde a una clase que maneja las ventas (de una ferreteria),
  * no es un cliente comprando sino que es quién utiliza el sistema y 
  * realiza las ventas, por cada venta existe un cliente.
- * 
  */
-
 public class Cliente {
     private String nombre;
     private String rut;
@@ -206,7 +204,6 @@ public class Cliente {
         toJson(contabilidad, path);
     }
 
-    // Extract method temporal para resolver código duplicado
     // FIXME Extract class json
     private static void toJson(Object obj, String path) {
         try (FileWriter writer = new FileWriter(path)) {

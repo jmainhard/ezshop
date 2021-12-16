@@ -14,10 +14,10 @@ import java.util.List;
 public class NumComprobanteController {
     @SerializedName("Num Comprobantes Generados")
     private int comprobantes;
-    private static ListController<NumComprobanteController> numComprobanteHandler;
+    private static JsonController<NumComprobanteController> numComprobanteHandler;
 
     public NumComprobanteController() {
-        numComprobanteHandler = new ListController<>("numComprobantes.json",
+        numComprobanteHandler = new JsonController<>("numComprobantes.json",
                 new TypeToken<Collection<NumComprobanteController>>(){});
     }
 
@@ -46,11 +46,11 @@ public class NumComprobanteController {
         numComprobanteHandler.guardarObjetos(new ArrayList<>(List.of(num)));
     }
 
-    public static ListController<NumComprobanteController> getNumComprobanteHandler() {
+    public static JsonController<NumComprobanteController> getNumComprobanteHandler() {
         return numComprobanteHandler;
     }
 
-    public static void setNumComprobanteHandler(ListController<NumComprobanteController> numComprobanteHandler) {
+    public static void setNumComprobanteHandler(JsonController<NumComprobanteController> numComprobanteHandler) {
         NumComprobanteController.numComprobanteHandler = numComprobanteHandler;
     }
 }

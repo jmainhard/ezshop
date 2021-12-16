@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.proyectoboletas.modelo.Cliente;
 import com.mycompany.proyectoboletas.modelo.HistorialCliente;
-import com.mycompany.proyectoboletas.modelo.Producto;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Jorge M.
  */
 class ListControllerTest {
-    static ListController<HistorialCliente> listHandler;
+    static JsonController<HistorialCliente> listHandler;
     static ArrayList<HistorialCliente> clientList;
     String jsonText;
 
@@ -28,7 +28,7 @@ class ListControllerTest {
 
     @BeforeAll
     static void beforeAll() {
-        listHandler  = new ListController("clientesTest.json", new TypeToken<Collection<HistorialCliente>>(){});
+        listHandler  = new JsonController("clientesTest.json", new TypeToken<Collection<HistorialCliente>>(){});
     }
 
     @BeforeEach

@@ -12,17 +12,17 @@ import java.util.Collection;
  */
 
 public class ClientesController implements Imprimible {
-    private ListController<HistorialCliente> clientesHandler;
+    private JsonController<HistorialCliente> clientesHandler;
     private ArrayList<HistorialCliente> clientes;
     
     public ClientesController() {
-        clientesHandler = new ListController<>("clientes.json",
+        clientesHandler = new JsonController<>("clientes.json",
                 new TypeToken<Collection<HistorialCliente>>(){});
         clientes = clientesHandler.cargarObjetos();
     }
 
     public ClientesController(String pathFile) {
-        clientesHandler = new ListController<>(pathFile,
+        clientesHandler = new JsonController<>(pathFile,
                 new TypeToken<Collection<HistorialCliente>>(){});
         clientes = clientesHandler.cargarObjetos();
     }

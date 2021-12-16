@@ -32,7 +32,7 @@ public class Contabilidad {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(path));
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException ignored) {
         }
 
         Contabilidad num = gson.fromJson(br,Contabilidad.class);
@@ -78,7 +78,7 @@ public class Contabilidad {
     }
     // Añade un comprobante al historial, separa por tipo (FACTURA O BOLETA)
     public void addComprobante(Comprobante comprobante){
-        if (comprobante.getClass() == Factura.class){
+        if (comprobante.getClass() == Factura.class) {
             facturasTotales.add((Factura) comprobante);
         }
         if(comprobante.getClass() == Boleta.class){

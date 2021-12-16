@@ -18,23 +18,35 @@ import java.util.List;
  * Clase genérica para controlar archivos json del proyecto
  * 
  * @param <E> tipo de elementos contenidos en este archivo  
+ * @see TypeToken
  * @author Jorge M.
- * 
- * Documentación de clases genéricas: 
- *   https://docs.oracle.com/javase/tutorial/java/generics/index.html
+ *
+ * Documentación de clases genéricas:
+ *  https://docs.oracle.com/javase/tutorial/java/generics/index.html
  */
-
 public class FileController<E> {
     private TypeToken<Collection<E>> collectionType;
 
+    /**
+     * Inicializa un nuevo objeto {@code FileController}, maneja una colección de tipo {@code <E>}
+     * @param collectionType tipo de colección a ser controlada por esta instancia
+     */
     public FileController(TypeToken<Collection<E>> collectionType) {
         this.collectionType = collectionType;
     }
 
+    /**
+     * Obtiene tipo de colección de esta instancia
+     * @return {@code TypeToken<Collection<E>>} de esta lista
+     */
     public TypeToken<Collection<E>> getCollectionType() {
         return collectionType;
     }
 
+    /**
+     * Establece tipo de colección de esta instancia
+     * @param collectionType {@code TypeToken<Collection<E>>}
+     */
     public void setCollectionType(TypeToken<Collection<E>> collectionType) {
         this.collectionType = collectionType;
     }
@@ -46,9 +58,9 @@ public class FileController<E> {
      * @param ruta ruta del archivo
      * @return {@code true} si se guarda la lista correctamente {@code false}
      * si la lista no es guardada
-     * @throws NullPointerException 
+     * @throws NullPointerException si la lista no ha sido inicializada
      */
-    public boolean saveToJson(List<E> lista, String ruta) throws NullPointerException{
+    public boolean saveToJson(List<E> lista, String ruta) throws NullPointerException {
             if (lista == null) {
                 throw new NullPointerException("Lista nula o no inicializada\n");
             }

@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @see FileController
  */
 // FIXME Evaluar refactor de nombre ya que no siempre guarda listas (p.ej JsonController)
-public class ListController<E> {
+public class JsonController<E> {
     private final TypeToken<Collection<E>> collectionType; // se usa para parsear en runtime y no perder el tipo de origen
     private final String archivoJson;
     private static final String RUTA = "jsons/";
@@ -23,7 +23,7 @@ public class ListController<E> {
      * @param archivoJson archivo json con los objetos de esta lista
      * @param collectionType {@code TypeToken} del tipo de colección de esta lista
      */    
-    public ListController(String archivoJson, TypeToken<Collection<E>> collectionType) {
+    public JsonController(String archivoJson, TypeToken<Collection<E>> collectionType) {
         this.archivoJson = archivoJson;
         this.collectionType = collectionType;
     }
@@ -31,7 +31,7 @@ public class ListController<E> {
     /**
      * Guarda una lista de objetos en formato JSON
      * @param listaObjetos lista que se desea guardar al archivo json
-     *  {@code archivoJson} de este ListController
+     *  {@code archivoJson} de este JsonController
      */
     public boolean guardarObjetos(ArrayList<E> listaObjetos) {
         FileController<E> jsonHandler = new FileController<>(collectionType);

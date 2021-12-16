@@ -11,9 +11,9 @@ import java.util.Scanner;
 import java.util.logging.*;
 
 /**
+ * @serial exclude
  * @author Esteban E., Maximiliano C., Jorge M.
  */
-
 public class Main {
     public static ClientesController clientesController = new ClientesController();
     public static Contabilidad contabilidad = new Contabilidad();

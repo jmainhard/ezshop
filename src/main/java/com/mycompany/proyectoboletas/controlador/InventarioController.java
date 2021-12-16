@@ -13,11 +13,11 @@ import java.util.Collection;
  * @author Maximiliano C., Esteban E., Jorge M.
  */
 public class InventarioController implements Imprimible {
-    private ListController<Stock> inventarioHandler;
+    private JsonController<Stock> inventarioHandler;
     private ArrayList<Stock> inventario; 
 
     public InventarioController() {
-        inventarioHandler = new ListController<>("inventario.json",
+        inventarioHandler = new JsonController<>("inventario.json",
         new TypeToken<Collection<Stock>>(){});
         inventario = inventarioHandler.cargarObjetos();
     }
