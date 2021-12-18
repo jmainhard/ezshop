@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-
+@Disabled
 public class MainTests {
     public static Scanner teclado = new Scanner(System.in);
     private final PrintStream standardOut = System.out;

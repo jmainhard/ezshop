@@ -13,7 +13,11 @@ import java.util.ArrayList;
  * 
  * @see FileController
  */
-// FIXME Evaluar refactor de nombre ya que no siempre guarda listas (p.ej JsonController)
+// FIXME Copiar al jar los jsons[0] y accedera ellos desde aquí[1] (se puede)
+// [0] https://stackoverflow.com/questions/35367536
+// [1] https://stackoverflow.com/questions/5171957
+// o intentar crear la estructura de directorios y archivos de jsons cuando no se encuentra
+// FIX momentaneo: se empaqueta la entrega con jsons/
 public class JsonController<E> {
     private final TypeToken<Collection<E>> collectionType; // se usa para parsear en runtime y no perder el tipo de origen
     private final String archivoJson;
