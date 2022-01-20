@@ -2,6 +2,8 @@
 <project version="4">
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../../../../Dev/ezshop-docs" />
+    <option name="OTHER_OPTIONS" value="-encoding utf8 -docencoding utf8 -charset utf8 -doctitle &quot;Módulo Ezshop Boletería&quot; -windowtitle &quot;Ezshop docs | Boletería&quot; -version" />
+    <option name="LOCALE" value="es_CL" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
